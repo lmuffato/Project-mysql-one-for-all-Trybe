@@ -2,7 +2,9 @@ DROP DATABASE if exists SpotifyClone;
 
 CREATE DATABASE SpotifyClone;
 
-CREATE Table SpotifyClone.`PLANO` (
+USE SpotifyClone;
+
+CREATE Table `PLANO` (
   `plano_id` INT AUTO_INCREMENT PRIMARY KEY,
   `nome` VARCHAR(30) NOT NULL,
   `valor` FLOAT NOT NULL
@@ -14,7 +16,7 @@ VALUES
 ('familiar', 7.99),
 ('universitário', 5.99);
 
-CREATE Table SpotifyClone.`USUARIO` (
+CREATE Table `USUARIO` (
   `usuario_id` INT AUTO_INCREMENT PRIMARY KEY,
   `nome_usuario` VARCHAR(30) NOT NULL,
   `idade` INT NOT NULL,
@@ -29,7 +31,7 @@ VALUES
 ('Bill', 20, 3),
 ('Roger', 40, 1);
 
-CREATE Table SpotifyClone.`ARTISTA` (
+CREATE Table `ARTISTA` (
   `artista_id` INT AUTO_INCREMENT PRIMARY KEY,
   `artista_nome` VARCHAR(30) NOT NULL
 ) engine = InnoDB;
@@ -41,7 +43,7 @@ VALUES
 ('Lance Day'),
 ('Freedie Shannon');
 
-CREATE Table SpotifyClone.`ALBUM` (
+CREATE Table `ALBUM` (
   `album_id` INT AUTO_INCREMENT PRIMARY KEY,
   `nome_album` VARCHAR(30) NOT NULL,
   `artista_id` INT NOT NULL,
@@ -56,7 +58,7 @@ VALUES
 ('Freedie Shannon', 3),
 ('Temporary Culture', 4);
 
-CREATE Table SpotifyClone.`CANCAO` (
+CREATE Table `CANCAO` (
   `cancao_id` INT AUTO_INCREMENT PRIMARY KEY,
   `nome_cancao` VARCHAR(50) NOT NULL,
   `album_id` INT NOT NULL,
@@ -86,7 +88,7 @@ VALUES
 ('Without My Streets', 5 , 4),
 ('Words Of Her Life', 5 , 4);
 
-CREATE Table SpotifyClone.`SEGUINDO_ARTISTA` (
+CREATE Table `SEGUINDO_ARTISTA` (
   `seguindo_id` INT AUTO_INCREMENT,
   `usuario_id` INT NOT NULL,
   `artista_id` INT NOT NULL,
@@ -107,7 +109,7 @@ VALUES
 (4, 4);
 
 
-CREATE Table SpotifyClone.`HISTORICO_REPRODUCAO` (
+CREATE Table `HISTORICO_REPRODUCAO` (
   `reproducao_id` INT AUTO_INCREMENT,
   `usuario_id` INT NOT NULL,
   `cancao_id` INT NOT NULL,
