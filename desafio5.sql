@@ -4,6 +4,6 @@ count(h.usuario_id) AS 'reproducoes'
 FROM SpotifyClone.Historico AS h
 INNER JOIN SpotifyClone.Cancoes AS c
 ON h.cancao_id = c.cancao_id
-GROUP BY c.cancao ASC
+GROUP BY c.cancao
 ORDER BY count(h.usuario_id) DESC
 LIMIT 2;
