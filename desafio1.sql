@@ -59,14 +59,12 @@ VALUES
 ('familiar', 7.99),
 ('universitário', 5.99);
     
--- SELECT * FROM Planos;
-    
 INSERT INTO Usuarios (nome_usuario, idade, plano_id)
 VALUES 
-	('Thati', '23', '1'),
-  ('Cintia', '35', '2'),
-  ('Bill', '20', '3'),
-  ('Roger', '45', '1');
+('Thati', '23', '1'),
+('Cintia', '35', '2'),
+('Bill', '20', '3'),
+('Roger', '45', '1');
 
 INSERT INTO Artistas (artista_nome)
 VALUES 
