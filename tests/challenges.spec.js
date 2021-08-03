@@ -337,7 +337,7 @@ describe('Queries de seleção', () => {
         FROM information_schema.KEY_COLUMN_USAGE
         WHERE TABLE_SCHEMA = 'SpotifyClone' AND TABLE_NAME = '${userTable}' AND CONSTRAINT_NAME = 'PRIMARY';
       `, { type: 'SELECT' });
-      const userId = (await sequelize.query(
+          const userId = (await sequelize.query(
         `SELECT ${userIdColumn} FROM ${userTable} WHERE ${userColumn} = 'Bill';`,
         { type: 'SELECT' },
       ))[0][userIdColumn];
