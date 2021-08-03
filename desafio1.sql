@@ -84,7 +84,7 @@ INSERT INTO songs (song_name, album_id_fk) VALUES
 CREATE TABLE `history`(
   user_id_fk INT NOT NULL,
   song_id_fk INT NOT NULL,
-  CONSTRAINT PRIMARY KEY (song_id_fk, user_id_fk),
+  PRIMARY KEY (song_id_fk, user_id_fk),
   FOREIGN KEY (user_id_fk) REFERENCES users(user_id),
   FOREIGN KEY (song_id_fk) REFERENCES songs(song_id),
   CONSTRAINT PRIMARY KEY(user_id_fk, song_id_fk)
@@ -109,7 +109,7 @@ INSERT INTO `history` (user_id_fk, song_id_fk) VALUES
 CREATE TABLE followers(
 user_id_fk INT NOT NULL,
 artist_id_fk INT NOT NULL,
-CONSTRAINT PRIMARY KEY (artist_id_fk, user_id_fk),
+PRIMARY KEY (artist_id_fk, user_id_fk),
 FOREIGN KEY (artist_id_fk) REFERENCES SpotifyClone.artists(artist_id),
 FOREIGN KEY (user_id_fk) REFERENCES SpotifyClone.users(user_id)
 );
