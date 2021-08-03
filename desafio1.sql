@@ -102,7 +102,7 @@ VALUES
   ('Words Of Her Life', 5),
   ('Without My Streets', 5);
 
-INSERT INTO `followers` (user_id, artist_id)
+INSERT INTO followers (user_id, artist_id)
 VALUES
   (1, 1),
   (1, 3),
@@ -113,7 +113,7 @@ VALUES
   (3, 2),
   (4, 4);
 
-INSERT INTO `history` (user_id, song_id)
+INSERT INTO history (user_id, song_id)
 VALUES
   (1, 1),
   (1, 6),
