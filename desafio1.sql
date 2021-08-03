@@ -44,7 +44,7 @@ CREATE TABLE SpotifyClone.Historico(
     historico_id INT NOT NULL AUTO_INCREMENT,
     usuario_id INT NOT NULL,
     cancao_id INT NOT NULL,
-    PRIMARY KEY (historico_id),
+    PRIMARY KEY (historico_id, usuario_id, cancao_id),
     FOREIGN KEY (usuario_id) REFERENCES SpotifyClone.Usuarios (usuario_id),
     FOREIGN KEY (cancao_id) REFERENCES SpotifyClone.Cancoes (cancao_id)
 ) engine = InnoDB;
@@ -53,7 +53,7 @@ CREATE TABLE SpotifyClone.Seguindo(
     seguindo_id INT NOT NULL AUTO_INCREMENT,
     usuario_id INT NOT NULL,
     artista_id INT NOT NULL,
-    PRIMARY KEY (seguindo_id),
+    PRIMARY KEY (seguindo_id, usuario_id, artista_id),
     FOREIGN KEY (usuario_id) REFERENCES SpotifyClone.Usuarios (usuario_id),
     FOREIGN KEY (artista_id) REFERENCES SpotifyClone.Artistas (artista_id)
 ) engine = InnoDB;
