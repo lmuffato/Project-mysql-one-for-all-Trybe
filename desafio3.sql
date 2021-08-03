@@ -3,9 +3,9 @@ SELECT
   u.usuario usuario,
   c.cancao nome
 FROM
-  spotifyclone.usuarios u
-  INNER JOIN spotifyclone.usuarios_reproducoes ur ON u.usuario_id = ur.usuario_id
-  INNER JOIN spotifyclone.cancoes c ON ur.cancao_id = c.cancao_id
+  SpotifyClone.USUARIOS u
+  INNER JOIN SpotifyClone.USUARIOS_REPRODUCOES ur ON u.usuario_id = ur.usuario_id
+  INNER JOIN SpotifyClone.CANCOES c ON c.cancao_id = ur.cancao_id
 ORDER BY
   usuario,
   nome;

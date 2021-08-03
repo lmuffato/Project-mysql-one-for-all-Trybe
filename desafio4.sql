@@ -1,11 +1,13 @@
-CREATE VIEW historico_reproducao_usuarios AS
+CREATE VIEW SpotifyClone.top_3_artistas AS
 SELECT
-  u.usuario usuario,
-  c.cancao nome
+  a.artista artista,
+  COUNT(DISTINCT us.usuario_id) seguidores
 FROM
-  SpotifyClone.USUARIOS u
-  INNER JOIN SpotifyClone.USUARIOS_REPRODUCOES ur ON u.usuario_id = ur.usuario_id
-  INNER JOIN SpotifyClone.CANCOES c ON c.cancao_id = ur.cancao_id
+  SpotifyClone.ARTISTAS a
+  INNER JOIN SpotifyClone.USUARIOS_SEGUIDAS us ON a.artista_id = us.artista_id
+GROUP BY
+  artista
 ORDER BY
-  usuario,
-  nome;
+  seguidores DESC
+LIMIT
+  3;
