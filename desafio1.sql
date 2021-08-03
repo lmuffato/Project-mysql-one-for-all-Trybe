@@ -59,7 +59,7 @@ INSERT INTO songs (song_name, album_id) VALUES
 ('Diamond Power', 4),
 ('Honey, Let\'s Be Silly', 4),
 ('Thang Of Thunder', 5),
-('Word Of Her Life', 5),
+('Words Of Her Life', 5),
 ('Without My Streets', 5);
 
 CREATE TABLE users_history(user_id INT, song_id INT, CONSTRAINT PRIMARY KEY(user_id, song_id),
