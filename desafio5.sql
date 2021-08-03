@@ -5,6 +5,6 @@ CREATE VIEW top_2_hits_do_momento AS
         SpotifyClone.History h
             INNER JOIN
         SpotifyClone.Singles s ON h.single_id = s.single_id
-    GROUP BY c.single
+    GROUP BY s.single
     ORDER BY COUNT(h.user_id) DESC
     LIMIT 2;
