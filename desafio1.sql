@@ -123,4 +123,3 @@ INSERT INTO history(id_user, id_music) VALUES (3,6);
 INSERT INTO history(id_user, id_music) VALUES (4,3);
 INSERT INTO history(id_user, id_music) VALUES (4,18);
 INSERT INTO history(id_user, id_music) VALUES (4,11);
-
