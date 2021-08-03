@@ -4,5 +4,5 @@ count(s.usuario_id) AS 'seguidores'
 FROM SpotifyClone.Seguindo AS s
 INNER JOIN SpotifyClone.Artistas AS a
 ON s.artista_id = a.artista_id
-GROUP BY a.nome_artista
+GROUP BY a.nome_artista ASC
 LIMIT 3;
