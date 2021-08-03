@@ -80,7 +80,7 @@ VALUES
 ('Hallowed Steam', 2),
 ('Incandescent', 3),
 ('Temporary Culture', 4);
-	
+
 INSERT INTO Cancoes (nome_cancao, album_id)
 VALUES
 ('Soul For Us', 1),
