@@ -29,36 +29,26 @@ FOREIGN KEY(user_plan) REFERENCES PLANS(plan_id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE SpotifyClone.FOLLOWING_ARTISTS(
+following_id INT PRIMARY KEY AUTO_INCREMENT,
 user_id INT NOT NULL,
-artist1 INT,
-artist2 INT, 
-artist3 INT, 
-artist4 INT, 
+artist_id INT NOT NULL,
 FOREIGN KEY(user_id) REFERENCES USERS(user_id),
-FOREIGN KEY(artist1) REFERENCES ARTISTS(artist_id),
-FOREIGN KEY(artist2) REFERENCES ARTISTS(artist_id),
-FOREIGN KEY(artist3) REFERENCES ARTISTS(artist_id),
-FOREIGN KEY(artist4) REFERENCES ARTISTS(artist_id)
+FOREIGN KEY(artist_id) REFERENCES ARTISTS(artist_id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE SpotifyClone.SONGS(
+song_id INT PRIMARY KEY AUTO_INCREMENT,
 album_id INT NOT NULL,
-song1 VARCHAR(50),
-song2 VARCHAR(50),
-song3 VARCHAR(50),
-song4 VARCHAR(50),
-song5 VARCHAR(50),
-song6 VARCHAR(50),
+song_name VARCHAR(50) NOT NULL,
 FOREIGN KEY(album_id) REFERENCES ALBUMS(album_id)
 ) Engine=InnoDB;
 
 CREATE TABLE SpotifyClone.HISTORY_REPRODUCTIONS(
+history_id INT PRIMARY KEY AUTO_INCREMENT,
 user_id INT NOT NULL,
-rep1 VARCHAR(50),
-rep2 VARCHAR(50),
-rep3 VARCHAR(50),
-rep4 VARCHAR(50),
-FOREIGN KEY(user_id) REFERENCES USERS(user_id)
+song_id INT NOT NULL,
+FOREIGN KEY(user_id) REFERENCES USERS(user_id),
+FOREIGN KEY(song_id) REFERENCES SONGS(song_id)
 ) Engine=InnoDB;
 
 INSERT INTO SpotifyClone.PLANS (plan_name, plan_value)
@@ -90,26 +80,54 @@ VALUES
 ('Roger', 45, 1);
 
 INSERT INTO SpotifyClone.FOLLOWING_ARTISTS
-(user_id, artist1, artist2, artist3, artist4)
+(following_id, user_id, artist_id)
 VALUES
-(1, 1, 4, 3, 4),
-(2, 1, 3, null, null),
-(3, 2, 1, null, null),
-(4, 4, null, null, null);
+(1,1,1),
+(2,1,4),
+(3,1,3),
+(4,2,1),
+(5,2,3),
+(6,3,2),
+(7,3,1),
+(8,4,4);
 
 INSERT INTO SpotifyClone.SONGS
-(album_id, song1, song2, song3, song4, song5, song6)
+(song_id, album_id, song_name)
 VALUES
-(1, "Soul For Us", "Reflections Of Magic", "Dance With Her Own", null, null, null),
-(2, "Troubles Of My Inner Fire", "Time Fireworks", null, null, null, null),
-(3, "Magic Circus", "Honey, So Do I", "Sweetie, Let's Go Wild", "She Knows", null, null),
-(4, "Fantasy For Me", "Celebration Of More", "Rock His Everything", "Home Forever", "Diamond Power", "Honey, Let's Be Silly"),
-(5, "Thang Of Thunder", "Words Of Her Life", "Without My Streets", null, null, null);
+(1, 1, "Soul For Us"),
+(2, 1, "Reflections Of Magic"), 
+(3, 1, "Dance With Her Own"),
+(4, 2, "Troubles Of My Inner Fire"),
+(5, 2, "Time Fireworks"),
+(6, 3, "Magic Circus"),
+(7, 3, "Honey, So Do I"),
+(8, 3, "Sweetie, Let's Go Wild"),
+(9, 3, "She Knows"),
+(10, 4, "Fantasy For Me"),
+(11, 4, "Celebration Of More"),
+(12, 4, "Rock His Everything"),
+(13, 4, "Home Forever"),
+(14, 4, "Diamond Power"),
+(15, 4, "Honey, Let's Be Silly"),
+(16, 5, "Thang Of Thunder"),
+(17, 5, "Words Of Her Life"),
+(18, 5, "Without My Streets");
+
 
 INSERT INTO SpotifyClone.HISTORY_REPRODUCTIONS
-(user_id, rep1, rep2, rep3, rep4)
+(history_id, user_id, song_id)
 VALUES
-(1, "Soul For Us", "Magic Circus", "Diamond Power", "Thang Of Thunder"),
-(2, "Home Forever", "Words Of Her Life", "Reflections Of Magic", "Honey, Let's Be Silly"),
-(3, "Troubles Of My Inner Fire", "Thang Of Thunder", "Magic Circus", null),
-(4, "Dance With Her Own", "Without My Streets", "Celebration Of More", null);
+(1, 1, 1),
+(2, 1, 6),
+(3, 1, 14),
+(4, 1, 16),
+(5, 2, 13),
+(6, 2, 17),
+(7, 2, 2),
+(8, 2, 15),
+(9, 3, 4),
+(10, 3, 16),
+(11, 3, 6),
+(12, 4, 3),
+(13, 4, 18),
+(14, 4, 11);
