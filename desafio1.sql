@@ -3,9 +3,9 @@ CREATE DATABASE SpotifyClone;
 Use SpotifyClone;
 
 CREATE TABLE Planos (
- Plano_ID INT PRIMARY KEY AUTO_INCREMENT,
- Plano VARCHAR(40) NOT NULL,
- Preço DECIMAL(3, 2) NOT NULL
+    Plano_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Plano VARCHAR(40) NOT NULL,
+    Preço DECIMAL(3 , 2 ) NOT NULL
 );
 
 INSERT INTO Planos (Plano, Preço)
@@ -47,10 +47,11 @@ VALUES ('Envious', 1), ('Exuberant', 1),
 
 
 CREATE TABLE Musicas (
- Musica_ID INT PRIMARY KEY AUTO_INCREMENT,
- Nome VARCHAR(100) NOT NULL,
- Album_ID INT NOT NULL,
- CONSTRAINT FOREIGN KEY (Album_ID) REFERENCES Albuns(Album_ID)
+    Musica_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(100) NOT NULL,
+    Album_ID INT NOT NULL,
+    CONSTRAINT FOREIGN KEY (Album_ID)
+        REFERENCES Albuns (Album_ID)
 );
 
 INSERT INTO Musicas (Nome, Album_ID)
