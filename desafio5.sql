@@ -1,8 +1,7 @@
 CREATE VIEW top_2_hits_do_momento AS
-SELECT m.musica, COUNT(h.musica_id) AS reproducoes
-FROM SpotifyClone.historico_reproducao AS h
-JOIN SpotifyClone.musicas AS m
-ON h.musica_id = m.musica_id
-GROUP BY h.musica_id
-ORDER BY `reproducoes` DESC, `cancao`
+SELECT m.musica AS cancao, COUNT(r.usuario_id) AS reproducoes
+FROM SpotifyClone.musicas AS m
+INNER JOIN SpotifyClone.historico_reproducao r ON m.musica_id = r.musica_id
+GROUP BY 1
+ORDER BY 2 DESC , 1
 LIMIT 2;
