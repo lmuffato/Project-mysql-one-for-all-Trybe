@@ -24,7 +24,7 @@ CREATE Table `ARTISTA` (
 ) engine = InnoDB;
 
 CREATE Table `ALBUM` (
-  `algum_id` INT AUTO_INCREMENT PRIMARY KEY,
+  `album_id` INT AUTO_INCREMENT PRIMARY KEY,
   `album_nome` VARCHAR(30),
   `artista_id` int,
   FOREIGN KEY (`artista_id`) REFERENCES `ARTISTA` (`artista_id`)
@@ -33,10 +33,8 @@ CREATE Table `ALBUM` (
 CREATE Table `CANCAO` (
   `cancao_id` INT AUTO_INCREMENT PRIMARY KEY,
   `cancao_nome` VARCHAR(50),
-  `algum_id` INT,
-  `artista_id` INT,
-  FOREIGN KEY (`algum_id`) REFERENCES `ALBUM` (`algum_id`),
-  FOREIGN KEY (`artista_id`) REFERENCES `ARTISTA` (`artista_id`)
+  `album_id` INT,
+  FOREIGN KEY (`album_id`) REFERENCES `ALBUM` (`album_id`)
 ) engine = InnoDB;
 
 CREATE Table `REPRODUCAO` (
@@ -83,26 +81,26 @@ VALUES
 ('Incandescent', 3),
 ('Temporary Culture', 4);
 
-INSERT INTO `CANCAO` (`cancao_nome`, `algum_id`, `artista_id`)
+INSERT INTO `CANCAO` (`cancao_nome`, `album_id`)
 VALUES
-('Reflections Of Magic', 1, 1),
-('Soul For Us', 1, 1),
-('Dance With Her Own', 1, 1),
-('Troubles Of My Inner Fire', 2, 1),
-('Time Fireworks', 2, 1),
-('Magic Circus', 3, 2),
-('Honey, So Do I', 3, 2),
-('Sweetie, Let`s Go Wild', 3, 2),
-('Celebration Of More', 4, 3),
-('She Knows', 3, 2),
-('Fantasy For Me', 4, 3),
-('Rock His Everything', 4, 3),
-('Honey, Let`s Be Silly', 4, 3),
-('Without My Streets', 4, 4),
-('Home Forever', 4, 3),
-('Diamond Power', 4, 3),
-('Thang Of Thunder', 5, 4),
-('Words Of Her Life', 5, 4);
+('Reflections Of Magic', 1),
+('Soul For Us', 1),
+('Dance With Her Own', 1),
+('Troubles Of My Inner Fire', 2),
+('Time Fireworks', 2),
+('Magic Circus', 3),
+('Honey, So Do I', 3),
+('Sweetie, Let`s Go Wild', 3),
+('Celebration Of More', 4),
+('She Knows', 3),
+('Fantasy For Me', 4),
+('Rock His Everything', 4),
+('Honey, Let`s Be Silly', 4),
+('Without My Streets', 4),
+('Home Forever', 4),
+('Diamond Power', 4),
+('Thang Of Thunder', 5),
+('Words Of Her Life', 5);
 
 INSERT IGNORE INTO `REPRODUCAO` (`cancao_id`, `usuario_id`)
 VALUES
