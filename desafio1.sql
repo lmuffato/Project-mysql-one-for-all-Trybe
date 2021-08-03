@@ -58,3 +58,30 @@ CREATE TABLE SpotifyClone.Seguindo(
     FOREIGN KEY (artista_id) REFERENCES SpotifyClone.Artistas (artista_id)
 ) engine = InnoDB;
 
+INSERT INTO SpotifyClone.Planos (plano_id, plano, valor)
+VALUES
+(1, 'gratuito', 0),
+(2, 'familiar', 7.99),
+(3, 'universitário', 5.99);
+  
+INSERT INTO SpotifyClone.Usuarios (usuario_id, usuario, idade, plano_id)
+VALUES
+(1, 'Thati', 23, 1),
+(2, 'Cintia', 35, 2),
+(3, 'Bill', 20, 3),
+(4, 'Roger', 45, 1);
+
+INSERT INTO SpotifyClone.Artistas (artista_id, nome_artista)
+VALUES
+(1, 'Walter Phoenix'),
+(2, 'Freedie Shannon'),
+(3, 'Lance Day'),
+(4, 'Peter Strong');
+
+INSERT INTO SpotifyClone.Albuns (album_id, album, artista_id)
+VALUES
+(1, 'Envious', 1),
+(2, 'Exuberant', 1),
+(3, 'Hallowed Steam', 4),
+(4, 'Incandescent', 3),
+(5, 'Temporary Culture', 2);
