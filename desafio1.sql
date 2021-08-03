@@ -20,41 +20,41 @@ CREATE TABLE usuarios(
 ) engine = InnoDB;
 
 CREATE TABLE artistas(
-	artista_id INTEGER AUTO_INCREMENT,
-    artista VARCHAR(50),
-    CONSTRAINT PRIMARY KEY(artista_id)
+artista_id INTEGER AUTO_INCREMENT,
+artista VARCHAR(50),
+CONSTRAINT PRIMARY KEY(artista_id)
 ) engine = InnoDB;
 
 CREATE TABLE albums (
-	album_id INTEGER AUTO_INCREMENT,
-    album VARCHAR(100),
-    artista_id INTEGER,
-    CONSTRAINT PRIMARY KEY(album_id),
-    FOREIGN KEY (artista_id) REFERENCES artistas (artista_id)
+album_id INTEGER AUTO_INCREMENT,
+album VARCHAR(100),
+artista_id INTEGER,
+CONSTRAINT PRIMARY KEY(album_id),
+FOREIGN KEY (artista_id) REFERENCES artistas (artista_id)
 ) engine = InnoDB;
 
 CREATE TABLE cancoes (
-	cancao_id INTEGER AUTO_INCREMENT,
-    cancao VARCHAR(200),
-    album_id INTEGER,
-    CONSTRAINT PRIMARY KEY(cancao_id),
-    FOREIGN KEY (album_id) REFERENCES albums (album_id)
+cancao_id INTEGER AUTO_INCREMENT,
+cancao VARCHAR(200),
+album_id INTEGER,
+CONSTRAINT PRIMARY KEY(cancao_id),
+FOREIGN KEY (album_id) REFERENCES albums (album_id)
 ) engine = InnoDB;
 
 CREATE TABLE usuario_artista(
-	usuario_id INTEGER,
-    artista_id INTEGER,
-    CONSTRAINT PRIMARY KEY(usuario_id, artista_id),
-    FOREIGN KEY (usuario_id) REFERENCES usuarios (usuario_id),
-    FOREIGN KEY (artista_id) REFERENCES artistas (artista_id)
+usuario_id INTEGER,
+artista_id INTEGER,
+CONSTRAINT PRIMARY KEY(usuario_id, artista_id),
+FOREIGN KEY (usuario_id) REFERENCES usuarios (usuario_id),
+FOREIGN KEY (artista_id) REFERENCES artistas (artista_id)
 ) engine = InnoDB;
 
 CREATE TABLE usuario_reproducao(
-	usuario_id INTEGER,
-    cancao_id INTEGER,
-    CONSTRAINT PRIMARY KEY(usuario_id, cancao_id),
-    FOREIGN KEY (usuario_id) REFERENCES usuarios (usuario_id),
-    FOREIGN KEY (cancao_id) REFERENCES cancoes (cancao_id)
+usuario_id INTEGER,
+cancao_id INTEGER,
+CONSTRAINT PRIMARY KEY(usuario_id, cancao_id),
+FOREIGN KEY (usuario_id) REFERENCES usuarios (usuario_id),
+FOREIGN KEY (cancao_id) REFERENCES cancoes (cancao_id)
 ) engine = InnoDB;
 
 INSERT INTO planos (plano, valor_plano)
