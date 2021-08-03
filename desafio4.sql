@@ -7,5 +7,4 @@ CREATE VIEW top_3_artistas AS
   ON f.id_artist = art.id_artist
   GROUP BY name_artist
   ORDER BY 2 DESC, 1;
-
-...
+  
