@@ -5,57 +5,57 @@ CREATE DATABASE SpotifyClone;
 USE SpotifyClone;
 
 CREATE TABLE artista(
-	artista_id INT NOT NULL AUTO_INCREMENT,
-  	artista VARCHAR(45) NOT NULL,
-  	CONSTRAINT PRIMARY KEY (artista_id)
+artista_id INT NOT NULL AUTO_INCREMENT,
+artista VARCHAR(45) NOT NULL,
+CONSTRAINT PRIMARY KEY (artista_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE album(
-	album_id INT NOT NULL AUTO_INCREMENT,
-  	album VARCHAR(45) NOT NULL,
-  	artista_id INT NOT NULL,
-  	CONSTRAINT PRIMARY KEY (album_id),
-  	CONSTRAINT FOREIGN KEY (artista_id) REFERENCES artista (artista_id)
+album_id INT NOT NULL AUTO_INCREMENT,
+album VARCHAR(45) NOT NULL,
+artista_id INT NOT NULL,
+CONSTRAINT PRIMARY KEY (album_id),
+CONSTRAINT FOREIGN KEY (artista_id) REFERENCES artista (artista_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS cancao(
-	cancao_id INT NOT NULL AUTO_INCREMENT,
-  	cancao VARCHAR(45) NOT NULL,
-  	album_id INT NOT NULL,
-  	CONSTRAINT PRIMARY KEY (cancao_id),
-  	CONSTRAINT FOREIGN KEY (album_id) REFERENCES album (album_id)
+cancao_id INT NOT NULL AUTO_INCREMENT,
+cancao VARCHAR(45) NOT NULL,
+album_id INT NOT NULL,
+CONSTRAINT PRIMARY KEY (cancao_id),
+CONSTRAINT FOREIGN KEY (album_id) REFERENCES album (album_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE plano(
-	plano_id INT NOT NULL AUTO_INCREMENT,
-  	plano VARCHAR(45) NOT NULL,
-  	valor_plano DECIMAL(3, 2) NOT NULL,
-  	CONSTRAINT PRIMARY KEY (plano_id)
+plano_id INT NOT NULL AUTO_INCREMENT,
+plano VARCHAR(45) NOT NULL,
+valor_plano DECIMAL(3, 2) NOT NULL,
+CONSTRAINT PRIMARY KEY (plano_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE usuario(
-	usuario_id INT NOT NULL AUTO_INCREMENT,
-  	usuario VARCHAR(45) NOT NULL,
-  	idade TINYINT NOT NULL,
-  	plano_id INT NOT NULL,
-  	CONSTRAINT PRIMARY KEY (usuario_id),
-  	CONSTRAINT FOREIGN KEY(plano_id) REFERENCES plano(plano_id)
+usuario_id INT NOT NULL AUTO_INCREMENT,
+usuario VARCHAR(45) NOT NULL,
+idade TINYINT NOT NULL,
+plano_id INT NOT NULL,
+CONSTRAINT PRIMARY KEY (usuario_id),
+CONSTRAINT FOREIGN KEY(plano_id) REFERENCES plano(plano_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE historico_reproducao(
-	usuario_id INT NOT NULL,
-  	cancao_id INT NOT NULL,
-  	CONSTRAINT PRIMARY KEY (usuario_id, cancao_id),
-  	CONSTRAINT FOREIGN KEY (usuario_id) REFERENCES usuario(usuario_id),
-  	CONSTRAINT FOREIGN KEY (cancao_id) REFERENCES cancao(cancao_id)
+usuario_id INT NOT NULL,
+cancao_id INT NOT NULL,
+CONSTRAINT PRIMARY KEY (usuario_id, cancao_id),
+CONSTRAINT FOREIGN KEY (usuario_id) REFERENCES usuario(usuario_id),
+CONSTRAINT FOREIGN KEY (cancao_id) REFERENCES cancao(cancao_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE seguindo_artista(
-	usuario_id INT NOT NULL,
-  	artista_id INT NOT NULL,
-  	CONSTRAINT PRIMARY KEY (usuario_id, artista_id),
-  	CONSTRAINT FOREIGN KEY (usuario_id) REFERENCES usuario(usuario_id),
-  	CONSTRAINT FOREIGN KEY (artista_id) REFERENCES artista(artista_id)
+usuario_id INT NOT NULL,
+artista_id INT NOT NULL,
+CONSTRAINT PRIMARY KEY (usuario_id, artista_id),
+CONSTRAINT FOREIGN KEY (usuario_id) REFERENCES usuario(usuario_id),
+CONSTRAINT FOREIGN KEY (artista_id) REFERENCES artista(artista_id)
 ) ENGINE = InnoDB;
 
 INSERT INTO artista(artista)
