@@ -86,7 +86,7 @@ CREATE TABLE `history`(
   song_id_fk INT NOT NULL,
   PRIMARY KEY (song_id_fk, user_id_fk),
   FOREIGN KEY (user_id_fk) REFERENCES users(user_id),
-  FOREIGN KEY (song_id_fk) REFERENCES songs(song_id),
+  FOREIGN KEY (song_id_fk) REFERENCES songs(song_id)
 );
 
 INSERT INTO `history` (user_id_fk, song_id_fk) VALUES
