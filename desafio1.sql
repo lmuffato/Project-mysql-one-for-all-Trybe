@@ -69,22 +69,13 @@ INSERT INTO artist(name_artist, id_user) VALUES ('Lance Day', 3);
 INSERT INTO artist(name_artist, id_user) VALUES ('Freedie Shannon', 4);
 
 INSERT INTO following(id_user, id_artist) VALUES (1, 1);
-INSERT INTO following(id_user, id_artist) VALUES (1, 1);
-INSERT INTO following(id_user, id_artist) VALUES (1, 3);
 INSERT INTO following(id_user, id_artist) VALUES (1, 4);
-
-INSERT INTO following(id_user, id_artist) VALUES (2, 3);
-INSERT INTO following(id_user, id_artist) VALUES (2, 4);
+INSERT INTO following(id_user, id_artist) VALUES (1, 3);
 INSERT INTO following(id_user, id_artist) VALUES (2, 1);
 INSERT INTO following(id_user, id_artist) VALUES (2, 3);
-
+INSERT INTO following(id_user, id_artist) VALUES (3, 2);
 INSERT INTO following(id_user, id_artist) VALUES (3, 1);
-INSERT INTO following(id_user, id_artist) VALUES (3, 3);
-INSERT INTO following(id_user, id_artist) VALUES (4, 1);
-
-INSERT INTO following(id_user, id_artist) VALUES (4, 1);
 INSERT INTO following(id_user, id_artist) VALUES (4, 4);
-INSERT INTO following(id_user, id_artist) VALUES (4, 2);
 
 INSERT INTO album(name_album, id_artist) VALUES ('Envious', 1);
 INSERT INTO album(name_album, id_artist) VALUES ('Exuberant', 1);
