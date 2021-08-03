@@ -132,4 +132,3 @@ VALUES
   (4, 3),
   (4, 18),
   (4, 11);
--- Error Code: 1054. Unknown column 'user_id' in 'field list'
