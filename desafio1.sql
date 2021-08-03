@@ -1,40 +1,36 @@
 DROP SCHEMA IF EXISTS SpotifyClone;
 CREATE SCHEMA SpotifyClone;
 
-     CREATE TABLE SpotifyClone.plans(
+CREATE TABLE SpotifyClone.plans(
         plan_id INT PRIMARY KEY AUTO_INCREMENT,
         plan_name VARCHAR(50) NOT NULL,
         price DEC NOT NULL
     );
- 
- CREATE TABLE SpotifyClone.users(
+CREATE TABLE SpotifyClone.users(
         user_id INT PRIMARY KEY AUTO_INCREMENT,
         user_name VARCHAR(50) NOT NULL,
         age INT NOT NULL,
         plan_id INT NOT NULL,
         FOREIGN KEY (plan_id) REFERENCES SpotifyClone.plans (plan_id)
     );
-    
-         CREATE TABLE SpotifyClone.artists(
+CREATE TABLE SpotifyClone.artists(
         artist_id INT PRIMARY KEY AUTO_INCREMENT,
         artist_name VARCHAR(50) NOT NULL
     );
     
-             CREATE TABLE SpotifyClone.albums(
+CREATE TABLE SpotifyClone.albums(
         album_id INT PRIMARY KEY AUTO_INCREMENT,
         album_name VARCHAR(50) NOT NULL,
         artist_id INT NOT NULL,
         FOREIGN KEY (artist_id) REFERENCES SpotifyClone.artists (artist_id)
     );
     
-     CREATE TABLE SpotifyClone.songs(
+CREATE TABLE SpotifyClone.songs(
         song_id INT PRIMARY KEY AUTO_INCREMENT,
         song_name VARCHAR(50) NOT NULL,
         album_id INT NOT NULL,
         FOREIGN KEY (album_id) REFERENCES SpotifyClone.albums (album_id)
-    );
-    
-    
+    );   
 CREATE TABLE SpotifyClone.listened_songs(
     song_id INT NOT NULL,
     user_id INT NOT NULL,
@@ -42,7 +38,6 @@ CREATE TABLE SpotifyClone.listened_songs(
     FOREIGN KEY (song_id) REFERENCES SpotifyClone.songs(song_id),
     FOREIGN KEY (user_id) REFERENCES SpotifyClone.users(user_id)
 );
-
 CREATE TABLE SpotifyClone.followed_artists(
     user_id INT NOT NULL,
     artist_id INT NOT NULL,
