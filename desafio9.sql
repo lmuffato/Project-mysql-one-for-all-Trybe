@@ -1,5 +1,7 @@
 -- DESAFIO 9: Crie uma procedure chamada albuns_do_artista que recebe como parâmetro o nome de uma pessoa artista e em retorno deve exibir as seguintes colunas:
 
+DROP PROCEDURE IF EXISTS albuns_do_artista;
+
 DELIMITER $$
 
 CREATE PROCEDURE albuns_do_artista (IN pessoa_artista VARCHAR(40))
