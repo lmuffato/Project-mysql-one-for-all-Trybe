@@ -6,7 +6,7 @@ CREATE Table SpotifyClone.`PLANO` (
   `plano_id` INT AUTO_INCREMENT PRIMARY KEY,
   `nome` VARCHAR(30) NOT NULL,
   `valor` FLOAT NOT NULL
-);
+) engine = InnoDB;
 
 INSERT INTO `PLANO` (`nome`, `valor`)
 VALUES
@@ -20,7 +20,7 @@ CREATE Table SpotifyClone.`USUARIO` (
   `idade` INT NOT NULL,
   `plano_id` INT NOT NULL,
   FOREIGN KEY (`plano_id`) REFERENCES `PLANO` (`plano_id`)
-);
+) engine = InnoDB;
 
 INSERT INTO `USUARIO` (`nome_usuario`, `idade`, `plano_id`)
 VALUES
@@ -32,7 +32,7 @@ VALUES
 CREATE Table SpotifyClone.`ARTISTA` (
   `artista_id` INT AUTO_INCREMENT PRIMARY KEY,
   `artista_nome` VARCHAR(30) NOT NULL
-);
+) engine = InnoDB;
 
 INSERT INTO `ARTISTA` (`artista_nome`)
 VALUES
@@ -46,7 +46,7 @@ CREATE Table SpotifyClone.`ALBUM` (
   `nome_album` VARCHAR(30) NOT NULL,
   `artista_id` INT NOT NULL,
   FOREIGN KEY (`artista_id`) REFERENCES `ARTISTA` (`artista_id`)
-);
+) engine = InnoDB;
 
 INSERT INTO `ALBUM` (`nome_album`, `artista_id`)
 VALUES
@@ -63,7 +63,7 @@ CREATE Table SpotifyClone.`CANCAO` (
   `artista_id` INT NOT NULL,
   FOREIGN KEY (`album_id`) REFERENCES `ALBUM` (`album_id`),
   FOREIGN KEY (`artista_id`) REFERENCES `ARTISTA` (`artista_id`)
-);
+) engine = InnoDB;
 
 INSERT INTO `CANCAO` (`nome_cancao`, `album_id`, `artista_id`)
 VALUES
@@ -90,9 +90,10 @@ CREATE Table SpotifyClone.`SEGUINDO_ARTISTA` (
   `seguindo_id` INT AUTO_INCREMENT PRIMARY KEY,
   `usuario_id` INT NOT NULL,
   `artista_id` INT NOT NULL,
+  PRIMARY KEY (usuario_id, artista_id),
   FOREIGN KEY (`usuario_id`) REFERENCES `USUARIO` (`usuario_id`),
   FOREIGN KEY (`artista_id`) REFERENCES `ARTISTA` (`artista_id`)
-);
+) engine = InnoDB;
 
 INSERT INTO `SEGUINDO_ARTISTA` (`usuario_id`, `artista_id`)
 VALUES
@@ -110,9 +111,10 @@ CREATE Table SpotifyClone.`HISTORICO_REPRODUCAO` (
   `reproducao_id` INT AUTO_INCREMENT PRIMARY KEY,
   `usuario_id` INT NOT NULL,
   `cancao_id` INT NOT NULL,
+  PRIMARY KEY (usuario_id, cancao_id),
   FOREIGN KEY (`usuario_id`) REFERENCES `USUARIO` (`usuario_id`),
   FOREIGN KEY (`cancao_id`) REFERENCES `CANCAO` (`cancao_id`)
-);
+) engine = InnoDB;
 
 INSERT INTO `HISTORICO_REPRODUCAO` (`usuario_id`, `cancao_id`)
 VALUES
