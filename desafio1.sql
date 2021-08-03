@@ -78,7 +78,7 @@ VALUES ('Envious', 1),
 ('Temporary Culture', 4);
 
 INSERT INTO cancao(cancao_nome, album_id)
-VALUES ('Soul For US', 1),
+VALUES ('Soul For Us', 1),
 ('Reflections Of Magic', 1),
 ('Dance With Her Own', 1),
 ('Troubles Of My Inner Fire', 2),
