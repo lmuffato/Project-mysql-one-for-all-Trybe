@@ -1,4 +1,4 @@
-CREATE VIEW top_3_artistas AS
+CREATE VIEW SpotifyClone.top_3_artistas AS
 SELECT
   a.artista artista,
   COUNT(DISTINCT us.usuario_id) seguidores
