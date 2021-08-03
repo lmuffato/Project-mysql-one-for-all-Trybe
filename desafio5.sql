@@ -1,5 +1,4 @@
 USE SpotifyClone;
-DROP VIEW IF EXISTS top_2_hits_do_momento;
 CREATE VIEW top_2_hits_do_momento AS
   SELECT 
     S.song_name AS `cancao`,
