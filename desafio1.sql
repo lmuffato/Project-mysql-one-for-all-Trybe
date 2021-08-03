@@ -18,7 +18,7 @@ CREATE TABLE SpotifyClone.users (
     plan_id INT NOT NULL,
     FOREIGN KEY (plan_id)
         REFERENCES SpotifyClone.plans (plan_id)
-);
+)
 
 INSERT INTO SpotifyClone.users(user_name, user_age, plan_id)
 VALUES
@@ -30,7 +30,7 @@ VALUES
 CREATE TABLE SpotifyClone.artists (
     artist_id INT PRIMARY KEY AUTO_INCREMENT,
     artist_name VARCHAR(250) NOT NULL
-);
+)
 
 INSERT INTO SpotifyClone.artists(artist_name)
 VALUES
@@ -42,12 +42,12 @@ VALUES
 CREATE TABLE SpotifyClone.followers (
     artist_id INT NOT NULL,
     user_id INT NOT NULL,
-    PRIMARY KEY (artist_id, user_id),
+    PRIMARY KEY (artist_id , user_id),
     FOREIGN KEY (artist_id)
         REFERENCES SpotifyClone.artists (artist_id),
     FOREIGN KEY (user_id)
         REFERENCES SpotifyClone.users (user_id)
-);
+)
 
 INSERT INTO SpotifyClone.followers (artist_id, user_id)
 VALUES
@@ -66,7 +66,7 @@ CREATE TABLE SpotifyClone.albums (
     artist_id INT NOT NULL,
     FOREIGN KEY (artist_id)
         REFERENCES SpotifyClone.artists (artist_id)
-);
+)
 
 INSERT INTO SpotifyClone.albums(album_name, artist_id)
 VALUES
@@ -82,7 +82,7 @@ CREATE TABLE SpotifyClone.songs (
     album_id INT,
     FOREIGN KEY (album_id)
         REFERENCES SpotifyClone.albums (album_id)
-);
+)
 
 INSERT INTO SpotifyClone.songs(song_name, album_id)
 VALUES
@@ -108,12 +108,12 @@ VALUES
 CREATE TABLE SpotifyClone.historic (
     user_id INT NOT NULL,
     song_id INT NOT NULL,
-    PRIMARY KEY (user_id, song_id),
+    PRIMARY KEY (user_id , song_id),
     FOREIGN KEY (user_id)
         REFERENCES SpotifyClone.users (user_id),
     FOREIGN KEY (song_id)
         REFERENCES SpotifyClone.songs (song_id)
-);
+)
 
 INSERT INTO SpotifyClone.historic(user_id, song_id)
 VALUES
