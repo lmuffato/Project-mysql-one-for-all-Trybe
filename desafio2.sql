@@ -1,3 +1,4 @@
+CREATE VIEW  estatisticas_musicais  AS
 SELECT 
     COUNT(*) AS cancoes,
     (SELECT 
@@ -9,4 +10,6 @@ SELECT
         FROM
             spotifyclone.albuns) AS albuns
 FROM
-    spotifyclone.musicas
+    spotifyclone.musicas;
+
+SELECT * FROM estatisticas_musicais;
