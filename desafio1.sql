@@ -53,27 +53,27 @@ CREATE TABLE `history`(
     FOREIGN KEY(song_id) REFERENCES `songs`(`song_id`)
 ) engine = InnoDB;
 
-INSERT INTO plans (plan_id, plan_type, plan_price)
+INSERT INTO plans (plan_type, plan_price)
 VALUES
   ('gratuito', 0),
   ('familiar', 7.99),
   ('universitário', 5.99);
 
-INSERT INTO users (user_id, user_name, user_age, plan_id)
+INSERT INTO users (user_name, user_age, plan_id)
 VALUES
   ('Thati', 1998, 1),
   ('Cintia', 1986, 2),
   ('Bill', 2001, 3),
   ('Roger', 1976, 1);
 
-INSERT INTO artists (artist_id, artist_name)
+INSERT INTO artists (artist_name)
 VALUES
   ('Walter Phoenix'),
   ('Peter Strong'),
   ('Lance Day'),
   ('Freedie Shannon');
 
-INSERT INTO albuns (album_id, album_name, artist_id)
+INSERT INTO albuns (album_name, artist_id)
 VALUES
   ('Envious', 1),
   ('Exuberant', 1),
@@ -81,7 +81,7 @@ VALUES
   ('Incandescent', 3),
   ('Temporary Culture', 4);
 
-INSERT INTO songs (song_id, song_name, album_id)
+INSERT INTO songs (song_name, album_id)
 VALUES
   ('Soul For Us', 1),
   ('Reflections Of Magic', 1),
