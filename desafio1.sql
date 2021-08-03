@@ -24,7 +24,7 @@ CREATE TABLE Artists(
 ) ENGINE = InnoDB;
 
 CREATE TABLE FollowedArtist(
-  id INT PRIMARY KEY AUTO_INCREMENT,
+  id PRIMARY KEY (user_id, artist_id),
   user_id INT NOT NULL,
   artist_id INT NOT NULL,
   FOREIGN KEY (user_id) REFERENCES Users(user_id),
@@ -49,7 +49,7 @@ CREATE TABLE Songs(
 
 
 CREATE TABLE PlayedSongs(
-  id INT PRIMARY KEY AUTO_INCREMENT,
+  id PRIMARY KEY (user_id, song_id),
   user_id INT NOT NULL,
   song_id INT NOT NULL,
   FOREIGN KEY (user_id) REFERENCES Users(user_id),
