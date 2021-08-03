@@ -7,7 +7,7 @@ USE SpotifyClone;
 CREATE TABLE plans(
 plan_id INT PRIMARY KEY AUTO_INCREMENT,
 plan_type VARCHAR(100) NOT NULL,
-price DOUBLE NOT NULL
+price decimal(15,2) NOT NULL
 );
 
 INSERT INTO plans (plan_type, price) VALUES
@@ -89,7 +89,7 @@ CREATE TABLE rep_history(
   FOREIGN KEY (song_id_fk) REFERENCES songs(song_id)
 );
 
-INSERT INTO `history` (user_id_fk, song_id_fk) VALUES
+INSERT INTO rep_history (user_id_fk, song_id_fk) VALUES
 (1, 1),
 (1, 6),
 (1, 14),
