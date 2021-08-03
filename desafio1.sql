@@ -43,7 +43,7 @@ CREATE TABLE album_details(
 ) engine = InnoDB;
 
 CREATE TABLE user_history(
-	user_id INT,
+	  user_id INT,
     song_id INT,
     CONSTRAINT PRIMARY KEY(song_id, user_id),
     FOREIGN KEY (song_id) REFERENCES songs (id),
