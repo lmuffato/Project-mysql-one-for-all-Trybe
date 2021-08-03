@@ -9,4 +9,3 @@ INNER JOIN SpotifyClone.Seguindo AS s
 ON ar.artista_id = s.artista_id
 GROUP BY al.album, ar.nome_artista
 ORDER BY count(s.artista_id) DESC, ar.nome_artista ASC, al.album ASC;
-
