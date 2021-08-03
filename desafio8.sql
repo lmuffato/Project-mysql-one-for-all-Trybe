@@ -8,3 +8,5 @@ DELETE FROM SpotifyClone.Following WHERE user_id = OLD.user_id;
 END $$
 
 DELIMITER ;
+
+-- DELETE FROM SpotifyClone.Users WHERE username = 'Thati';
