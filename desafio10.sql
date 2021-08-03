@@ -15,4 +15,3 @@ GROUP BY hi.user_id INTO musics;
 RETURN musics;
 END $$
 DELIMITER ;
-SELECT quantidade_musicas_no_historico(3)

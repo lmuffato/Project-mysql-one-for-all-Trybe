@@ -6,8 +6,7 @@ SELECT
     al.album_name AS 'album'
 FROM
     SpotifyClone.albums AS al
-INNER JOIN
-	SpotifyClone.artists AS ar
+INNER JOIN SpotifyClone.artists AS ar
 ON al.artist_id = ar.artist_id
 WHERE ar.artist_name = artistInput;
 END $$
