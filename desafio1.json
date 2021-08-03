@@ -3,7 +3,7 @@
   "tabela_que_contem_usuario": "Usuarios",
   "coluna_plano": "Plano",
   "tabela_que_contem_plano": "Planos",
-  "coluna_historico_de_reproducoes": "Musica_ID",
+  "coluna_historico_de_reproducoes": "musica_ID",
   "tabela_que_contem_historico_de_reproducoes": "historico_reproducao",
   "coluna_seguindo_artistas": "Usuario_ID",
   "tabela_que_contem_seguindo_artistas": "Artistas_seguidos",
@@ -12,5 +12,5 @@
   "coluna_album": "Nome",
   "tabela_que_contem_album": "Albuns",
   "coluna_cancoes": "Nome",
-  "tabela_que_contem_cancoes": "Musicas"
+  "tabela_que_contem_cancoes": "musicas"
 }
