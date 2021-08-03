@@ -63,10 +63,10 @@ INSERT INTO SpotifyClone.usuario (nome_usuario, idade, plano_id) VALUES
 ('Roger', 45, 1);
 
 INSERT INTO SpotifyClone.artista (nome_artista) VALUES
-('Walter Phoenix'),
-('Peter Strong'),
+('Freedie Shannon'),
 ('Lance Day'),
-('Freedie Shannon');
+('Peter Strong'),
+('Walter Phoenix');
 
 INSERT INTO SpotifyClone.album (nome_album, artista_id) VALUES
 ('Envious', 4),
