@@ -7,4 +7,3 @@ CREATE VIEW estatisticas_musicais AS
         SpotifyClone.songs AS songs,
         SpotifyClone.stars AS stars,
         SpotifyClone.album AS album;
-        

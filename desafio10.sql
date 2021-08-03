@@ -1,7 +1,7 @@
 DELIMITER $$
 
 CREATE FUNCTION quantidade_musicas_no_historico(user_ID INT)
- RETURNS INT READS SQL DATA
+  RETURNS INT READS SQL DATA
 BEGIN
 DECLARE tot_musicas INT;
 SELECT 

@@ -1,5 +1,5 @@
 CREATE VIEW top_3_artistas AS
-    SELECT 
+	SELECT 
         CONCAT(stars.`name`, ' ', stars.last_name) AS artista,
         COUNT(follow_stars.users_id) AS seguidores
     FROM
@@ -9,4 +9,3 @@ CREATE VIEW top_3_artistas AS
     GROUP BY artista
     ORDER BY seguidores DESC , artista ASC
     LIMIT 3;
-      
