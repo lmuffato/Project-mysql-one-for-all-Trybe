@@ -23,7 +23,7 @@ CREATE TABLE Artists(
   artist_name VARCHAR(50) NOT NULL
 ) ENGINE = InnoDB;
 
-CREATE TABLE followedArtist(
+CREATE TABLE FollowedArtist(
   id INT PRIMARY KEY AUTO_INCREMENT,
   user_id INT NOT NULL,
   artist_id INT NOT NULL,
