@@ -235,7 +235,7 @@ describe('Queries de seleção', () => {
     });
   });
 
-  describe('4 - Exibe top 3 artistas com maior quantidade de pessoas seguidoras', () => {
+  describe.only('4 - Exibe top 3 artistas com maior quantidade de pessoas seguidoras', () => {
     it('Verifica o desafio 4', async () => {
       const challengeQuery = readFileSync('desafio4.sql', 'utf8');
 

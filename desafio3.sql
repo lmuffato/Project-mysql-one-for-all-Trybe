@@ -1,6 +1,7 @@
 -- DESAFIO 3 Crie uma VIEW chamada historico_reproducao_usuarios. Essa VIEW deverá ter apenas duas colunas:
 
 CREATE VIEW historico_reproducao_usuarios (`usuario`, `nome`) AS
+
   SELECT
     U.usuario,
     C.cancao_nome
