@@ -252,7 +252,7 @@ describe('Queries de seleção', () => {
     });
   });
 
-  describe.only('5 - Exibe top 2 hits mais tocados no momento', () => {
+  describe('5 - Exibe top 2 hits mais tocados no momento', () => {
     it('Verifica o desafio 5', async () => {
       const challengeQuery = readFileSync('desafio5.sql', 'utf8');
 
@@ -288,7 +288,7 @@ describe('Queries de seleção', () => {
     });
   });
 
-  describe('7 - Exibe uma relação de todos os álbuns produzidos por cada artista', () => {
+  describe.only('7 - Exibe uma relação de todos os álbuns produzidos por cada artista', () => {
     it('Verifica o desafio 7', async () => {
       const challengeQuery = readFileSync('desafio7.sql', 'utf8');
 
