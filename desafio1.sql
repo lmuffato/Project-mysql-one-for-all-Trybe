@@ -87,10 +87,10 @@ VALUES
 ('Words Of Her Life', 5 , 4);
 
 CREATE Table SpotifyClone.`SEGUINDO_ARTISTA` (
-  `seguindo_id` INT AUTO_INCREMENT PRIMARY KEY,
+  `seguindo_id` INT AUTO_INCREMENT,
   `usuario_id` INT NOT NULL,
   `artista_id` INT NOT NULL,
-  PRIMARY KEY (usuario_id, artista_id),
+  PRIMARY KEY (seguindo_id, usuario_id, artista_id),
   FOREIGN KEY (`usuario_id`) REFERENCES `USUARIO` (`usuario_id`),
   FOREIGN KEY (`artista_id`) REFERENCES `ARTISTA` (`artista_id`)
 ) engine = InnoDB;
@@ -108,10 +108,10 @@ VALUES
 
 
 CREATE Table SpotifyClone.`HISTORICO_REPRODUCAO` (
-  `reproducao_id` INT AUTO_INCREMENT PRIMARY KEY,
+  `reproducao_id` INT AUTO_INCREMENT,
   `usuario_id` INT NOT NULL,
   `cancao_id` INT NOT NULL,
-  PRIMARY KEY (usuario_id, cancao_id),
+  PRIMARY KEY (reproducao_id, usuario_id, cancao_id),
   FOREIGN KEY (`usuario_id`) REFERENCES `USUARIO` (`usuario_id`),
   FOREIGN KEY (`cancao_id`) REFERENCES `CANCAO` (`cancao_id`)
 ) engine = InnoDB;
