@@ -1,10 +1,10 @@
 {
-  "coluna_usuario": "user",
+  "coluna_usuario": "username",
   "tabela_que_contem_usuario": "users",
   "coluna_plano": "plan_type",
   "tabela_que_contem_plano": "plans",
   "coluna_historico_de_reproducoes": "song_id_fk",
-  "tabela_que_contem_historico_de_reproducoes": "history",
+  "tabela_que_contem_historico_de_reproducoes": "rep_history",
   "coluna_seguindo_artistas": "artist_id_fk",
   "tabela_que_contem_seguindo_artistas": "followers",
   "coluna_artista": "artist_name",
