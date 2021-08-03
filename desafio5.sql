@@ -5,5 +5,5 @@ FROM SpotifyClone.Historico AS h
 INNER JOIN SpotifyClone.Cancoes AS c
 ON h.cancao_id = c.cancao_id
 GROUP BY c.cancao
-ORDER BY count(h.usuario_id) DESC
+ORDER BY count(h.usuario_id) DESC, c.cancao ASC
 LIMIT 2;
