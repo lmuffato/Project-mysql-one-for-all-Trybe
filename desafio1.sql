@@ -1,52 +1,52 @@
 CREATE DATABASE IF NOT EXISTS SpotifyClone;
 
 CREATE TABLE SpotifyClone.plans(
-  planID INT PRIMARY KEY AUTO_INCREMENT,
-  planName VARCHAR(80) NOT NULL,
-  planValue DECIMAL(5,2) NOT NULL
+planID INT PRIMARY KEY AUTO_INCREMENT,
+planName VARCHAR(80) NOT NULL,
+planValue DECIMAL(5,2) NOT NULL
 );
 
 CREATE TABLE SpotifyClone.users(
-  userID INT PRIMARY KEY AUTO_INCREMENT,
-  userName VARCHAR(100) NOT NULL,
-  userAge INT NOT NULL,
-  planID INT NOT NULL,
-  FOREIGN KEY (planID) REFERENCES SpotifyClone.plans(planID)
+userID INT PRIMARY KEY AUTO_INCREMENT,
+userName VARCHAR(100) NOT NULL,
+userAge INT NOT NULL,
+planID INT NOT NULL,
+FOREIGN KEY (planID) REFERENCES SpotifyClone.plans(planID)
 );
 
 CREATE TABLE SpotifyClone.artists(
-  artistID INT PRIMARY KEY AUTO_INCREMENT,
-  artistName VARCHAR(100) NOT NULL
+artistID INT PRIMARY KEY AUTO_INCREMENT,
+artistName VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE SpotifyClone.albums(
-  albumID INT PRIMARY KEY AUTO_INCREMENT,
-  albumName VARCHAR(200) NOT NULL,
-  artistID INT NOT NULL,
-  FOREIGN KEY (artistID) REFERENCES SpotifyClone.artists(artistID)
+albumID INT PRIMARY KEY AUTO_INCREMENT,
+albumName VARCHAR(200) NOT NULL,
+artistID INT NOT NULL,
+FOREIGN KEY (artistID) REFERENCES SpotifyClone.artists(artistID)
 );
 
 CREATE TABLE SpotifyClone.songs(
-  songID INT PRIMARY KEY AUTO_INCREMENT,
-  songName VARCHAR(200) NOT NULL,
-  albumID INT NOT NULL,
-  FOREIGN KEY (albumID) REFERENCES SpotifyClone.albums(albumID)
+songID INT PRIMARY KEY AUTO_INCREMENT,
+songName VARCHAR(200) NOT NULL,
+albumID INT NOT NULL,
+FOREIGN KEY (albumID) REFERENCES SpotifyClone.albums(albumID)
 );
 
 CREATE TABLE SpotifyClone.followingArtist(
-  artistID INT NOT NULL,
-  userID INT NOT NULL,
-  CONSTRAINT PRIMARY KEY(artistID, userID),
-  FOREIGN KEY (artistID) REFERENCES SpotifyClone.artists(artistID),
-  FOREIGN KEY (userID) REFERENCES SpotifyClone.users(userID)
+artistID INT NOT NULL,
+userID INT NOT NULL,
+CONSTRAINT PRIMARY KEY(artistID, userID),
+FOREIGN KEY (artistID) REFERENCES SpotifyClone.artists(artistID),
+FOREIGN KEY (userID) REFERENCES SpotifyClone.users(userID)
 );
 
 CREATE TABLE SpotifyClone.listeningHistory(
-  songID INT NOT NULL,
-  userID INT NOT NULL,
-  CONSTRAINT PRIMARY KEY(songID, userID),
-  FOREIGN KEY (songID) REFERENCES SpotifyClone.songs(songID),
-  FOREIGN KEY (userID) REFERENCES SpotifyClone.users(userID)
+songID INT NOT NULL,
+userID INT NOT NULL,
+CONSTRAINT PRIMARY KEY(songID, userID),
+FOREIGN KEY (songID) REFERENCES SpotifyClone.songs(songID),
+FOREIGN KEY (userID) REFERENCES SpotifyClone.users(userID)
 );
 
 INSERT INTO SpotifyClone.plans(planID, planName, planValue)
@@ -125,4 +125,3 @@ VALUES
 (3, 4),
 (18, 4),
 (11,4);
-
