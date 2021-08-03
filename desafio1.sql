@@ -16,7 +16,7 @@ INSERT INTO plans (plan_type, price) VALUES
 ('student', 5.99);
 
 CREATE TABLE users(
-username_id INT PRIMARY KEY AUTO_INCREMENT,
+user_id INT PRIMARY KEY AUTO_INCREMENT,
 username VARCHAR(100) NOT NULL,
 age INT NOT NULL,
 plan_id_fk INT NOT NULL,
@@ -82,14 +82,14 @@ INSERT INTO songs (song_name, album_id_fk) VALUES
 ('Without My Streets', 5);
 
 CREATE TABLE rep_history(
-  username_id_fk INT NOT NULL,
+  user_id_fk INT NOT NULL,
   song_id_fk INT NOT NULL,
-  PRIMARY KEY (song_id_fk, username_id_fk),
-  FOREIGN KEY (username_id_fk) REFERENCES users(username_id),
+  PRIMARY KEY (song_id_fk, user_id_fk),
+  FOREIGN KEY (user_id_fk) REFERENCES users(user_id),
   FOREIGN KEY (song_id_fk) REFERENCES songs(song_id)
 );
 
-INSERT INTO `history` (username_id_fk, song_id_fk) VALUES
+INSERT INTO `history` (user_id_fk, song_id_fk) VALUES
 (1, 1),
 (1, 6),
 (1, 14),
@@ -106,14 +106,14 @@ INSERT INTO `history` (username_id_fk, song_id_fk) VALUES
 (4, 11);
 
 CREATE TABLE followers(
-username_id_fk INT NOT NULL,
+user_id_fk INT NOT NULL,
 artist_id_fk INT NOT NULL,
-PRIMARY KEY (artist_id_fk, username_id_fk),
+PRIMARY KEY (artist_id_fk, user_id_fk),
 FOREIGN KEY (artist_id_fk) REFERENCES SpotifyClone.artists(artist_id),
-FOREIGN KEY (username_id_fk) REFERENCES SpotifyClone.users(username_id)
+FOREIGN KEY (user_id_fk) REFERENCES SpotifyClone.users(user_id)
 );
 
-INSERT INTO followers (username_id_fk, artist_id_fk) VALUES
+INSERT INTO followers (user_id_fk, artist_id_fk) VALUES
 (1, 1),
 (1, 4),
 (1, 3),
