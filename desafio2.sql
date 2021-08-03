@@ -11,4 +11,3 @@ SELECT
             SpotifyClone.Albuns) AS albuns
 FROM
     SpotifyClone.Musicas;
-
