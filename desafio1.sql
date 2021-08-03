@@ -28,14 +28,6 @@ user_plan INT NOT NULL,
 FOREIGN KEY(user_plan) REFERENCES PLANS(plan_id)
 ) ENGINE=InnoDB;
 
-CREATE TABLE SpotifyClone.FOLLOWING_ARTISTS(
-following_id INT PRIMARY KEY AUTO_INCREMENT,
-user_id INT NOT NULL,
-artist_id INT NOT NULL,
-FOREIGN KEY(user_id) REFERENCES USERS(user_id),
-FOREIGN KEY(artist_id) REFERENCES ARTISTS(artist_id)
-) ENGINE=InnoDB;
-
 CREATE TABLE SpotifyClone.SONGS(
 song_id INT PRIMARY KEY AUTO_INCREMENT,
 album_id INT NOT NULL,
@@ -43,10 +35,18 @@ song_name VARCHAR(50) NOT NULL,
 FOREIGN KEY(album_id) REFERENCES ALBUMS(album_id)
 ) Engine=InnoDB;
 
+CREATE TABLE SpotifyClone.FOLLOWING_ARTISTS(
+following_id INT PRIMARY KEY AUTO_INCREMENT,
+user_id INT PRIMARY KEY NOT NULL,
+artist_id INT PRIMARY KEY NOT NULL,
+FOREIGN KEY(user_id) REFERENCES USERS(user_id),
+FOREIGN KEY(artist_id) REFERENCES ARTISTS(artist_id)
+) ENGINE=InnoDB;
+
 CREATE TABLE SpotifyClone.HISTORY_REPRODUCTIONS(
 history_id INT PRIMARY KEY AUTO_INCREMENT,
-user_id INT NOT NULL,
-song_id INT NOT NULL,
+user_id INT PRIMARY KEY NOT NULL,
+song_id INT PRIMARY KEY NOT NULL,
 FOREIGN KEY(user_id) REFERENCES USERS(user_id),
 FOREIGN KEY(song_id) REFERENCES SONGS(song_id)
 ) Engine=InnoDB;
@@ -113,7 +113,6 @@ VALUES
 (17, 5, "Words Of Her Life"),
 (18, 5, "Without My Streets");
 
-
 INSERT INTO SpotifyClone.HISTORY_REPRODUCTIONS
 (history_id, user_id, song_id)
 VALUES
@@ -131,3 +130,8 @@ VALUES
 (12, 4, 3),
 (13, 4, 18),
 (14, 4, 11);
+
+/* Contribuições da Marília para a refatoração das tabelas
+Link GitHub/PR: https://github.com/tryber/sd-010-a-mysql-one-for-all/pull/15/files
+ */
+ 
