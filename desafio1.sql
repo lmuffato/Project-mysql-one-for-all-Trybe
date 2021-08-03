@@ -58,7 +58,7 @@ CREATE TABLE user_likes(
 INSERT INTO
   plans (plan_name, price)
 VALUES
-  ('gratuito', 0),
+  ('gratuito', 0.00),
   ('familiar', 7.99),
   ('universitario', 5.99);
   
