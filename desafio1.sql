@@ -117,7 +117,7 @@ INSERT INTO historico_de_reproducoes (cancao_id, usuario_id)
 VALUES (1, 1),
       (6, 1),
       (14, 1),
-      (17, 1),
+      (16, 1),
       (13 ,2),
       (17 ,2),
       (2, 2),
