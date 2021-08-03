@@ -80,23 +80,10 @@ INSERT INTO songs VALUES
 (17, "Without My Streets", 5),
 (18, "Honey, So Do I", 2);
 
-
-CREATE TABLE historic(
-  historic_id INT PRIMARY KEY NOT NULL,
-  user_id INT NOT NULL,
-  FOREIGN KEY(user_id) REFERENCES `user`(user_id)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-INSERT INTO historic VALUES 
-(1,1),
-(2,2),
-(3,3),
-(4,4);
-
 CREATE TABLE historic_musics(
-  historic_id INT NOT NULL,
+  user_id INT NOT NULL,
   song_id INT NOT NULL,
-  FOREIGN KEY(historic_id) REFERENCES historic(historic_id),
+  FOREIGN KEY(user_id) REFERENCES `user`(user_id),
   FOREIGN KEY(song_id) REFERENCES songs(song_id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
