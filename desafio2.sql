@@ -4,10 +4,11 @@ SELECT
     (SELECT 
             COUNT(*)
         FROM
-            spotifyclone.artistas) AS artistas,
+            SpotifyClone.Artistas) AS artistas,
     (SELECT 
             COUNT(*)
         FROM
-            spotifyclone.albuns) AS albuns
+            SpotifyClone.Albuns) AS albuns
 FROM
-    spotifyclone.musicas;
+    SpotifyClone.Musicas;
+
