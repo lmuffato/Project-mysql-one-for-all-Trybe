@@ -1,29 +1,38 @@
 DROP DATABASE IF EXISTS SpotifyClone;
+
 CREATE DATABASE SpotifyClone;
+
 USE SpotifyClone;
-CREATE TABLE users(
-  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  user_name VARCHAR(50) NOT NULL,
-  age INT NOT NULL,
-  plan_id INT NOT NULL
-) engine = InnoDB;
+
 CREATE TABLE plans(
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   plan_name VARCHAR(50) NOT NULL,
   price DOUBLE NOT NULL
 ) engine = InnoDB;
+
+CREATE TABLE users(
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  user_name VARCHAR(50) NOT NULL,
+  age INT NOT NULL,
+  plan_id INT NOT NULL,
+  FOREIGN KEY (plan_id) REFERENCES plans (id)
+) engine = InnoDB;
+
 CREATE TABLE artists(
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   artist_name VARCHAR(50) NOT NULL
 ) engine = InnoDB;
+
 CREATE TABLE albums(
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   album_name VARCHAR(50) NOT NULL
 ) engine = InnoDB;
+
 CREATE TABLE songs(
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   song_name VARCHAR(50) NOT NULL
 ) engine = InnoDB;
+
 CREATE TABLE album_details(
   album_id INT,
   artist_id INT,
@@ -33,6 +42,7 @@ CREATE TABLE album_details(
   FOREIGN KEY (artist_id) REFERENCES artists (id),
   FOREIGN KEY (song_id) REFERENCES songs (id)
 ) engine = InnoDB;
+
 CREATE TABLE user_history(
   user_id INT,
   song_id INT,
@@ -40,6 +50,7 @@ CREATE TABLE user_history(
   FOREIGN KEY (song_id) REFERENCES songs (id),
   FOREIGN KEY (user_id) REFERENCES users (id)
 ) engine = InnoDB;
+
 CREATE TABLE user_likes(
   artist_id INT,
   user_id INT,
@@ -47,6 +58,14 @@ CREATE TABLE user_likes(
   FOREIGN KEY (artist_id) REFERENCES artists (id),
   FOREIGN KEY (user_id) REFERENCES users (id)
 ) engine = InnoDB;
+
+INSERT INTO
+  plans (plan_name, price)
+VALUES
+  ('gratuito', 0),
+  ('familiar', 7.99),
+  ('universitario', 5.99);
+  
 INSERT INTO
   users (user_name, age, plan_id)
 VALUES
@@ -54,12 +73,7 @@ VALUES
   ('Cintia', 35, 2),
   ('Bill', 20, 3),
   ('Roger', 45, 1);
-INSERT INTO
-  plans (plan_name, price)
-VALUES
-  ('gratuito', 0),
-  ('familiar', 7.99),
-  ('universitario', 5.99);
+
 INSERT INTO
   artists (artist_name)
 VALUES
@@ -67,6 +81,7 @@ VALUES
   ('Peter Strong'),
   ('Lance Day'),
   ('Freedie Shannon');
+
 INSERT INTO
   albums (album_name)
 VALUES
@@ -75,6 +90,7 @@ VALUES
   ('Hallowed Steam'),
   ('Incandescent'),
   ('Temporary Culture');
+
 INSERT INTO
   songs (song_name)
 VALUES
@@ -96,6 +112,7 @@ VALUES
   ('Thang Of Thunder'),
   ('Words Of Her Life'),
   ('Without My Streets');
+
 INSERT INTO
   album_details (album_id, artist_id, song_id)
 VALUES
@@ -117,6 +134,7 @@ VALUES
   (5, 4, 16),
   (5, 4, 17),
   (5, 4, 18);
+
 INSERT INTO
   user_history (user_id, song_id)
 VALUES
@@ -134,6 +152,7 @@ VALUES
   (4, 3),
   (4, 18),
   (4, 11);
+
 INSERT INTO
   user_likes (user_id, artist_id)
 VALUES
