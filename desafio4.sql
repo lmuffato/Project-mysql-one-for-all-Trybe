@@ -7,6 +7,6 @@ CREATE VIEW top_3_artistas AS
             INNER JOIN
         SpotifyClone.stars AS stars ON follow_stars.stars_id = stars.stars_id
     GROUP BY artista
-    ORDER BY seguidores DESC, artista ASC
+    ORDER BY seguidores DESC , artista ASC
     LIMIT 3;
       
