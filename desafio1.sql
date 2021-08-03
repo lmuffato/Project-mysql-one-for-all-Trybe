@@ -124,7 +124,7 @@ VALUES
   (4, 18),
   (4, 11);
   
-  INSERT INTO user_following (user_id, artist_id)
+INSERT INTO user_following (user_id, artist_id)
 VALUES
   (1, 1),
   (1, 4),
