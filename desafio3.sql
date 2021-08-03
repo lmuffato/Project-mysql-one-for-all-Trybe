@@ -8,5 +8,3 @@ FROM
         INNER JOIN
     spotifyclone.musicas AS m ON hr.Musica_ID = m.Musica_ID
 ORDER BY usuario , nome;
-
-SELECT * FROM historico_reproducao_usuarios;

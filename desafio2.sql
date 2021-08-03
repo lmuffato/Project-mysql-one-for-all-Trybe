@@ -11,5 +11,3 @@ SELECT
             spotifyclone.albuns) AS albuns
 FROM
     spotifyclone.musicas;
-
-SELECT * FROM estatisticas_musicais;
