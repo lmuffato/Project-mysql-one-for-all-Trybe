@@ -77,7 +77,9 @@ INSERT INTO songs VALUES
 (14, "Honey, Let's Be Silly", 4),
 (15, "Thang Of Thunder", 5),
 (16, "Words Of Her Life", 5),
-(17, "Without My Streets", 5);
+(17, "Without My Streets", 5),
+(18, "Honey, So Do I", 2);
+
 
 CREATE TABLE historic(
   historic_id INT PRIMARY KEY NOT NULL,
@@ -115,6 +117,7 @@ INSERT INTO historic_musics VALUES
 (4,	10);
 
 CREATE TABLE followed_artists(
+  following_id INT PRIMARY KEY NOT NULL,
   user_id INT NOT NULL,
   artist_id INT NOT NULL,
   FOREIGN KEY(user_id) REFERENCES `user`(user_id),
@@ -122,11 +125,11 @@ CREATE TABLE followed_artists(
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO followed_artists VALUES 
-(1,	1),
-(1,	3),
-(1,	4),
-(2,	1),
-(2,	3),
-(3,	1),
-(3,	2),
-(4,	4);
+(1, 1, 1),
+(2, 1, 3),
+(3, 1, 4),
+(4, 2, 1),
+(5, 2, 3),
+(6, 3, 1),
+(7, 3, 2),
+(8, 4, 4);
