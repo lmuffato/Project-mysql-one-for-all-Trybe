@@ -53,9 +53,9 @@ CREATE TABLE SpotifyClone.historico_de_reproducoes(
 
 INSERT INTO SpotifyClone.planos (plano, valor_plano)
 VALUES
-  ('Gratuito', 0),
-  ('Universitário', 5.99),
-  ('Família', 7.99);
+  ('gratuito', 0),
+  ('universitário', 5.99),
+  ('familiar', 7.99);
 
 INSERT INTO SpotifyClone.usuarios (usuario, idade, plano_id)
 VALUES
@@ -88,16 +88,14 @@ VALUES
   ('Time Fireworks', 2),
   ('Magic Circus', 3),
   ('Honey, So Do I', 3),
-  ('Sweetie', 3),
-  ("Let's Go Wild", 3),
+  ("Sweetie, Let's Go Wild", 3),
   ('She Knows', 3),
   ('Fantasy For Me', 4),
   ('Celebration Of More', 4),
   ('Rock His Everything', 4),
   ('Home Forever', 4),
   ('Diamond Power', 4),
-  ('Honey', 4),
-  ("Let's Be Silly", 4),
+  ("Honey, Let's Be Silly", 4),
   ('Thang Of Thunder', 5),
   ('Words Of Her Life', 5),
   ('Without My Streets', 5);
@@ -109,26 +107,25 @@ VALUES
   (1, 3),
   (1, 4),
   (2, 1),
-  (2, 4),
+  (2, 3),
   (3, 1),
   (3, 2),
-  (4, 3);
+  (4, 4);
   
 
   INSERT INTO SpotifyClone.historico_de_reproducoes (usuario_id, cancao_id)
 VALUES
   (1, 1),
   (1, 6),
-  (1, 15),
-  (1, 18),
-  (2, 14),
-  (2, 19),
-  (2, 2),
-  (2, 16),
+  (1, 14),
+  (1, 16),
+  (2, 13),
   (2, 17),
+  (2, 2),
+  (2, 15),
   (3, 4),
-  (3, 18),
+  (3, 16),
   (3, 6),
   (4, 3),
-  (4, 20),
-  (4, 12);
+  (4, 18),
+  (4, 11);
