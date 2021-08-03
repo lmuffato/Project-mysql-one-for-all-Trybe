@@ -1,10 +1,11 @@
-CREATE VIEW `top_2_hits_do_momento` AS
+CREATE VIEW `top_3_artistas` AS
   SELECT 
-      s.song_name AS `cancao`, COUNT(*) AS `reproducoes`
+      a.artist_name AS `artista`, COUNT(*) AS `seguidores`
   FROM
-      SpotifyClone.history AS h
+      SpotifyClone.followers AS f
           INNER JOIN
-      SpotifyClone.songs AS s ON s.song_id = h.song_id
-  GROUP BY `cancao`
-  ORDER BY `reproducoes` DESC , `cancao`
-  LIMIT 2;
+      SpotifyClone.artists AS a ON f.artist_id = a.artist_id
+  GROUP BY f.artist_id
+  ORDER BY `seguidores` DESC , `artista`
+  LIMIT 3;
+    
