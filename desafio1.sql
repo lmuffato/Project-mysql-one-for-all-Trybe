@@ -134,4 +134,3 @@ VALUES
 /* Contribuições da Marília para a refatoração das tabelas
 Link GitHub/PR: https://github.com/tryber/sd-010-a-mysql-one-for-all/pull/15/files
  */
- 
