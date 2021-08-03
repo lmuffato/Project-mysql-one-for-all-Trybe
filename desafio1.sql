@@ -1,5 +1,5 @@
 CREATE DATABASE SpotifyClone;
-
+USE SpotifyClone;
 CREATE TABLE `user`(
 `user_id` INT NOT NULL AUTO_INCREMENT,
 `user_name`VARCHAR(50) NOT NULL,
