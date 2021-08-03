@@ -13,11 +13,12 @@ VALUES ('gratuito', 0), ('familiar', 7.99),
 ('universitário', 5.99);
 
 CREATE TABLE Usuarios (
- Usuario_ID INT PRIMARY KEY AUTO_INCREMENT,
- Nome VARCHAR(40) NOT NULL,
- Idade INT NOT NULL,
- Plano_ID INT NOT NULL,
- CONSTRAINT FOREIGN KEY (Plano_ID) REFERENCES Planos(Plano_ID)
+    Usuario_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(40) NOT NULL,
+    Idade INT NOT NULL,
+    Plano_ID INT NOT NULL,
+    CONSTRAINT FOREIGN KEY (Plano_ID)
+        REFERENCES Planos (Plano_ID)
 );
 
 INSERT INTO Usuarios (Nome, Idade, Plano_ID) 
@@ -25,19 +26,20 @@ VALUES ('Thati', 23, 1), ('Cintia', 35, 2),
 ('Bill', 20, 3), ('Roger', 45, 1);
 
 CREATE TABLE Artistas (
- Artista_ID INT PRIMARY KEY AUTO_INCREMENT,
- Nome VARCHAR(40) NOT NULL
- );
+    Artista_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(40) NOT NULL
+);
 
 INSERT INTO Artistas(Nome)
 VALUES('Walter Phoenix'),('Peter Strong'), 
 ('Lance Day'), ('Freedie Shannon');
 
 CREATE TABLE Albuns (
- Album_ID INT PRIMARY KEY AUTO_INCREMENT,
- Nome VARCHAR(100) NOT NULL,
- Artista_ID INT NOT NULL,
- CONSTRAINT FOREIGN KEY (Artista_ID) REFERENCES Artistas(Artista_ID)
+    Album_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(100) NOT NULL,
+    Artista_ID INT NOT NULL,
+    CONSTRAINT FOREIGN KEY (Artista_ID)
+        REFERENCES Artistas (Artista_ID)
 );
 
 INSERT INTO Albuns (Nome, Artista_ID)
