@@ -117,7 +117,7 @@ VALUES
   (4,3),
   (4,18),
   (4,11);
-  
+
     INSERT INTO `Follow` (user_id,artista_id)
 VALUES
   (1,1),
@@ -128,12 +128,4 @@ VALUES
   (3,2),
   (3,1),
   (4,4);
-  
-  
-  
-  
-  
-  
-  
-
   
