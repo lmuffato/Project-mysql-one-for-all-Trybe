@@ -8,4 +8,3 @@ CREATE VIEW perfil_artistas AS
   INNER JOIN SpotifyClone.seguindo_artistas AS sa ON art.artista_id = sa.artista_id
   GROUP BY art.nome_artista, alb.nome_album
   ORDER BY seguidores DESC, artista ASC;
-  
