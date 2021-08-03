@@ -5,4 +5,5 @@ FROM SpotifyClone.Seguindo AS s
 INNER JOIN SpotifyClone.Artistas AS a
 ON s.artista_id = a.artista_id
 GROUP BY a.nome_artista
-LIMIT 3;
+ORDER BY count(s.usuario_id) DESC, a.nome_artista ASC
+LIMIT 3; 
