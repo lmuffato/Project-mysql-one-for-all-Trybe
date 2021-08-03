@@ -24,11 +24,11 @@ CREATE TABLE Artists(
 ) ENGINE = InnoDB;
 
 CREATE TABLE FollowedArtist(
-  CONSTRAINT id PRIMARY KEY (user_id, artist_id),
   user_id INT NOT NULL,
   artist_id INT NOT NULL,
   FOREIGN KEY (user_id) REFERENCES Users(user_id),
-  FOREIGN KEY (artist_id) REFERENCES Artists(artist_id)
+  FOREIGN KEY (artist_id) REFERENCES Artists(artist_id),
+  PRIMARY KEY (user_id, artist_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE Albums(
@@ -49,9 +49,9 @@ CREATE TABLE Songs(
 
 
 CREATE TABLE PlayedSongs(
-  CONSTRAINT id PRIMARY KEY (user_id, song_id),
   user_id INT NOT NULL,
   song_id INT NOT NULL,
+  PRIMARY KEY (user_id, song_id),
   FOREIGN KEY (user_id) REFERENCES Users(user_id),
   FOREIGN KEY (song_id) REFERENCES Songs(song_id)
 ) ENGINE = InnoDB;
