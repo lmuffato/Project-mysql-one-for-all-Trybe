@@ -288,7 +288,7 @@ describe('Queries de seleção', () => {
     });
   });
 
-  describe.only('7 - Exibe uma relação de todos os álbuns produzidos por cada artista', () => {
+  describe('7 - Exibe uma relação de todos os álbuns produzidos por cada artista', () => {
     it('Verifica o desafio 7', async () => {
       const challengeQuery = readFileSync('desafio7.sql', 'utf8');
 
@@ -307,7 +307,7 @@ describe('Queries de seleção', () => {
     });
   });
 
-  describe('9 - Crie uma procedure chamada `albuns_do_artista` que, dado o nome da pessoa artista, retorna todos seus álbuns', () => {
+  describe.only('9 - Crie uma procedure chamada `albuns_do_artista` que, dado o nome da pessoa artista, retorna todos seus álbuns', () => {
     it('Verifica o desafio 9', async () => {
       const challengeQuery = readFileSync('desafio9.sql', 'utf8').trim();
       const createProcedureQuery = /CREATE PROCEDURE.*END/si.exec(challengeQuery)[0];
