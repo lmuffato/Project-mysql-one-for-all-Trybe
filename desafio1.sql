@@ -40,7 +40,7 @@ CREATE TABLE `songs`(
 CREATE TABLE `followers`(
     user_id INT NOT NULL,
     artist_id INT NOT NULL,
-	PRIMARY KEY(user_id, artist_id),
+PRIMARY KEY(user_id, artist_id),
     FOREIGN KEY(user_id) REFERENCES `users`(`user_id`),
     FOREIGN KEY(artist_id) REFERENCES `artists`(`artist_id`)
 ) engine = InnoDB;
@@ -129,3 +129,4 @@ VALUES
   (4, 3),
   (4, 18),
   (4, 11);
+  
