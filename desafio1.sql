@@ -76,7 +76,7 @@ VALUES
   ('Lance Day'),
   ('Freedie Shannon');
 
-INSERT INTO followedArtist (user_id, artist_id)
+INSERT INTO FollowedArtist (user_id, artist_id)
 VALUES
   (1, 1),
   (1, 4),
