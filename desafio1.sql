@@ -50,6 +50,12 @@ FOREIGN KEY (USUARIO_ID) REFERENCES USUARIOS(USUARIO_ID),
 FOREIGN KEY (ARTISTA_ID) REFERENCES ARTISTAS(ARTISTA_ID)
 ) ENGINE = InnoDB;
 
+INSERT INTO PLANO (NOME_DO_PLANO, VALOR_DO_PLANO)
+VALUES
+('gratuito', '0'),
+('universitario', '5.99'),
+('familiar', '7.99');
+
 INSERT INTO USUARIOS (NOME, IDADE, PLANO_ID)
 VALUES
 ('Thati', '23', '1'),
@@ -57,11 +63,12 @@ VALUES
 ('Bill', '20', '2'),
 ('Roger', '45', '1');
 
-INSERT INTO PLANO (NOME_DO_PLANO, VALOR_DO_PLANO)
+INSERT INTO ARTISTAS (NOME_DO_ARTISTA)
 VALUES
-('gratuito', '0'),
-('universitario', '5.99'),
-('familiar', '7.99');
+('Walter Phoenix'),
+('Peter Strong'),
+('Lance Day'),
+('Freedie Shannon');
 
 INSERT INTO ALBUNS (NOME_DO_ALBUM, ARTISTA_ID)
 VALUES
@@ -71,33 +78,26 @@ VALUES
 ('Incandescent','3'),
 ('Temporary Culture', '4');
 
-INSERT INTO ARTISTAS (NOME_DO_ARTISTA)
-VALUES
-('Walter Phoenix'),
-('Peter Strong'),
-('Lance Day'),
-('Freedie Shannon');
-
 INSERT INTO CANCOES (NOME_DA_CANCAO, ALBUM_ID)
 VALUES
-('Soul For Us', '11'),
-('Reflections Of Magic', '11'),
-('Dance With Her Own', '11'),
-('Troubles Of My Inner Fire', '12'),
-('Time Fireworks', '12'),
-('Magic Circus', '13'),
-('Honey, So Do I', '13'),
-('Sweetie, Lets Go Wild', '13'),
-('She Knows', '13'),
-('Fantasy For Me', '14'),
-('Celebration Of More', '14'),
-('Rock His Everything', '14'),
-('Home Forever', '14'),
-('Diamond Power', '14'),
-('Honey, Lets Be Silly', '14'),
-('Thang Of Thunder', '15'),
-('Words Of Her Life', '15'),
-('Without My Streets', '15');
+('Soul For Us', '1'),
+('Reflections Of Magic', '1'),
+('Dance With Her Own', '1'),
+('Troubles Of My Inner Fire', '2'),
+('Time Fireworks', '2'),
+('Magic Circus', '3'),
+('Honey, So Do I', '3'),
+('Sweetie, Lets Go Wild', '3'),
+('She Knows', '3'),
+('Fantasy For Me', '4'),
+('Celebration Of More', '4'),
+('Rock His Everything', '4'),
+('Home Forever', '4'),
+('Diamond Power', '4'),
+('Honey, Lets Be Silly', '4'),
+('Thang Of Thunder', '5'),
+('Words Of Her Life', '5'),
+('Without My Streets', '5');
 
 INSERT INTO HIST_REPRODUCOES (USUARIO_ID, CANCAO_ID)
 VALUES
