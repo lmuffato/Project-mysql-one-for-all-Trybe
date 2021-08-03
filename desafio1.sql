@@ -53,7 +53,7 @@ CREATE TABLE Albums (
   FOREIGN KEY(ArtistID) REFERENCES Artists(ArtistID)
   ) ENGINE = InnoDB;
 
-INSERT INTO Albums (AlbumName) 
+INSERT INTO Albums (ArtistID, AlbumName) 
 VALUES
 (1, 'Envious'),
 (1, 'Exuberant'),
