@@ -2,3 +2,4 @@ node_modules/
 
 # VSCode repo settings
 .vscode
+.~lock.DER.ods#

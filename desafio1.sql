@@ -88,10 +88,10 @@ VALUES
   ('Without My Streets', 5, 2);
 
 CREATE TABLE SpotifyClone.seguindo_artistas (
-  seguindo_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  seguindo_id INT NOT NULL AUTO_INCREMENT,
   usuario_id INT NOT NULL,
   artista_id INT NOT NULL,
-  PRIMARY KEY (usuario_id, artista_id),
+  PRIMARY KEY (seguindo_id, usuario_id, artista_id),
   FOREIGN KEY (usuario_id) REFERENCES SpotifyClone.usuarios (usuario_id),
   FOREIGN KEY (artista_id) REFERENCES SpotifyClone.artistas (artista_id)
 );
@@ -108,10 +108,10 @@ VALUES
   (4, 2);
 
 CREATE TABLE SpotifyClone.historico_reproducoes (
-  reproducao_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  reproducao_id INT NOT NULL AUTO_INCREMENT,
   usuario_id INT NOT NULL,
   cancao_id INT NOT NULL,
-  PRIMARY KEY (usuario_id, cancao_id),
+  PRIMARY KEY (reproducao_id, usuario_id, cancao_id),
   FOREIGN KEY (usuario_id) REFERENCES SpotifyClone.usuarios (usuario_id),
   FOREIGN KEY (cancao_id) REFERENCES SpotifyClone.cancoes (cancao_id)
 );
