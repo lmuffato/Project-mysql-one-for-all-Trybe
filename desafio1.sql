@@ -84,7 +84,7 @@ CREATE TABLE historic_musics(
   historic_id INT NOT NULL,
   user_id INT NOT NULL,
   song_id INT NOT NULL,
-  PRIMARY KEY(historic_id),
+  PRIMARY KEY(historic_id, user_id, song_id),
   FOREIGN KEY(user_id) REFERENCES `user`(user_id),
   FOREIGN KEY(song_id) REFERENCES songs(song_id)
 )ENGINE=InnoDB;
@@ -109,7 +109,7 @@ CREATE TABLE followed_artists(
   following_id INT NOT NULL,
   user_id INT NOT NULL,
   artist_id INT NOT NULL,
-  PRIMARY KEY(following_id),
+  PRIMARY KEY(following_id, user_id, artist_id),
   FOREIGN KEY(user_id) REFERENCES `user`(user_id),
   FOREIGN KEY(artist_id) REFERENCES artists(artist_id)
 )ENGINE=InnoDB;
