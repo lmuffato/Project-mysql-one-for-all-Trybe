@@ -8,3 +8,5 @@ CREATE VIEW faturamento_atual AS
  SpotifyClone.usuario AS u
  ON u.plano_id = p.plano_id;
  
+ DROP VIEW faturamento_atual;
+ 
