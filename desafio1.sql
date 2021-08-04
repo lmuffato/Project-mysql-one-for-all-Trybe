@@ -2,17 +2,19 @@ DROP DATABASE IF EXISTS SpotifyClone;
 CREATE DATABASE SpotifyClone;
 USE SpotifyClone;
 
+CREATE TABLE plans(
+plan_id INT AUTO_INCREMENT,
+plan VARCHAR(50) NOT NULL,
+plan_price DECIMAL(5,2) NOT NULL,
+PRIMARY KEY(plan_id)
+) ENGINE = InnoDB;
+
 CREATE TABLE users(
 user_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 user_name VARCHAR(100) NOT NULL,
-age INT NOT NULL
-) ENGINE = InnoDB;
-
-CREATE TABLE plans(
-plan_id INT AUTO_INCREMENT,
-plan_name VARCHAR(50) NOT NULL,
-plan_price DECIMAL(5,2) NOT NULL,
-PRIMARY KEY(plan_id)
+age INT NOT NULL,
+plan_id INT NOT NULL,
+FOREIGN KEY (plan_id) REFERENCES plans(plan_id)
 ) ENGINE = InnoDB;
 
 CREATE table artists(
@@ -32,14 +34,6 @@ song_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 song_name VARCHAR(225) NOT NULL,
 album_id INT NOT NULL,
 FOREIGN KEY (album_id) REFERENCES albums(album_id)
-) ENGINE = InnoDB;
-
-CREATE TABLE user_plans(
-user_id INT,
-plan_id INT,
-CONSTRAINT PRIMARY KEY(user_id, plan_id),
-FOREIGN KEY (user_id) REFERENCES users(user_id),
-FOREIGN KEY (plan_id) REFERENCES plans(plan_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE user_play_history(
