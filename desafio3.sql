@@ -1,4 +1,4 @@
-CREATE VIEW SpotifyClone.historico_reproducao_usuario AS
+CREATE VIEW SpotifyClone.historico_reproducao_usuarios AS
 SELECT Usuario, Cancao
 FROM SpotifyClone.Historico AS h
 INNER JOIN SpotifyClone.Usuario AS u ON h.Usuario_id = u.Usuario_id
