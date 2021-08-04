@@ -1,5 +1,4 @@
 DROP DATABASE IF EXISTS SpotifyClone;
-
 CREATE DATABASE SpotifyClone;
 USE SpotifyClone;
 
@@ -10,9 +9,10 @@ age INT NOT NULL
 ) ENGINE = InnoDB;
 
 CREATE TABLE plans(
-plan_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-plan_name VARCHAR(100) NOT NULL,
-plan_price DOUBLE NOT NULL
+plan_id INT AUTO_INCREMENT,
+plan_name VARCHAR(50) NOT NULL,
+plan_price DECIMAL(5,2) NOT NULL,
+PRIMARY KEY(plan_id)
 ) ENGINE = InnoDB;
 
 CREATE table artists(
@@ -62,8 +62,8 @@ INSERT INTO users(user_name, age)
 VALUES ('Thati', 23), ('Cintia', 35), ('Bill', 20), ('Roger', 45);
 
 INSERT INTO plans(plan_name, plan_price)
-VALUES ('gratuito', 0), ('familiar', 7.99), ('universitário', 5.99);
-  
+VALUES ("gratuito", 0), ("familiar", 7.99), ("universitário", 5.99);
+
 INSERT INTO artists(artist_name)
 VALUES ('Walter Phoenix'), ('Peter Strong'), ('Lance Day'), ('Freedie Shannon');
 
