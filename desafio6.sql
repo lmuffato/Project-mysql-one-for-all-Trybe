@@ -8,4 +8,4 @@ INNER JOIN
 SpotifyClone.usuario AS u
 ON u.plano_id = p.plano_id;
  
- --DROP VIEW faturamento_atual;
+--DROP VIEW faturamento_atual;
