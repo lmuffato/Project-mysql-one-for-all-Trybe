@@ -50,8 +50,8 @@ CREATE TABLE SpotifyClone.user_play_history(
 ) ENGINE = InnoDB;
 
 CREATE TABLE SpotifyClone.artist_followers(
-  artist_id INT NOT NULL,
   user_id INT NOT NULL,
+  artist_id INT NOT NULL,
   CONSTRAINT PRIMARY KEY (artist_id, user_id),
   FOREIGN KEY (artist_id) REFERENCES SpotifyClone.artists(artist_id),
   FOREIGN KEY (user_id) REFERENCES SpotifyClone.users(user_id)
