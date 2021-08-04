@@ -9,6 +9,8 @@ CREATE VIEW cancoes_premium AS
   ON u.users_id = r.users_id
   INNER JOIN SpotifyClone.songs AS s
   ON s.songs_id = r.songs_id
-  WHERE p.plans_name = 'familliar' OR p.plans_name = 'universitário'
+  WHERE p.plans_name = 'familiar' OR p.plans_name = 'universitário'
   GROUP BY s.songs_name
   ORDER BY `nome` ASC;
+
+SELECT * FROM cancoes_premium;

@@ -53,7 +53,7 @@ CREATE TABLE followers(
 
 INSERT INTO SpotifyClone.plans(plans_name, plans_value) VALUES
 ('gratuito', 0),
-('familliar', 7.99),
+('familiar', 7.99),
 ('universitário', 5.99);
 
 INSERT INTO SpotifyClone.users(users_name, users_age, plans_id) VALUES
