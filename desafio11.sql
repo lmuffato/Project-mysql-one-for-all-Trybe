@@ -1,7 +1,7 @@
 CREATE VIEW cancoes_premium AS
   SELECT
     s.songs_name AS `nome`,
-    COUNT(s.songs_name) AS `repoducoes`
+    COUNT(s.songs_name) AS `reproducoes`
   FROM SpotifyClone.users AS u
   INNER JOIN SpotifyClone.plans AS p
   ON u.plans_id = p.plans_id
@@ -12,5 +12,3 @@ CREATE VIEW cancoes_premium AS
   WHERE p.plans_name = 'familiar' OR p.plans_name = 'universitário'
   GROUP BY s.songs_name
   ORDER BY `nome` ASC;
-
-SELECT * FROM cancoes_premium;
