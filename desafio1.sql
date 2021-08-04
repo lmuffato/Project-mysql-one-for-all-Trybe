@@ -70,7 +70,7 @@ INSERT INTO SpotifyClone.songs(song_name, album_id) VALUES('Soul For Us', 1);
 INSERT INTO SpotifyClone.songs(song_name, album_id) VALUES('Magic Circus', 3);
 INSERT INTO SpotifyClone.songs(song_name, album_id) VALUES('Diamond Power', 4);
 INSERT INTO SpotifyClone.songs(song_name, album_id) VALUES('Thang Of Thunder', 5);
-INSERT INTO SpotifyClone.songs(song_name, album_id) VALUES('Thang Of Thunder', 4);
+INSERT INTO SpotifyClone.songs(song_name, album_id) VALUES('Home Forever', 4);
 INSERT INTO SpotifyClone.songs(song_name, album_id) VALUES('Words Of Her Life', 5);
 INSERT INTO SpotifyClone.songs(song_name, album_id) VALUES('Reflections Of Magic', 1);
 INSERT INTO SpotifyClone.songs(song_name, album_id) VALUES("Honey, Let's Be Silly", 4);
