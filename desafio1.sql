@@ -83,7 +83,7 @@ INSERT INTO `artist` (`FIRST_NAME`, `LAST_NAME`)
 VALUES
   ('Walter',  'Phoenix'),
   ('Peter',  'Strong'),
-  ('Lance',  ' Day'),
+  ('Lance',  'Day'),
   ('Freedie',  'Shannon');
 
 INSERT INTO `album` (`ALBUM_NAME`, `ARTIST_ID`)
