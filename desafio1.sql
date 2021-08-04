@@ -120,4 +120,3 @@ INSERT INTO historico_reproducao(usuario_id, cancao_id)
             (4, 3),
             (4, 18),
             (4, 11);
-            
