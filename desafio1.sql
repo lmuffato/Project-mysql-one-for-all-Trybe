@@ -43,7 +43,7 @@ VALUES
 ('Walter Phoenix'),
 ('Peter Strong'),
 ('Lance Day'),
-('Freddie Shannon');
+('Freedie Shannon');
 
 CREATE TABLE Albums (
   AlbumID INT NOT NULL AUTO_INCREMENT,
