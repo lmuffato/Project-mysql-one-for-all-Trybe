@@ -3,10 +3,9 @@ CREATE DATABASE SpotifyClone;
 USE SpotifyClone;
 
 CREATE TABLE plans(
-plan_id INT AUTO_INCREMENT,
+plan_id INT PRIMARY KEY AUTO_INCREMENT,
 plan VARCHAR(50) NOT NULL,
-plan_price DECIMAL(5,2) NOT NULL,
-PRIMARY KEY(plan_id)
+plan_price DECIMAL(5,2) NOT NULL
 ) ENGINE = InnoDB;
 
 CREATE TABLE users(
@@ -52,11 +51,11 @@ FOREIGN KEY (artist_id) REFERENCES artists(artist_id),
 FOREIGN KEY (user_id) REFERENCES users(user_id)
 ) ENGINE = InnoDB;
 
-INSERT INTO users(user_name, age)
-VALUES ('Thati', 23), ('Cintia', 35), ('Bill', 20), ('Roger', 45);
-
-INSERT INTO plans(plan_name, plan_price)
+INSERT INTO plans(plan, plan_price)
 VALUES ("gratuito", 0), ("familiar", 7.99), ("universitário", 5.99);
+
+INSERT INTO users(user_name, age, plan_id)
+VALUES ('Thati', 23, 1), ('Cintia', 35, 2), ('Bill', 20, 3), ('Roger', 45, 1);
 
 INSERT INTO artists(artist_name)
 VALUES ('Walter Phoenix'), ('Peter Strong'), ('Lance Day'), ('Freedie Shannon');
@@ -85,9 +84,6 @@ VALUES
 ("Thang Of Thunder", 5),
 ("Words Of Her Life", 5),
 ("Without My Streets", 5);
-    
-INSERT INTO user_plans(user_id, plan_id)
-VALUES (1, 1), (2, 2), (3, 3), (4, 1);
 
 INSERT INTO user_play_history(user_id, song_id)
 VALUES
