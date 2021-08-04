@@ -1,39 +1,40 @@
 DROP DATABASE IF EXISTS SpotifyClone;
 
-CREATE SCHEMA SpotifyClone;
+CREATE DATABASE SpotifyClone;
+USE SpotifyClone;
 
-CREATE TABLE SpotifyClone.users(
-user_id INT NOT NULL PRIMARY KEY auto_increment ,
+CREATE TABLE users(
+user_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 user_name VARCHAR(100) NOT NULL,
 age INT NOT NULL
 ) ENGINE = InnoDB;
 
-CREATE TABLE SpotifyClone.plan(
-plan_id INT NOT NULL PRIMARY KEY auto_increment,
+CREATE TABLE plans(
+plan_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 plan_name VARCHAR(100) NOT NULL,
 plan_price DOUBLE NOT NULL
 ) ENGINE = InnoDB;
 
-CREATE table SpotifyClone.artists(
+CREATE table artists(
 artist_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 artist_name VARCHAR(150) NOT NULL
 ) ENGINE = InnoDB;
 
-CREATE TABLE SpotifyClone.albums(
+CREATE TABLE albums(
 album_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 album_name VARCHAR(225) NOT NULL,
 artist_id INT NOT NULL,
 FOREIGN KEY (artist_id) REFERENCES SpotifyClone.artists (artist_id)
 ) ENGINE = InnoDB;
 
-CREATE TABLE SpotifyClone.songs(
+CREATE TABLE songs(
 song_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 song_name VARCHAR(225) NOT NULL,
 album_id INT NOT NULL,
 FOREIGN KEY (album_id) REFERENCES SpotifyClone.albums(album_id)
 ) ENGINE = InnoDB;
 
-CREATE TABLE SpotifyClone.user_plans(
+CREATE TABLE user_plans(
 user_id INT,
 plan_id INT,
 CONSTRAINT PRIMARY KEY(user_id, plan_id),
@@ -41,7 +42,7 @@ FOREIGN KEY (user_id) REFERENCES SpotifyClone.users(user_id),
 FOREIGN KEY (plan_id) REFERENCES SpotifyClone.plan(plan_id)
 ) ENGINE = InnoDB;
 
-CREATE TABLE SpotifyClone.user_play_history(
+CREATE TABLE user_play_history(
 user_id INT NOT NULL,
 song_id INT NOT NULL,
 CONSTRAINT PRIMARY KEY (user_id, song_id),
@@ -49,7 +50,7 @@ FOREIGN KEY (user_id) REFERENCES SpotifyClone.users(user_id),
 FOREIGN KEY (song_id) REFERENCES SpotifyClone.songs(song_id)
 ) ENGINE = InnoDB;
 
-CREATE TABLE SpotifyClone.artist_followers(
+CREATE TABLE artist_followers(
 user_id INT NOT NULL,
 artist_id INT NOT NULL,
 CONSTRAINT PRIMARY KEY (artist_id, user_id),
@@ -57,20 +58,20 @@ FOREIGN KEY (artist_id) REFERENCES SpotifyClone.artists(artist_id),
 FOREIGN KEY (user_id) REFERENCES SpotifyClone.users(user_id)
 ) ENGINE = InnoDB;
 
-INSERT INTO SpotifyClone.users (user_name, age)
+INSERT INTO users(user_name, age)
 VALUES ('Thati', 23), ('Cintia', 35), ('Bill', 20), ('Roger', 45);
 
-INSERT INTO SpotifyClone.plan (plan_name, plan_price)
+INSERT INTO plans(plan_name, plan_price)
 VALUES ('gratuito', 0), ('familiar', 7.99), ('universitário', 5.99);
   
-INSERT INTO SpotifyClone.artists (artist_name)
+INSERT INTO artists(artist_name)
 VALUES ('Walter Phoenix'), ('Peter Strong'), ('Lance Day'), ('Freedie Shannon');
 
-INSERT INTO SpotifyClone.albums (album_name, artist_id)
+INSERT INTO albums(album_name, artist_id)
 VALUES ('Envious', 1), ('Exuberant', 1), ('Hallowed Steam', 2), ('Incandescent', 3),
 ('Temporary Culture', 4);
 
-INSERT INTO SpotifyClone.songs (song_name, album_id)
+INSERT INTO songs(song_name, album_id)
 VALUES
 ('Soul For Us', 1),
 ('Reflections Of Magic', 1),
@@ -91,10 +92,10 @@ VALUES
 ("Words Of Her Life", 5),
 ("Without My Streets", 5);
     
-INSERT INTO SpotifyClone.user_plans (user_id, plan_id)
+INSERT INTO user_plans(user_id, plan_id)
 VALUES (1, 1), (2, 2), (3, 3), (4, 1);
 
-INSERT INTO SpotifyClone.user_play_history (user_id, song_id)
+INSERT INTO user_play_history(user_id, song_id)
 VALUES
 (1, 1),
 (1, 6),
@@ -111,7 +112,7 @@ VALUES
 (4, 18),
 (4, 11);
 
-INSERT INTO SpotifyClone.artist_followers (user_id, artist_id)
+INSERT INTO artist_followers(user_id, artist_id)
 VALUES
 (1, 1),
 (1, 4),
