@@ -111,9 +111,9 @@ VALUES
 (4, 11);
 
 CREATE TABLE SpotifyClone.Seguindo(
-Seguindo_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 Usuario_id INT NOT NULL,
 Artista_id INT NOT NULL,
+PRIMARY KEY(Usuario_id, Artista_id)
 FOREIGN KEY(Usuario_id) REFERENCES SpotifyClone.Usuario(Usuario_id),
 FOREIGN KEY(Artista_id) REFERENCES SpotifyClone.Artista(Artista_id)
 ) engine = InnoDB;
