@@ -343,6 +343,7 @@ describe('Queries de seleção', () => {
       ))[0][userIdColumn];
 
       await sequelize.query(createFunctionQuery);
+      console.log(userId);
 
       const result = await sequelize.query(
         `SELECT quantidade_musicas_no_historico(${userId}) AS quantidade_musicas_no_historico;`,
