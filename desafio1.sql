@@ -86,29 +86,29 @@ VALUES
 
 
 CREATE TABLE SpotifyClone.Historico(
-Historico_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 Usuario_id INT NOT NULL,
 Cancao_id INT NOT NULL,
+PRIMARY KEY(Usuario_id, Cancao_id),
 FOREIGN KEY(Cancao_id) REFERENCES SpotifyClone.Cancao(Cancao_id),
 FOREIGN KEY(Usuario_id) REFERENCES SpotifyClone.Usuario(Usuario_id)
 ) engine = InnoDB;
 
-INSERT INTO SpotifyClone.Historico(Historico_id, Usuario_id, Cancao_id)
+INSERT INTO SpotifyClone.Historico(Usuario_id, Cancao_id)
 VALUES
-(default, 1, 1),
-(default, 1, 6),
-(default, 1, 14),
-(default, 1, 16),
-(default, 2, 13),
-(default, 2, 17),
-(default, 2, 2),
-(default, 2, 15),
-(default, 3, 4),
-(default, 3, 16),
-(default, 3, 6),
-(default, 4, 3),
-(default, 4, 18),
-(default, 4, 11);
+(1, 1),
+(1, 6),
+(1, 14),
+(1, 16),
+(2, 13),
+(2, 17),
+(2, 2),
+(2, 15),
+(3, 4),
+(3, 16),
+(3, 6),
+(4, 3),
+(4, 18),
+(4, 11);
 
 CREATE TABLE SpotifyClone.Seguindo(
 Seguindo_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
