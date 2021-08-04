@@ -128,4 +128,3 @@ VALUES
 (default, 3, 2),
 (default, 3, 1),
 (default, 4, 4);
-
