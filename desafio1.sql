@@ -15,7 +15,6 @@ CREATE TABLE user(
   name_user VARCHAR(80) NOT NULL,
   birthdate DATE,
   id_plan INT,
-  id_music INT,
   FOREIGN KEY (id_plan) REFERENCES plan(id_plan)
   );
     
@@ -58,24 +57,11 @@ INSERT INTO plan(name_plan, price) VALUES ('gratuito', 0);
 INSERT INTO plan(name_plan, price) VALUES ('familiar', 7.99);
 INSERT INTO plan(name_plan, price) VALUES ('universitário', 5.99);
 
-INSERT INTO user(name_user, birthdate, id_plan, id_music) VALUES ('Thati', '1998-02-01' , 1, 1);
-INSERT INTO user(name_user, birthdate, id_plan, id_music) VALUES ('Thati', '1998-02-01' , 1, 6);
-INSERT INTO user(name_user, birthdate, id_plan, id_music) VALUES ('Thati', '1998-02-01' , 1, 14);
-INSERT INTO user(name_user, birthdate, id_plan, id_music) VALUES ('Thati', '1998-02-01' , 1, 16);
+INSERT INTO user(name_user, birthdate, id_plan ) VALUES ('Thati', '1998-02-01' , 1);
+INSERT INTO user(name_user, birthdate, id_plan) VALUES ('Cintia', '1986-08-30' , 2);
+INSERT INTO user(name_user, birthdate, id_plan) VALUES ('Bill', '2001-12-04' , 3);
+INSERT INTO user(name_user, birthdate, id_plan) VALUES ('Roger', '1976-10-25' , 1);
 
-
-INSERT INTO user(name_user, birthdate, id_plan, id_music) VALUES ('Cintia', '1986-08-30' , 2, 13);
-INSERT INTO user(name_user, birthdate, id_plan, id_music) VALUES ('Cintia', '1986-08-30' , 2, 17);
-INSERT INTO user(name_user, birthdate, id_plan, id_music) VALUES ('Cintia', '1986-08-30' , 2, 2);
-INSERT INTO user(name_user, birthdate, id_plan, id_music) VALUES ('Cintia', '1986-08-30' , 2, 15);
-
-INSERT INTO user(name_user, birthdate, id_plan, id_music) VALUES ('Bill', '2001-12-04' , 3, 4);
-INSERT INTO user(name_user, birthdate, id_plan, id_music) VALUES ('Bill', '2001-12-04' , 3, 16);
-INSERT INTO user(name_user, birthdate, id_plan, id_music) VALUES ('Bill', '2001-12-04' , 3, 6);
-
-INSERT INTO user(name_user, birthdate, id_plan, id_music) VALUES ('Roger', '1976-10-25' , 1, 3);
-INSERT INTO user(name_user, birthdate, id_plan, id_music) VALUES ('Roger', '1976-10-25' , 1, 18);
-INSERT INTO user(name_user, birthdate, id_plan, id_music) VALUES ('Roger', '1976-10-25' , 1, 11);
 
 INSERT INTO artist(name_artist, id_user) VALUES ('Walter Phoenix', 1);
 INSERT INTO artist(name_artist, id_user) VALUES ('Peter Strong', 2);
