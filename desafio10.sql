@@ -1,5 +1,4 @@
 DELIMITER $$
-
 CREATE FUNCTION quantidade_musicas_no_historico(userId int)
 RETURNS INT READS SQL DATA
 BEGIN
@@ -9,5 +8,4 @@ BEGIN
     WHERE UH.user_id = userId INTO music_quantity;
     RETURN music_quantity;
 END $$
-
 DELIMITER ;

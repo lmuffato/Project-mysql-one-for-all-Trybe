@@ -1,5 +1,4 @@
 DELIMITER $$
-
 CREATE PROCEDURE albuns_do_artista(IN artistName VARCHAR(70))
 BEGIN
   SELECT
@@ -10,5 +9,4 @@ BEGIN
   ON A.artist_id = AL.album_id AND A.artist_name = artistName
   ORDER BY `album` ASC;
 END $$
-
 DELIMITER ;
