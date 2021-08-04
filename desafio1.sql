@@ -88,6 +88,16 @@ CREATE TABLE follows(
   FOREIGN KEY (artist_id) REFERENCES artists (artist_id)
 ) engine = InnoDB;
 
+INSERT INTO follows (user_id, artist_id) VALUES
+  (1, 1),
+  (1, 3),
+  (1, 4),
+  (2, 1),
+  (2, 3),
+  (3, 1),
+  (3, 2),
+  (4, 4);
+
 CREATE TABLE reproductions(
   user_id INT,
   song_id INT,
@@ -95,3 +105,19 @@ CREATE TABLE reproductions(
   FOREIGN KEY (user_id) REFERENCES users (user_id),
   FOREIGN KEY (song_id) REFERENCES songs (song_id)
 ) engine = InnoDB;
+
+INSERT INTO reproductions (user_id, song_id) VALUES
+  (1, 1),
+  (1, 6),
+  (1, 14),
+  (1 ,16),
+  (2, 13),
+  (2, 17),
+  (2, 2),
+  (2, 15),
+  (3, 4),
+  (3, 16),
+  (3, 6),
+  (4, 3),
+  (4, 18),
+  (4, 11);
