@@ -9,4 +9,3 @@ CREATE VIEW historico_reproducao_usuarios AS (
   ON sp.SONG_ID = s.SONG_ID
   ORDER BY 1, 2
 );
-
