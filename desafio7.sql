@@ -9,5 +9,5 @@
       SpotifyClone.album ab ON a.artista_id = ab.artista_id
     INNER JOIN
       SpotifyClone.seguindo s ON ab.artista_id = s.artista_id
-    GROUP BY 2
+    GROUP BY 1, 2 
     ORDER BY 3 DESC, 1, 2;
