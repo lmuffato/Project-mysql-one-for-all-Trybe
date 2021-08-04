@@ -54,7 +54,7 @@ VALUES
 (default, 'Exuberant', 1),
 (default, 'Hallowed Steam', 2),
 (default, 'Incandescent', 3),
-(default, 'Temporary Culture', 2);
+(default, 'Temporary Culture', 4);
 
 CREATE TABLE SpotifyClone.Cancao(
 Cancao_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -111,20 +111,21 @@ VALUES
 (4, 11);
 
 CREATE TABLE SpotifyClone.Seguindo(
+Seguindo_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 Usuario_id INT NOT NULL,
 Artista_id INT NOT NULL,
-PRIMARY KEY(Usuario_id, Artista_id),
 FOREIGN KEY(Usuario_id) REFERENCES SpotifyClone.Usuario(Usuario_id),
 FOREIGN KEY(Artista_id) REFERENCES SpotifyClone.Artista(Artista_id)
 ) engine = InnoDB;
 
-INSERT INTO SpotifyClone.Seguindo(Usuario_id, Artista_id)
+INSERT INTO SpotifyClone.Seguindo(Seguindo_id, Usuario_id, Artista_id)
 VALUES
-(1, 1),
-(1, 4),
-(1, 3),
-(2, 1),
-(2, 3),
-(3, 2),
-(3, 1),
-(4, 4);
+(default, 1, 1),
+(default, 1, 4),
+(default, 1, 3),
+(default, 2, 1),
+(default, 2, 3),
+(default, 3, 2),
+(default, 3, 1),
+(default, 4, 4);
+
