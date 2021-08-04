@@ -8,7 +8,7 @@ CREATE TABLE plans(plan_id INT AUTO_INCREMENT, plan_name VARCHAR(50) NOT NULL UN
 CONSTRAINT PRIMARY KEY(plan_id));
 
 INSERT INTO plans (plan_name, plan_price) VALUES
-('gratuito', 0),
+('gratuito', 0.00),
 ('familiar', 7.99),
 ('universitário', 5.99);
 
