@@ -9,7 +9,7 @@ CREATE TABLE plans(
 ) engine = InnoDB;
 
 INSERT INTO plans (plan_id, name, value) VALUES
-	(1, 'gratuito', 0),
+(1, 'gratuito', 0),
   (2, 'familiar', 7.99),
   (3, 'universitário', 5.99);
 
@@ -22,7 +22,7 @@ CREATE TABLE users(
 ) engine = InnoDB;
 
 INSERT INTO users (user_id, name, age, plan_id) VALUES
-	(1, 'Thati', 23, 1),
+(1, 'Thati', 23, 1),
   (2, 'Cintia', 35, 2),
   (3, 'Bill', 20, 3),
   (4, 'Roger', 45, 1);
