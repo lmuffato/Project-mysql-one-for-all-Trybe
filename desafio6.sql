@@ -16,11 +16,10 @@ CREATE VIEW faturamento_atual AS
                     INNER JOIN
                 SpotifyClone.users AS u ON p.flat_id = u.flat_id) AS 'faturamento_medio',
         (SELECT 
-                SUM(p.price) AS 'faturamento_total'
-            FROM
+                SUM(p.price)             FROM
                 SpotifyClone.plans AS p
                     INNER JOIN
-                SpotifyClone.users AS u ON p.flat_id = u.flat_id)
+                SpotifyClone.users AS u ON p.flat_id = u.flat_id) AS 'faturamento_total'
     FROM
         SpotifyClone.plans
     WHERE
