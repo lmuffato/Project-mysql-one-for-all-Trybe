@@ -1,0 +1,10 @@
+DELIMITER $$
+
+CREATE TRIGGER trigger_usuario_delete
+AFTER DELETE ON SpotifyClone.USER
+FOR EACH ROW
+BEGIN
+	DELETE FROM SpotifyClone.FOLLOWING_ARTISTS WHERE user_id = OLD.user_id;
+    DELETE FROM SpotifyClone.HISTORY_REPRODUCTIONS WHERE user_id = OLD.user_id;
+END $$
+DELIMITER ;
