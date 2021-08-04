@@ -7,7 +7,7 @@ USE SpotifyClone;
 CREATE TABLE planos (
 id INT PRIMARY KEY AUTO_INCREMENT,
 nome_plano VARCHAR(100),
-valor_plano DOUBLE
+valor_plano DECIMAL(10,6)
 );
 
 CREATE TABLE artistas (
@@ -55,7 +55,7 @@ FOREIGN KEY (musica_id) REFERENCES musicas(id)
 
 INSERT INTO planos(nome_plano, valor_plano)
 VALUES
-('gratuito', 0),
+('gratuito', 0.00),
 ('familiar', 7.99),
 ('universitário', 5.99);
 
@@ -90,14 +90,14 @@ VALUES
 ('Time Fireworks', 2),
 ('Magic Circus', 3),
 ('Honey, So Do I', 3),
-('Sweetie, Lets Go Wild', 3),
+("Sweetie, Let's Go Wild", 3),
 ('She Knows', 3),
 ('Fantasy For Me', 4),
 ('Celebration Of More', 4),
 ('Rock His Everything', 4),
 ('Home Forever', 4),
 ('Diamond Power', 4),
-('Honey, Lets Be Silly', 4),
+("Honey, Let's Be Silly", 4),
 ('Thang Of Thunder', 5),
 ('Words Of Her Life', 5),
 ('Without My Streets', 5);
