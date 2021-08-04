@@ -48,7 +48,7 @@ FOREIGN KEY (cancao_id) REFERENCES cancoes(cancao_id)
 CREATE TABLE seguindo_artista(
 usuario_id INT NOT NULL,
 artista_id INT NOT NULL,
-CONSTRAINT PRIMARY KEY (usuario_id, artista_id)
+CONSTRAINT PRIMARY KEY (usuario_id, artista_id),
 FOREIGN KEY (usuario_id) REFERENCES usuarios(usuario_id),
 FOREIGN KEY (artista_id) REFERENCES artistas(artista_id)
 ) engine = InnoDB;
