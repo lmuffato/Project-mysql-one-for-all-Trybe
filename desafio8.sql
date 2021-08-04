@@ -8,4 +8,4 @@ BEGIN
   DELETE FROM SpotifyClone.User_history AS UH
   WHERE UH.user_id = OLD.user_id;
 END $$
-DELIMITER ;
+DELIMITER $$ ;
