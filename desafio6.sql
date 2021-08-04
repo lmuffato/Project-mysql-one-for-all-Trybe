@@ -1,3 +1,4 @@
+CREATE VIEW faturalmento_atual AS
 SELECT
 (SELECT FORMAT(MIN(plan_price), 2) FROM plans) AS faturamento_minimo,
 (SELECT MAX(plan_price) FROM plans) AS faturamento_maximo,
