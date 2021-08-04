@@ -1,7 +1,7 @@
 DROP DATABASE IF EXISTS SpotifyClone;
 
 CREATE DATABASE SpotifyClone;
-
+-- test
 USE SpotifyClone;
 
 CREATE TABLE plans(
