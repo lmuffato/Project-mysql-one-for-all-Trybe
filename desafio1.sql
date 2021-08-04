@@ -4,7 +4,7 @@ CREATE SCHEMA SpotifyClone;
 CREATE TABLE SpotifyClone.plans(
         plan_id INT PRIMARY KEY AUTO_INCREMENT,
         plan_name VARCHAR(50) NOT NULL,
-        price DEC NOT NULL
+        price DECIMAL(5, 2) NOT NULL
     );
 CREATE TABLE SpotifyClone.users(
         user_id INT PRIMARY KEY AUTO_INCREMENT,
