@@ -82,4 +82,3 @@ VALUES (1,1), (1,4),(1,3), (2,1), (2,3), (3,1), (3,2), (4,4);
 INSERT INTO SpotifyClone.historicoReproducoes(usuario_id, musica_id)
 VALUES (1,1), (1,6), (1,14), (1,16), (2,13), (2,17), (2,2), (2,15), (3,4), (3,16), (3,6),(4,3),
 (4,18), (4,11);
-
