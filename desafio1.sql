@@ -98,11 +98,11 @@ VALUES
 INSERT INTO Songs (song_name, artist_id, album_id)
 VALUES
   ('Soul For Us',	1,	1),
-  ('ReReflections Of Magic',	1,	1),
+  ('Reflections Of Magic',	1,	1),
   ('Dance With Her Own',	1,	1),
   ('Troubles Of My Inner Fire',	1,	2),
   ('Time Fireworks',	1,	2),
-  ("Sweetie, Let's Go Wild",	2,	3),
+  ('Magic Circus',	2,	3),
   ('Honey, So Do I',	2,	3),
   ("Sweetie, Let's Go Wild",	2,	3),
   ('She Knows',	2,	3),
