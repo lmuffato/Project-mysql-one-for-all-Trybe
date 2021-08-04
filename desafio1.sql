@@ -12,7 +12,7 @@ CREATE TABLE artistas(
 CREATE TABLE planos(
     plano_id INT PRIMARY KEY AUTO_INCREMENT,
     plano VARCHAR(50),
-    valor_plano INT
+    valor_plano NUMERIC(10, 2)
 ) engine = InnoDB;
 
 CREATE TABLE usuarios(
