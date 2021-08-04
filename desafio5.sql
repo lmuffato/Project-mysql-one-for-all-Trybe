@@ -1,4 +1,4 @@
--- DROP VIEW top_2_hits_do_momento;
+DROP VIEW top_2_hits_do_momento;
 
 CREATE VIEW top_2_hits_do_momento AS
     SELECT 
@@ -11,4 +11,4 @@ CREATE VIEW top_2_hits_do_momento AS
     ORDER BY 2 DESC , 1
     LIMIT 2;
 
--- SELECT * FROM top_2_hits_do_momento;
+SELECT * FROM top_2_hits_do_momento;
