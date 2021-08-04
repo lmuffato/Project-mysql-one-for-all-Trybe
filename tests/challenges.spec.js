@@ -32,6 +32,7 @@ describe('Queries de seleção', () => {
     await importer.disconnect();
   });
 
+  jest.setTimeout(30000);
   describe('1 - Normalize as tabelas para a 3ª Forma Normal', () => {
     const hasForeignKey = async (table, referencedTable) => {
       const [{ REFERENCE_COUNT: referenceCount }] = await sequelize.query(
