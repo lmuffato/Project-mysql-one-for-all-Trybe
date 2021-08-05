@@ -1,3 +1,5 @@
+USE SpotifyClone;
+
 DELIMITER $$
 
 CREATE FUNCTION quantidade_musicas_no_historico(userId INT)
@@ -6,8 +8,8 @@ BEGIN
 DECLARE user_repro_quant INT;
 SELECT
   COUNT(SONG_ID)
-FROM songs_played
-WHERE USER_ID = userId
+FROM SpotifyClone.songs_played
+WHERE `USER_ID` = userId
 INTO user_repro_quant;
 RETURN user_repro_quant;
 END $$
