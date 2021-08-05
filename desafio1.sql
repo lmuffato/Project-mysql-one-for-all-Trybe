@@ -119,4 +119,4 @@ VALUES ('Envious', 1),
 ('Exuberant', 1),
 ('Hallowed Steam', 2),
 ('Incandescent', 3),
-('Temporary Culture', 4); 
+('Temporary Culture', 4);
