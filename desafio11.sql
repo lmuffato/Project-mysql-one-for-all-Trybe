@@ -13,4 +13,3 @@ FROM(
     WHERE P.plano <> 'gratuito') AS SUB
     GROUP BY SUB.CA
     ORDER BY 1;
-    
