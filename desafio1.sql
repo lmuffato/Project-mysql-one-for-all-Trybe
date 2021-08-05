@@ -74,7 +74,7 @@ VALUES
 INSERT INTO songs (artista_id, song)
 VALUES
   (1, 'Soul For Us'),
-  (1, 'Refletions Of Magic'),
+  (1, 'Reflections Of Magic'),
   (1, 'Dance With Her Own'),
   (1, 'Troubles Of My Inner Fire'),
   (1, 'Time Fireworks'),
@@ -96,9 +96,9 @@ INSERT INTO album (artista_id, name_album)
 VALUES
   (1, 'Envious'),
   (1, 'Exuberant'),
-  (2, 'Hallowed Steam'),
+  (4, 'Hallowed Steam'),
   (3, 'Incandescent'),
-  (4, 'Temporary Culture');
+  (2, 'Temporary Culture');
 
 INSERT INTO following (user_id, artista_id)
 VALUES
