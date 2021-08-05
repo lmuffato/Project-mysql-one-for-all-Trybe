@@ -36,7 +36,7 @@ INSERT INTO artists (artist_id, name) VALUES
   (1, 'Walter Phoenix'),
   (2, 'Peter Strong'),
   (3, 'Lance Day'),
-  (4, 'Freedie Shanno');
+  (4, 'Freedie Shannon');
 
 CREATE TABLE albuns(
   album_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
