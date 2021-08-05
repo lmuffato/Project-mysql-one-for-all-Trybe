@@ -15,7 +15,14 @@ CREATE TABLE `user` (
     `user_name` VARCHAR(50) NOT NULL,
     `user_age` INT NOT NULL,
     `plano_id` INT NOT NULL,
-    PRIMARY KEY (`user_id`)
+    PRIMARY KEY (`user_id`),
+    INDEX `fk_user_plano_idx` (`plano_id` ASC) VISIBLE,
+    CONSTRAINT `fk_user_plano`
+  FOREIGN KEY (`plano_id`)
+  REFERENCES `SpotifyClone`.`plano` (`plano_id`)
+  ON DELETE CASCADE
+  ON UPDATE RESTRICT
+    
 );
 
 
@@ -23,7 +30,13 @@ CREATE TABLE `Album` (
     `album_id` INT NOT NULL AUTO_INCREMENT,
     `album` VARCHAR(50) NOT NULL,
     `artista_id` INT NOT NULL,
-    PRIMARY KEY (`album_id`)
+    PRIMARY KEY (`album_id`),
+    INDEX `fk_Album_artista_idx` (`artista_id` ASC) VISIBLE,
+    CONSTRAINT `fk_Album_artista`
+  FOREIGN KEY (`artista_id`)
+  REFERENCES `SpotifyClone`.`artista` (`artista_id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
 );
 
 
@@ -31,7 +44,13 @@ CREATE TABLE `songs` (
     `song_id` INT NOT NULL AUTO_INCREMENT,
     `song` VARCHAR(100) NOT NULL,
     `album_id` INT NOT NULL,
-    PRIMARY KEY (`song_id`)
+    PRIMARY KEY (`song_id`),
+    INDEX `fk_songs_album_idx` (`album_id` ASC) VISIBLE,
+    CONSTRAINT `fk_songs_album`
+  FOREIGN KEY (`album_id`)
+  REFERENCES `SpotifyClone`.`Album` (`album_id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
 );
 
 
@@ -45,13 +64,37 @@ CREATE TABLE `artista` (
 
 CREATE TABLE `historico` (
     `user_id` INT NOT NULL,
-    `song_id` INT NOT NULL
+    `song_id` INT NOT NULL,
+    INDEX `fk_historico_songs_idx` (`song_id` ASC) VISIBLE,
+    INDEX `fk_historico_user_idx` (`user_id` ASC) VISIBLE,
+    CONSTRAINT `fk_historico_songs`
+  FOREIGN KEY (`song_id`)
+  REFERENCES `SpotifyClone`.`songs` (`song_id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION,
+  CONSTRAINT `fk_historico_user`
+  FOREIGN KEY (`user_id`)
+  REFERENCES `SpotifyClone`.`user` (`user_id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
 );
 
 
 CREATE TABLE `Follow` (
     `user_id` INT NOT NULL,
-    `artista_id` INT NOT NULL
+    `artista_id` INT NOT NULL,
+    INDEX `fk_Follow_artista_idx` (`artista_id` ASC) VISIBLE,
+    INDEX `fk_Follow_user_idx` (`user_id` ASC) VISIBLE,
+    CONSTRAINT `fk_Follow_artista`
+  FOREIGN KEY (`artista_id`)
+  REFERENCES `SpotifyClone`.`artista` (`artista_id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Follow_user`
+  FOREIGN KEY (`user_id`)
+  REFERENCES `SpotifyClone`.`user` (`user_id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
 );
 
 
@@ -136,75 +179,3 @@ VALUES
   ('Cintia', 35,2),
   ('Bill',20,3),
   ('Roger',45,1);
-  
-  
-  ALTER TABLE `SpotifyClone`.`user` 
-ADD INDEX `fk_user_plano_idx` (`plano_id` ASC) VISIBLE;
-;
-ALTER TABLE `SpotifyClone`.`user` 
-ADD CONSTRAINT `fk_user_plano`
-  FOREIGN KEY (`plano_id`)
-  REFERENCES `SpotifyClone`.`plano` (`plano_id`)
-  ON DELETE CASCADE
-  ON UPDATE RESTRICT;
-  
-  ALTER TABLE `SpotifyClone`.`Album` 
-ADD INDEX `fk_Album_artista_idx` (`artista_id` ASC) VISIBLE;
-;
-ALTER TABLE `SpotifyClone`.`Album` 
-ADD CONSTRAINT `fk_Album_artista`
-  FOREIGN KEY (`artista_id`)
-  REFERENCES `SpotifyClone`.`artista` (`artista_id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION;
-  
-  ALTER TABLE `SpotifyClone`.`songs` 
-ADD INDEX `fk_songs_album_idx` (`album_id` ASC) VISIBLE;
-;
-ALTER TABLE `SpotifyClone`.`songs` 
-ADD CONSTRAINT `fk_songs_album`
-  FOREIGN KEY (`album_id`)
-  REFERENCES `SpotifyClone`.`Album` (`album_id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION;
-  
-ALTER TABLE `SpotifyClone`.`historico` 
-ADD INDEX `fk_historico_songs_idx` (`song_id` ASC) VISIBLE;
-;
-ALTER TABLE `SpotifyClone`.`historico` 
-ADD CONSTRAINT `fk_historico_songs`
-  FOREIGN KEY (`song_id`)
-  REFERENCES `SpotifyClone`.`songs` (`song_id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION;
-  
-ALTER TABLE `SpotifyClone`.`historico` 
-ADD INDEX `fk_historico_user_idx` (`user_id` ASC) VISIBLE;
-;
-ALTER TABLE `SpotifyClone`.`historico` 
-ADD CONSTRAINT `fk_historico_user`
-  FOREIGN KEY (`user_id`)
-  REFERENCES `SpotifyClone`.`user` (`user_id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION;
-  
-ALTER TABLE `SpotifyClone`.`Follow` 
-ADD INDEX `fk_Follow_artista_idx` (`artista_id` ASC) VISIBLE;
-;
-ALTER TABLE `SpotifyClone`.`Follow` 
-ADD CONSTRAINT `fk_Follow_artista`
-  FOREIGN KEY (`artista_id`)
-  REFERENCES `SpotifyClone`.`artista` (`artista_id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION;
-
-
-ALTER TABLE `SpotifyClone`.`Follow` 
-ADD INDEX `fk_Follow_user_idx` (`user_id` ASC) VISIBLE;
-;
-ALTER TABLE `SpotifyClone`.`Follow` 
-ADD CONSTRAINT `fk_Follow_user`
-  FOREIGN KEY (`user_id`)
-  REFERENCES `SpotifyClone`.`user` (`user_id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION;
