@@ -1,0 +1,16 @@
+{
+  "coluna_usuario": "user_name",
+  "tabela_que_contem_usuario": "User",
+  "coluna_plano": "plan_name",
+  "tabela_que_contem_plano": "Plan",
+  "coluna_historico_de_reproducoes": "Song_id",
+  "tabela_que_contem_historico_de_reproducoes": "History",
+  "coluna_seguindo_artistas": "Artist_id",
+  "tabela_que_contem_seguindo_artistas": "Artist_followers",
+  "coluna_artista": "Artist_name",
+  "tabela_que_contem_artista": "Artist",
+  "coluna_album": "Album_name",
+  "tabela_que_contem_album": "Album",
+  "coluna_cancoes": "Song_name",
+  "tabela_que_contem_cancoes": "Song"
+}
