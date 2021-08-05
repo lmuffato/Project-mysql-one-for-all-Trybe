@@ -1,79 +1,61 @@
 DROP DATABASE IF EXISTS SpotifyClone;
 CREATE DATABASE SpotifyClone;
 USE SpotifyClone;
-CREATE TABLE `user` (
-    `user_id` INT NOT NULL AUTO_INCREMENT,
-    `user_name` VARCHAR(50) NOT NULL,
-    `user_age` INT NOT NULL,
-    `plano_id` INT NOT NULL,
-    FOREIGN KEY (`plano_id`) REFERENCES `plano`(`plano_id`) ON DELETE RESTRICT ON UPDATE CASCADE,
-    PRIMARY KEY (`user_id`)
-)  ENGINE=MYISAM DEFAULT CHARSET=LATIN1;
-
-
-CREATE TABLE `Album` (
-    `album_id` INT NOT NULL AUTO_INCREMENT,
-    `album` VARCHAR(50) NOT NULL,
-    `artista_id` INT NOT NULL,
-    PRIMARY KEY (`album_id`),
-    FOREIGN KEY (`artista_id`) REFERENCES `artista`(`artista_id`) ON DELETE RESTRICT ON UPDATE CASCADE
-)  ENGINE=MYISAM DEFAULT CHARSET=LATIN1;
-
-
-CREATE TABLE `songs` (
-    `song_id` INT NOT NULL AUTO_INCREMENT,
-    `song` VARCHAR(100) NOT NULL,
-    `album_id` INT NOT NULL,
-    PRIMARY KEY (`song_id`),
-    FOREIGN KEY (`album_id`)
-        REFERENCES `Album` (`album_id`)
-        ON DELETE RESTRICT ON UPDATE CASCADE
-)  ENGINE=MYISAM DEFAULT CHARSET=LATIN1;
 
 CREATE TABLE `plano` (
     `plano_id` INT NOT NULL AUTO_INCREMENT,
     `plano` VARCHAR(50) NOT NULL,
     `valor_plano` DOUBLE NOT NULL,
     PRIMARY KEY (`plano_id`)
-)  ENGINE=MYISAM DEFAULT CHARSET=LATIN1;
+);
+
+
+CREATE TABLE `user` (
+    `user_id` INT NOT NULL AUTO_INCREMENT,
+    `user_name` VARCHAR(50) NOT NULL,
+    `user_age` INT NOT NULL,
+    `plano_id` INT NOT NULL,
+    PRIMARY KEY (`user_id`)
+);
+
+
+CREATE TABLE `Album` (
+    `album_id` INT NOT NULL AUTO_INCREMENT,
+    `album` VARCHAR(50) NOT NULL,
+    `artista_id` INT NOT NULL,
+    PRIMARY KEY (`album_id`)
+);
+
+
+CREATE TABLE `songs` (
+    `song_id` INT NOT NULL AUTO_INCREMENT,
+    `song` VARCHAR(100) NOT NULL,
+    `album_id` INT NOT NULL,
+    PRIMARY KEY (`song_id`)
+);
+
+
 
 
 CREATE TABLE `artista` (
     `artista_id` INT NOT NULL AUTO_INCREMENT,
     `artista` VARCHAR(100) NOT NULL,
     PRIMARY KEY (`artista_id`)
-)  ENGINE=MYISAM DEFAULT CHARSET=LATIN1;
+);
 
 CREATE TABLE `historico` (
     `user_id` INT NOT NULL,
-    `song_id` INT NOT NULL,
-    FOREIGN KEY (`user_id`)
-        REFERENCES `user` (`user_id`)
-        ON DELETE RESTRICT ON UPDATE CASCADE,
-    FOREIGN KEY (`song_id`)
-        REFERENCES `songs` (`song_id`)
-        ON DELETE RESTRICT ON UPDATE CASCADE
-)  ENGINE=MYISAM DEFAULT CHARSET=LATIN1;
+    `song_id` INT NOT NULL
+);
 
 
 CREATE TABLE `Follow` (
     `user_id` INT NOT NULL,
-    `artista_id` INT NOT NULL,
-    FOREIGN KEY (`user_id`)
-        REFERENCES `user` (`user_id`)
-        ON DELETE RESTRICT ON UPDATE CASCADE,
-    FOREIGN KEY (`artista_id`)
-        REFERENCES `artista` (`artista_id`)
-        ON DELETE RESTRICT ON UPDATE CASCADE
-)  ENGINE=MYISAM DEFAULT CHARSET=LATIN1;
+    `artista_id` INT NOT NULL
+);
 
 
-INSERT INTO `user` (user_name,user_age,plano_id)
-VALUES
-  ('Thati', 23,1),
-  ('Cintia', 35,2),
-  ('Bill',20,3),
-  ('Roger',45,1);
+
   
   
   INSERT INTO `artista`(artista)
@@ -148,3 +130,81 @@ VALUES
   (3,2),
   (3,1),
   (4,4);
+  INSERT INTO `user` (user_name,user_age,plano_id)
+VALUES
+  ('Thati', 23,1),
+  ('Cintia', 35,2),
+  ('Bill',20,3),
+  ('Roger',45,1);
+  
+  
+  ALTER TABLE `SpotifyClone`.`user` 
+ADD INDEX `fk_user_plano_idx` (`plano_id` ASC) VISIBLE;
+;
+ALTER TABLE `SpotifyClone`.`user` 
+ADD CONSTRAINT `fk_user_plano`
+  FOREIGN KEY (`plano_id`)
+  REFERENCES `SpotifyClone`.`plano` (`plano_id`)
+  ON DELETE CASCADE
+  ON UPDATE RESTRICT;
+  
+  ALTER TABLE `SpotifyClone`.`Album` 
+ADD INDEX `fk_Album_artista_idx` (`artista_id` ASC) VISIBLE;
+;
+ALTER TABLE `SpotifyClone`.`Album` 
+ADD CONSTRAINT `fk_Album_artista`
+  FOREIGN KEY (`artista_id`)
+  REFERENCES `SpotifyClone`.`artista` (`artista_id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+  
+  ALTER TABLE `SpotifyClone`.`songs` 
+ADD INDEX `fk_songs_album_idx` (`album_id` ASC) VISIBLE;
+;
+ALTER TABLE `SpotifyClone`.`songs` 
+ADD CONSTRAINT `fk_songs_album`
+  FOREIGN KEY (`album_id`)
+  REFERENCES `SpotifyClone`.`Album` (`album_id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+  
+ALTER TABLE `SpotifyClone`.`historico` 
+ADD INDEX `fk_historico_songs_idx` (`song_id` ASC) VISIBLE;
+;
+ALTER TABLE `SpotifyClone`.`historico` 
+ADD CONSTRAINT `fk_historico_songs`
+  FOREIGN KEY (`song_id`)
+  REFERENCES `SpotifyClone`.`songs` (`song_id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+  
+ALTER TABLE `SpotifyClone`.`historico` 
+ADD INDEX `fk_historico_user_idx` (`user_id` ASC) VISIBLE;
+;
+ALTER TABLE `SpotifyClone`.`historico` 
+ADD CONSTRAINT `fk_historico_user`
+  FOREIGN KEY (`user_id`)
+  REFERENCES `SpotifyClone`.`user` (`user_id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+  
+ALTER TABLE `SpotifyClone`.`Follow` 
+ADD INDEX `fk_Follow_artista_idx` (`artista_id` ASC) VISIBLE;
+;
+ALTER TABLE `SpotifyClone`.`Follow` 
+ADD CONSTRAINT `fk_Follow_artista`
+  FOREIGN KEY (`artista_id`)
+  REFERENCES `SpotifyClone`.`artista` (`artista_id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+
+ALTER TABLE `SpotifyClone`.`Follow` 
+ADD INDEX `fk_Follow_user_idx` (`user_id` ASC) VISIBLE;
+;
+ALTER TABLE `SpotifyClone`.`Follow` 
+ADD CONSTRAINT `fk_Follow_user`
+  FOREIGN KEY (`user_id`)
+  REFERENCES `SpotifyClone`.`user` (`user_id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
