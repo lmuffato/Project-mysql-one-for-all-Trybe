@@ -31,7 +31,7 @@ CREATE TABLE `songs` (
 )  ENGINE=MYISAM DEFAULT CHARSET=LATIN1;
 
 CREATE TABLE `plano` (
-	`plano_id`INT NOT NULL AUTO_INCREMENT,
+    `plano_id` INT NOT NULL AUTO_INCREMENT,
     `plano` VARCHAR(50) NOT NULL,
     `valor_plano` DOUBLE NOT NULL,
     PRIMARY KEY (`plano_id`)
