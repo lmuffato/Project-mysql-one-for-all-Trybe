@@ -1,60 +1,68 @@
+DROP DATABASE IF EXISTS SpotifyClone;
 CREATE DATABASE SpotifyClone;
 USE SpotifyClone;
-CREATE TABLE `user`(
-`user_id` INT NOT NULL AUTO_INCREMENT,
-`user_name`VARCHAR(50) NOT NULL,
-`user_age` INT NOT NULL,
-`plano_id` INT NOT NULL,
-PRIMARY KEY (`user_id`)
-)ENGINE=MyISAM DEFAULT CHARSET=latin1;
+CREATE TABLE `user` (
+    `user_id` INT NOT NULL AUTO_INCREMENT,
+    `user_name` VARCHAR(50) NOT NULL,
+    `user_age` INT NOT NULL,
+    PRIMARY KEY (`user_id`)
+)  ENGINE=MYISAM DEFAULT CHARSET=LATIN1;
 
 
-CREATE TABLE `Album`(
-`album_id` INT NOT NULL AUTO_INCREMENT,
-`album`VARCHAR(50) NOT NULL,
-`artista_id` INT NOT NULL,
-PRIMARY KEY (`album_id`)
-)ENGINE=MyISAM DEFAULT CHARSET=latin1;
+CREATE TABLE `Album` (
+    `album_id` INT NOT NULL AUTO_INCREMENT,
+    `album` VARCHAR(50) NOT NULL,
+    `artista_id` INT NOT NULL,
+    PRIMARY KEY (`album_id`),
+    FOREIGN KEY (`artista_id`) REFERENCES `artista`(`artista_id`) ON DELETE RESTRICT ON UPDATE CASCADE
+)  ENGINE=MYISAM DEFAULT CHARSET=LATIN1;
 
 
-CREATE TABLE `songs`(
-`song_id` INT NOT NULL AUTO_INCREMENT,
-`song`VARCHAR(100) NOT NULL,
-`album_id` INT NOT NULL,
-PRIMARY KEY (`song_id`)
-)ENGINE=MyISAM DEFAULT CHARSET=latin1;
+CREATE TABLE `songs` (
+    `song_id` INT NOT NULL AUTO_INCREMENT,
+    `song` VARCHAR(100) NOT NULL,
+    `album_id` INT NOT NULL,
+    PRIMARY KEY (`song_id`),
+    FOREIGN KEY (`album_id`)
+        REFERENCES `Album` (`album_id`)
+        ON DELETE RESTRICT ON UPDATE CASCADE
+)  ENGINE=MYISAM DEFAULT CHARSET=LATIN1;
 
-CREATE TABLE `plano`(
-`plano_id` INT NOT NULL AUTO_INCREMENT,
-`plano`VARCHAR(50) NOT NULL,
-`valor_plano` double NOT NULL,
-PRIMARY KEY (`plano_id`)
-)ENGINE=MyISAM DEFAULT CHARSET=latin1;
+CREATE TABLE `plano` (
+	`user_id` INT NOT NULL,
+    `plano` VARCHAR(50) NOT NULL,
+    `valor_plano` DOUBLE NOT NULL,
+    FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE RESTRICT ON UPDATE CASCADE
+)  ENGINE=MYISAM DEFAULT CHARSET=LATIN1;
 
-CREATE TABLE `artista`(
-`artista_id` INT NOT NULL AUTO_INCREMENT,
-`artista`VARCHAR(100) NOT NULL,
-PRIMARY KEY (`artista_id`)
-)ENGINE=MyISAM DEFAULT CHARSET=latin1;
+CREATE TABLE `artista` (
+    `artista_id` INT NOT NULL AUTO_INCREMENT,
+    `artista` VARCHAR(100) NOT NULL,
+    PRIMARY KEY (`artista_id`)
+)  ENGINE=MYISAM DEFAULT CHARSET=LATIN1;
 
-CREATE TABLE `historico`(
-`user_id` INT NOT NULL,
-`song_id`INT NOT NULL
-)ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
-
-CREATE TABLE `Follow`(
-`user_id` INT NOT NULL,
-`artista_id`INT NOT NULL
-)ENGINE=MyISAM DEFAULT CHARSET=latin1;
+CREATE TABLE `historico` (
+    `user_id` INT NOT NULL,
+    `song_id` INT NOT NULL,
+    FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE RESTRICT ON UPDATE CASCADE,
+    FOREIGN KEY (`song_id`) REFERENCES `songs`(`song_id`) ON DELETE RESTRICT ON UPDATE CASCADE
+)  ENGINE=MYISAM DEFAULT CHARSET=LATIN1;
 
 
-INSERT INTO `user` (user_name,user_age,plano_id)
+CREATE TABLE `Follow` (
+    `user_id` INT NOT NULL,
+    `artista_id` INT NOT NULL,
+    FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE RESTRICT ON UPDATE CASCADE,
+    FOREIGN KEY (`artista_id`) REFERENCES `artista`(`artista_id`) ON DELETE RESTRICT ON UPDATE CASCADE
+)  ENGINE=MYISAM DEFAULT CHARSET=LATIN1;
+
+
+INSERT INTO `user` (user_name,user_age)
 VALUES
-  ('Thati', 23,1),
-  ('Cintia', 35,2),
-  ('Bill',20,3),
-  ('Roger',45,1);
+  ('Thati', 23),
+  ('Cintia', 35),
+  ('Bill',20),
+  ('Roger',45);
   
   
   INSERT INTO `artista`(artista)
@@ -95,11 +103,12 @@ VALUES
   ('Without My Streets',5);
   
   
-    INSERT INTO `plano` (plano,valor_plano)
+    INSERT INTO `plano` (user_id,plano,valor_plano)
 VALUES
-  ('gratuito',0),
-  ('familiar',7.99),
-  ('universitário',5.99);
+  (1,'gratuito',0),
+  (2,'familiar',7.99),
+  (3,'universitário',5.99),
+  (4,'gratuito',0);
   
   
     INSERT INTO `historico` (user_id,song_id)
