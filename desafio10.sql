@@ -1,7 +1,10 @@
+DROP FUNCTION IF EXISTS quantidade_musicas_no_historico;
+
 DELIMITER $$
 
-CREATE FUNCTION quantidade_musicas_no_historico(user_name VARCHAR(255))
+CREATE FUNCTION quantidade_musicas_no_historico(id INT)
   RETURNS INT
+  DETERMINISTIC
   
 BEGIN
   RETURN (
@@ -14,7 +17,7 @@ BEGIN
     ON 
       rh.user_id = u.id
     AND
-      u.name = user_name
+      u.id = id
   );
 END$$
 
