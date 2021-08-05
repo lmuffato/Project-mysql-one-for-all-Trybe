@@ -7,7 +7,7 @@ USE SpotifyClone;
 CREATE TABLE IF NOT EXISTS plan (
   id INT AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
-  price FLOAT NOT NULL,
+  price DECIMAL(3, 2) NOT NULL,
   CONSTRAINT plan_pk
     PRIMARY KEY (id),
   UNIQUE KEY(name)
