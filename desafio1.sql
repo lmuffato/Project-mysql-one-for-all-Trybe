@@ -80,7 +80,7 @@ CREATE TABLE cancoes(
 CREATE TABLE historico_reproducoes(
 cancao_id INT NOT NULL,
 usuario_id INT NOT NULL,
-CONSTRAINT PRIMARY KEY(cancao_id, usuario_id),
+PRIMARY KEY(cancao_id, usuario_id),
 FOREIGN KEY (cancao_id) REFERENCES cancoes (cancao_id),
 FOREIGN KEY (usuario_id) REFERENCES usuarios (usuario_id)
 )ENGINE = InnoDB;
@@ -92,7 +92,7 @@ VALUES(1, 1), (6, 1), (14, 1), (16, 1), (13, 2), (17, 2),
 CREATE TABLE seguindo_artistas(
         artista_id INT NOT NULL,
         usuario_id INT NOT NULL,
-        CONSTRAINT PRIMARY KEY(artista_id, usuario_id),
+        PRIMARY KEY(artista_id, usuario_id),
         FOREIGN KEY (artista_id) REFERENCES artistas (artista_id),
         FOREIGN KEY (usuario_id) REFERENCES usuarios (usuario_id)
     )ENGINE = InnoDB;
