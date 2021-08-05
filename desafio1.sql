@@ -25,20 +25,16 @@ CREATE TABLE IF NOT EXISTS album (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
   artist_id INT NOT NULL,
-  CONSTRAINT album_pk
-	  PRIMARY KEY (id),
-  CONSTRAINT album_artist_id_fk
-	  FOREIGN KEY (artist_id) REFERENCES artist (id)
+  CONSTRAINT album_pk PRIMARY KEY (id),
+  CONSTRAINT album_artist_id_fk FOREIGN KEY (artist_id) REFERENCES artist (id)
 );
 
 CREATE TABLE IF NOT EXISTS song (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
   album_id INT NOT NULL,
-  CONSTRAINT song_pk
-	  PRIMARY KEY (id),
-  CONSTRAINT song_album_id_fk
-	  FOREIGN KEY (album_id) REFERENCES album (id)
+  CONSTRAINT song_pk PRIMARY KEY (id),
+  CONSTRAINT song_album_id_fk FOREIGN KEY (album_id) REFERENCES album (id)
 );
 
 CREATE TABLE IF NOT EXISTS user (
@@ -46,32 +42,24 @@ CREATE TABLE IF NOT EXISTS user (
   name VARCHAR(255) NOT NULL,
   age INT NOT NULL,
   plan_id INT NOT NULL,
-  CONSTRAINT user_pk
-	  PRIMARY KEY (id),
-  CONSTRAINT user_plan_id_fk
-	  FOREIGN KEY (plan_id) REFERENCES plan (id)
+  CONSTRAINT user_pk PRIMARY KEY (id),
+  CONSTRAINT user_plan_id_fk FOREIGN KEY (plan_id) REFERENCES plan (id)
 );
 
 CREATE TABLE IF NOT EXISTS follow_artist (
   user_id INT NOT NULL,
   artist_id INT NOT NULL,
-  CONSTRAINT follow_artist_artist_id_fk
-    FOREIGN KEY (artist_id) REFERENCES artist (id),
-  CONSTRAINT follow_artist_user_id_fk
-	  FOREIGN KEY (user_id) REFERENCES user (id),
-  CONSTRAINT follow_artist_user_id_artist_id_fk
-    PRIMARY KEY (user_id, artist_id)
+  CONSTRAINT follow_artist_artist_id_fk FOREIGN KEY (artist_id) REFERENCES artist (id),
+  CONSTRAINT follow_artist_user_id_fk FOREIGN KEY (user_id) REFERENCES user (id),
+  CONSTRAINT follow_artist_user_id_artist_id_fk PRIMARY KEY (user_id, artist_id)
 );
 
 CREATE TABLE IF NOT EXISTS reproduction_history (
   user_id INT NOT NULL,
   song_id INT NOT NULL,
-  CONSTRAINT reproduction_history_user_id_fk
-    FOREIGN KEY (user_id) REFERENCES user (id),
-  CONSTRAINT reproduction_song_id_fk
-    FOREIGN KEY (song_id) REFERENCES song (id),
-  CONSTRAINT reproduction_history_user_id_song_id_fk
-    PRIMARY KEY (user_id, song_id)
+  CONSTRAINT reproduction_history_user_id_fk FOREIGN KEY (user_id) REFERENCES user (id),
+  CONSTRAINT reproduction_song_id_fk FOREIGN KEY (song_id) REFERENCES song (id),
+  CONSTRAINT reproduction_history_user_id_song_id_fk PRIMARY KEY (user_id, song_id)
 );
 
 INSERT INTO plan (name, price)
