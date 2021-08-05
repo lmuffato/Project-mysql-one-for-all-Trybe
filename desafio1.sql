@@ -30,8 +30,6 @@ FOREIGN KEY (artista_id) REFERENCES artistas(artista_id),
 PRIMARY KEY(usuario_id, artista_id)
 )ENGINE=InnoDB;
 
-SELECT * FROM seguindo_artistas;
-
 CREATE TABLE albuns(
 album_id INT PRIMARY KEY AUTO_INCREMENT,
 album VARCHAR(50) NOT NULL,
