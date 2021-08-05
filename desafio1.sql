@@ -1,0 +1,45 @@
+DROP DATABASE IF EXISTS SpotifyCLone;
+
+CREATE DATABASE SpotifyCLone;
+
+USE SpotifyCLone;
+
+CREATE TABLE User(
+user_id INT PRIMARY KEY AUTO_INCREMENT,
+user_name VARCHAR (100) NOT NULL,
+user_age INT NOT NULL,
+plan_id INT,
+FOREIGN KEY (plan_id) REFERENCES (plan_id)
+)
+
+CREATE TABLE Plan(
+plan_id INT PRIMARY KEY AUTO_INCREMENT,
+plan_name VARCHAR(100) NOT NULL,
+plan_value DECIMAL(3,2) NOT NULL
+)
+
+CREATE TABLE Songs(
+Song_id INT PRIMARY KEY AUTO_INCREMENT,
+Song_name VARCHAR(100) NOT NULL,
+Album_id INT NOT NULL,
+FOREIGN KEY (Album_id) REFERENCES (Album_id),
+FOREIGN KEY (Artist_id) REFERENCES (Artist_id)
+)
+
+CREATE TABLE Album(
+  Album_id INT PRIMARY KEY AUTO_INCREMENT,
+  Album_name VARCHAR(100) NOT NULL,
+  FOREIGN KEY (Song_id) REFERENCES (Song_id)
+)
+
+CREATE TABLE Artist(
+  Artist_id INT PRIMARY KEY AUTO_INCREMENT,
+  Artist_name VARCHAR(100) NOT NULL,
+)
+
+CREATE TABLE History(
+  History_id INT PRIMARY KEY AUTO_INCREMENT,
+  FOREIGN KEY (Song_id) REFERENCES (Song_id)
+  FOREIGN KEY (Artist_id) REFERENCES (Artist_id)
+  FOREIGN KEY (User_id) REFERENCES (User_id)
+)
