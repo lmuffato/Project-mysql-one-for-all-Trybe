@@ -5,4 +5,4 @@ JOIN SpotifyClone.usuario AS u
 ON h.usuario_id = u.usuario_id
 JOIN SpotifyClone.cancoes AS c
 ON h.musicas_id = c.musicas_id
-ORDER BY `usuario`, `nome`;
+ORDER BY `usuario` ASC, `nome`;
