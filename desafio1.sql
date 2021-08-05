@@ -69,6 +69,13 @@ INSERT INTO artists (artist) VALUES
 ('Freedie Shannon');
 
 INSERT INTO albums (album, artist_id) VALUES
+('Envious', 1),
+('Exuberant', 1),
+('Hallowed Steam', 2),
+('Incandescent', 3),
+('Temporary Culture', 4);
+
+INSERT INTO songs (song, album_id) VALUES
 ('Soul For Us', 1),
 ('Reflections Of Magic', 1),
 ('Dance With Her Own', 1),
