@@ -2,9 +2,9 @@ DROP DATABASE IF EXISTS SpotifyClone;
 CREATE DATABASE SpotifyClone;
 USE SpotifyClone;
 
-CREATE TABLE `plano` (
+CREATE TABLE `planos` (
     `plano_id` INT NOT NULL AUTO_INCREMENT,
-    `plano` VARCHAR(50) NOT NULL,
+    `planos_disponiveis` VARCHAR(50) NOT NULL,
     `valor_plano` DOUBLE NOT NULL,
     PRIMARY KEY (`plano_id`)
 );
@@ -19,13 +19,17 @@ CREATE TABLE `user` (
     INDEX `fk_user_plano_idx` (`plano_id` ASC) VISIBLE,
     CONSTRAINT `fk_user_plano`
   FOREIGN KEY (`plano_id`)
-  REFERENCES `SpotifyClone`.`plano` (`plano_id`)
+  REFERENCES `SpotifyClone`.`planos` (`plano_id`)
   ON DELETE CASCADE
-  ON UPDATE RESTRICT
+  ON UPDATE NO ACTION
     
 );
 
-
+CREATE TABLE `artista` (
+    `artista_id` INT NOT NULL AUTO_INCREMENT,
+    `artista` VARCHAR(100) NOT NULL,
+    PRIMARY KEY (`artista_id`)
+);
 CREATE TABLE `Album` (
     `album_id` INT NOT NULL AUTO_INCREMENT,
     `album` VARCHAR(50) NOT NULL,
@@ -51,15 +55,6 @@ CREATE TABLE `songs` (
   REFERENCES `SpotifyClone`.`Album` (`album_id`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION
-);
-
-
-
-
-CREATE TABLE `artista` (
-    `artista_id` INT NOT NULL AUTO_INCREMENT,
-    `artista` VARCHAR(100) NOT NULL,
-    PRIMARY KEY (`artista_id`)
 );
 
 CREATE TABLE `historico` (
@@ -97,9 +92,18 @@ CREATE TABLE `Follow` (
   ON UPDATE NO ACTION
 );
 
+    INSERT INTO `planos` (planos_disponiveis,valor_plano)
+VALUES
+  ('gratuito',0),
+  ('familiar',7.99),
+  ('universitário',5.99);
 
-
-  
+    INSERT INTO `user` (user_name,user_age,plano_id)
+VALUES
+  ('Thati', 23,1),
+  ('Cintia', 35,2),
+  ('Bill',20,3),
+  ('Roger',45,1);
   
   INSERT INTO `artista`(artista)
 VALUES
@@ -139,11 +143,7 @@ VALUES
   ('Without My Streets',5);
   
   
-    INSERT INTO `plano` (plano,valor_plano)
-VALUES
-  ('gratuito',0),
-  ('familiar',7.99),
-  ('universitário',5.99);
+
   
   
     INSERT INTO `historico` (user_id,song_id)
@@ -173,9 +173,3 @@ VALUES
   (3,2),
   (3,1),
   (4,4);
-  INSERT INTO `user` (user_name,user_age,plano_id)
-VALUES
-  ('Thati', 23,1),
-  ('Cintia', 35,2),
-  ('Bill',20,3),
-  ('Roger',45,1);
