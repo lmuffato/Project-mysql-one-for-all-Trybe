@@ -78,9 +78,9 @@ CREATE TABLE cancoes(
           ('Without My Streets', 5);
           
 CREATE TABLE historico_reproducoes(
-historico_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 cancao_id INT NOT NULL,
 usuario_id INT NOT NULL,
+CONSTRAINT PRIMARY KEY(cancao_id, usuario_id),
 FOREIGN KEY (cancao_id) REFERENCES cancoes (cancao_id),
 FOREIGN KEY (usuario_id) REFERENCES usuarios (usuario_id)
 )ENGINE = InnoDB;
@@ -90,9 +90,9 @@ VALUES(1, 1), (6, 1), (14, 1), (16, 1), (13, 2), (17, 2),
 (2, 2), (15, 2), (4, 3), (16, 3), (6, 3), (3, 4), (18, 4), (11, 4);
           
 CREATE TABLE seguindo_artistas(
-        seguindo_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
         artista_id INT NOT NULL,
         usuario_id INT NOT NULL,
+        CONSTRAINT PRIMARY KEY(artista_id, usuario_id),
         FOREIGN KEY (artista_id) REFERENCES artistas (artista_id),
         FOREIGN KEY (usuario_id) REFERENCES usuarios (usuario_id)
     )ENGINE = InnoDB;
