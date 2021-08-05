@@ -29,10 +29,12 @@ CREATE TABLE `songs` (
 )  ENGINE=MYISAM DEFAULT CHARSET=LATIN1;
 
 CREATE TABLE `plano` (
-	`user_id` INT NOT NULL,
+    `user_id` INT NOT NULL,
     `plano` VARCHAR(50) NOT NULL,
     `valor_plano` DOUBLE NOT NULL,
-    FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE RESTRICT ON UPDATE CASCADE
+    FOREIGN KEY (`user_id`)
+        REFERENCES `user` (`user_id`)
+        ON DELETE RESTRICT ON UPDATE CASCADE
 )  ENGINE=MYISAM DEFAULT CHARSET=LATIN1;
 
 CREATE TABLE `artista` (
@@ -44,16 +46,24 @@ CREATE TABLE `artista` (
 CREATE TABLE `historico` (
     `user_id` INT NOT NULL,
     `song_id` INT NOT NULL,
-    FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE RESTRICT ON UPDATE CASCADE,
-    FOREIGN KEY (`song_id`) REFERENCES `songs`(`song_id`) ON DELETE RESTRICT ON UPDATE CASCADE
+    FOREIGN KEY (`user_id`)
+        REFERENCES `user` (`user_id`)
+        ON DELETE RESTRICT ON UPDATE CASCADE,
+    FOREIGN KEY (`song_id`)
+        REFERENCES `songs` (`song_id`)
+        ON DELETE RESTRICT ON UPDATE CASCADE
 )  ENGINE=MYISAM DEFAULT CHARSET=LATIN1;
 
 
 CREATE TABLE `Follow` (
     `user_id` INT NOT NULL,
     `artista_id` INT NOT NULL,
-    FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE RESTRICT ON UPDATE CASCADE,
-    FOREIGN KEY (`artista_id`) REFERENCES `artista`(`artista_id`) ON DELETE RESTRICT ON UPDATE CASCADE
+    FOREIGN KEY (`user_id`)
+        REFERENCES `user` (`user_id`)
+        ON DELETE RESTRICT ON UPDATE CASCADE,
+    FOREIGN KEY (`artista_id`)
+        REFERENCES `artista` (`artista_id`)
+        ON DELETE RESTRICT ON UPDATE CASCADE
 )  ENGINE=MYISAM DEFAULT CHARSET=LATIN1;
 
 
