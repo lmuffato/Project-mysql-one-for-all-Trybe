@@ -43,6 +43,14 @@ CREATE TABLE `history`(
   CONSTRAINT PRIMARY KEY (user_id, song_id)
 ) engine = InnoDB;
 
+CREATE TABLE followers(
+  user_id TINYINT NOT NULL,
+  artist_id TINYINT NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES users(user_id),
+  FOREIGN KEY (artist_id) REFERENCES artists(artist_id),
+  CONSTRAINT PRIMARY KEY(user_id, artist_id)
+) engine = InnoDB;
+
 INSERT INTO plans (plan, price) VALUES
 ('free', 0.00),
 ('family', 7.99),
