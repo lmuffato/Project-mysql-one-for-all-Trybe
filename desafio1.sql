@@ -5,6 +5,8 @@ CREATE TABLE `user` (
     `user_id` INT NOT NULL AUTO_INCREMENT,
     `user_name` VARCHAR(50) NOT NULL,
     `user_age` INT NOT NULL,
+    `plano_id` INT NOT NULL,
+    FOREIGN KEY (`plano_id`) REFERENCES `plano`(`plano_id`) ON DELETE RESTRICT ON UPDATE CASCADE,
     PRIMARY KEY (`user_id`)
 )  ENGINE=MYISAM DEFAULT CHARSET=LATIN1;
 
@@ -29,13 +31,12 @@ CREATE TABLE `songs` (
 )  ENGINE=MYISAM DEFAULT CHARSET=LATIN1;
 
 CREATE TABLE `plano` (
-    `user_id` INT NOT NULL,
+	`plano_id`INT NOT NULL AUTO_INCREMENT,
     `plano` VARCHAR(50) NOT NULL,
     `valor_plano` DOUBLE NOT NULL,
-    FOREIGN KEY (`user_id`)
-        REFERENCES `user` (`user_id`)
-        ON DELETE RESTRICT ON UPDATE CASCADE
+    PRIMARY KEY (`plano_id`)
 )  ENGINE=MYISAM DEFAULT CHARSET=LATIN1;
+
 
 CREATE TABLE `artista` (
     `artista_id` INT NOT NULL AUTO_INCREMENT,
@@ -67,12 +68,12 @@ CREATE TABLE `Follow` (
 )  ENGINE=MYISAM DEFAULT CHARSET=LATIN1;
 
 
-INSERT INTO `user` (user_name,user_age)
+INSERT INTO `user` (user_name,user_age,plano_id)
 VALUES
-  ('Thati', 23),
-  ('Cintia', 35),
-  ('Bill',20),
-  ('Roger',45);
+  ('Thati', 23,1),
+  ('Cintia', 35,2),
+  ('Bill',20,3),
+  ('Roger',45,1);
   
   
   INSERT INTO `artista`(artista)
@@ -113,12 +114,11 @@ VALUES
   ('Without My Streets',5);
   
   
-    INSERT INTO `plano` (user_id,plano,valor_plano)
+    INSERT INTO `plano` (plano,valor_plano)
 VALUES
-  (1,'gratuito',0),
-  (2,'familiar',7.99),
-  (3,'universitário',5.99),
-  (4,'gratuito',0);
+  ('gratuito',0),
+  ('familiar',7.99),
+  ('universitário',5.99);
   
   
     INSERT INTO `historico` (user_id,song_id)
