@@ -3,23 +3,23 @@ DROP DATABASE IF EXISTS SpotifyClone;
 CREATE DATABASE SpotifyClone;
 USE SpotifyClone;
 
+CREATE TABLE planos(
+plano_id INT PRIMARY KEY AUTO_INCREMENT,
+plano VARCHAR(50) NOT NULL,
+valor DOUBLE NOT NULL
+)ENGINE=InnoDB;
+
 CREATE TABLE usuarios(
-usuario_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-nome VARCHAR(50),
-idade INT,
-plano_id INT,
+usuario_id INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(50) NOT NULL,
+idade INT NOT NULL,
+plano_id INT NOT NULL,
 FOREIGN KEY (plano_id) REFERENCES planos(plano_id)
 )ENGINE=InnoDB;
 
-CREATE TABLE planos(
-plano_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-plano VARCHAR(50),
-valor DOUBLE
-)ENGINE=InnoDB;
-
 CREATE TABLE artistas(
-artista_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-nome VARCHAR(100)
+artista_id INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(100) NOT NULL
 )ENGINE=InnoDB;
 
 CREATE TABLE seguindo_artistas(
@@ -27,20 +27,22 @@ usuario_id INT NOT NULL,
 artista_id INT NOT NULL,
 FOREIGN KEY (usuario_id) REFERENCES usuarios(usuario_id),
 FOREIGN KEY (artista_id) REFERENCES artistas(artista_id),
-CONSTRAINT PRIMARY KEY(usuario_id, artista_id)
+PRIMARY KEY(usuario_id, artista_id)
 )ENGINE=InnoDB;
 
+SELECT * FROM seguindo_artistas;
+
 CREATE TABLE albuns(
-album_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-album VARCHAR(50),
+album_id INT PRIMARY KEY AUTO_INCREMENT,
+album VARCHAR(50) NOT NULL,
 artista_id INT NOT NULL,
 FOREIGN KEY (artista_id) REFERENCES artistas(artista_id)
 )ENGINE=InnoDB;
 
 CREATE TABLE cancoes(
-cancao_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-cancao VARCHAR(100),
-album_id INT NOT NULL,
+cancao_id INT PRIMARY KEY AUTO_INCREMENT,
+cancao VARCHAR(100) NOT NULL,
+album_id INT,
 FOREIGN KEY (album_id) REFERENCES albuns(album_id)
 )ENGINE=InnoDB;
 
@@ -49,7 +51,7 @@ usuario_id INT NOT NULL,
 cancao_id INT NOT NULL,
 FOREIGN KEY (usuario_id) REFERENCES usuarios(usuario_id),
 FOREIGN KEY (cancao_id) REFERENCES cancoes(cancao_id),
-CONSTRAINT PRIMARY KEY(usuario_id, cancao_id)
+PRIMARY KEY(usuario_id, cancao_id)
 )ENGINE=InnoDB;
 
 INSERT INTO planos(plano, valor) VALUES
