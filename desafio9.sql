@@ -2,7 +2,7 @@
 DELIMITER $$
 
 CREATE PROCEDURE albuns_do_artista (
-	IN  artist_name VARCHAR(32)
+	IN artist_name VARCHAR(32)
 )
 BEGIN
 SELECT
