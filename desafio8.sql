@@ -9,4 +9,6 @@ BEGIN
   DELETE FROM SpotifyClone.historico_reproducoes WHERE OLD.usuario_id = usuario_id;
 END $$
 
+DELIMITER;
+
 -- ajuda e explicação de OLD por Rafael Medeiros. 
