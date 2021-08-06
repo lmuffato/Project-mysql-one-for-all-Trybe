@@ -85,7 +85,7 @@ INSERT INTO SpotifyClone.albuns (album, artista_id) VALUES
 ('Incandescent',	3),
 ('Temporary Culture',	4);
 
-INSERT INTO SpotifyClone.cancao (cancao, album_id) VALUES
+INSERT INTO SpotifyClone.cancoes (cancao, album_id) VALUES
 ('Soul For Us', 1),
 ('Reflections Of Magic', 1),
 ('Dance With Her Own', 1),
