@@ -7,13 +7,15 @@ USE SpotifyClone;
 CREATE TABLE User(
   user_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   user_name VARCHAR(100) NOT NULL,
-  user_age INT NOT NULL
+  user_age INT NOT NULL,
+  plan_id INT,
+  FOREIGN KEY (plan_id) REFERENCES Plan(plan_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE Plan(
 plan_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 plan_name VARCHAR(100) NOT NULL,
-plan_value DECIMAL(3,2) NOT NULL
+plan_value VARCHAR(20) NOT NULL
 ) ENGINE = InnoDB;
 
 CREATE TABLE Artist(
@@ -36,9 +38,10 @@ CREATE TABLE Songs(
 ) ENGINE = InnoDB;
 
 CREATE TABLE History(
-  History_id INT PRIMARY KEY AUTO_INCREMENT,
+  History_id INT AUTO_INCREMENT,
   user_id INT,
   Song_id INT,
+  PRIMARY KEY (History_id, user_id, Song_id),
   FOREIGN KEY (Song_id) REFERENCES Songs(Song_id),
   FOREIGN KEY (User_id) REFERENCES User(User_id)
 ) ENGINE = InnoDB;
@@ -52,9 +55,10 @@ CREATE TABLE User_plan(
 ) ENGINE = InnoDB;
 
 CREATE TABLE Artist_followers (
-  Artist_followers_id INT PRIMARY KEY AUTO_INCREMENT  NOT NULL,
+  Artist_followers_id INT AUTO_INCREMENT  NOT NULL,
   user_id INT,
   Artist_id INT,
+  PRIMARY KEY (Artist_followers_id, user_id, Artist_id),
   FOREIGN KEY (user_id) REFERENCES User(user_id),
   FOREIGN KEY (Artist_id) REFERENCES Artist(Artist_id)
 ) ENGINE = InnoDB;
@@ -108,22 +112,22 @@ VALUES
 ('Words Of Her Life', 5),
 ('Without My Streets', 5);
 
-INSERT INTO History(User_id, Song_id)
+INSERT INTO History(User_id, Song_id, History_id)
 VALUES
-(1,1),
-(1,6),
-(1,14),
-(1,16),
-(2,13),
-(2,17),
-(2,2),
-(2,15),
-(3,4),
-(3,16),
-(3,6),
-(4,3),
-(4,18),
-(4,11);
+(1,1,1),
+(1,6,2),
+(1,14,3),
+(1,16,4),
+(2,13,5),
+(2,17,6),
+(2,2,7),
+(2,15,8),
+(3,4,9),
+(3,16,10),
+(3,6,11),
+(4,3,12),
+(4,18,13),
+(4,11,14);
 
 INSERT INTO User_plan (user_id, plan_id)
 VALUES
