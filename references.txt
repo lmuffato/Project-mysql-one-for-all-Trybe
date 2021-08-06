@@ -1,0 +1,10 @@
+Normalização de Dados
+https://pt.wikipedia.org/wiki/Normaliza%C3%A7%C3%A3o_de_dados
+
+Normal  de dados - 1NF
+https://www.youtube.com/watch?v=yuAGsxGMes0
+
+Diferença PRIMARY KEY e PRIMARY KEY CONSTRAIN
+https://stackoverflow.com/questions/16085724/what-is-the-difference-between-primary-key-only-and-primary-key-constraint
+
+https://www.youtube.com/watch?v=DJ054rHGhRw
