@@ -4,10 +4,10 @@ DELIMITER $$
 CREATE FUNCTION quantidade_musicas_no_historico(
     user_id INT
 )
-RETURNS UNSIGNED INT
-NOT DETERMINISTIC
+RETURNS INT
+READS SQL DATA
 BEGIN
-  DECLARE number_of_songs UNSIGNED INT DEFAULT 0;
+  DECLARE number_of_songs INT DEFAULT 0;
   SELECT
       COUNT(song_id)
     FROM
