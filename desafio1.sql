@@ -40,7 +40,7 @@ FOREIGN KEY(album_id) REFERENCES album(album_id)
 CREATE TABLE seguindo_artistas(
 usuario_id INT NOT NULL, 
 artista_id INT NOT NULL,
-PRIMARY KEY(usuario_id, artista_id),
+CONSTRAINT PRIMARY KEY(usuario_id, artista_id),
 FOREIGN KEY(usuario_id) REFERENCES usuario(usuario_id),
 FOREIGN KEY(artista_id) REFERENCES artista(artista_id)
 )ENGINE=InnoDB;
@@ -48,7 +48,7 @@ FOREIGN KEY(artista_id) REFERENCES artista(artista_id)
 CREATE TABLE historico_reproducoes(
 cancao_id INT NOT NULL,
 usuario_id INT NOT NULL,
-PRIMARY KEY(cancao_id, usuario_id),
+CONSTRAINT PRIMARY KEY(cancao_id, usuario_id),
 FOREIGN KEY(cancao_id) REFERENCES cancao(cancao_id),
 FOREIGN KEY(usuario_id) REFERENCES usuario(usuario_id)
 )ENGINE=InnoDB;
@@ -113,19 +113,19 @@ VALUES
   (3,1),
   (4,4);
 
-INSERT INTO historico_reproducoes(cancao_id, usuario_id) 
+INSERT INTO historico_reproducoes(usuario_id, cancao_id) 
 VALUES
   (1,1),
-  (2,1),
-  (15,1),
-  (17,1),
-  (14,2),
-  (18,2),
+  (1,2),
+  (1,15),
+  (1,17),
+  (2,14),
+  (2,18),
   (2,2),
-  (16,2),
-  (4,3),
-  (17,3),
-  (6,3),
+  (2,16),
   (3,4),
-  (19,4),
-  (12,4);
+  (3,17),
+  (3,6),
+  (4,3),
+  (4,19),
+  (4,12);
