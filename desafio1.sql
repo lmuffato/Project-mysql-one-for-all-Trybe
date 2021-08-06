@@ -21,7 +21,7 @@ CREATE TABLE SpotifyClone.customer(
     age INT NOT NULL,
     plan_id INT NOT NULL,
     PRIMARY KEY(customer_id),
-    FOREIGN KEY(plan_id) REFERENCES plan(plan_id)
+    FOREIGN KEY(plan_id) REFERENCES SpotifyClone.plan(plan_id)
 ) engine = InnoDB;
 
 INSERT INTO SpotifyClone.customer (customer_name, age, plan_id)
@@ -33,7 +33,7 @@ VALUES
 
 CREATE TABLE SpotifyClone.artist(
     artist_id INT PRIMARY KEY AUTO_INCREMENT,
-    artist_name VARCHAR(25) NOT NULL
+    artist_name VARCHAR(50) NOT NULL
 ) engine = InnoDB;
 
   INSERT INTO SpotifyClone.artist (artist_name)
@@ -48,7 +48,7 @@ CREATE TABLE SpotifyClone.album(
     album_name VARCHAR(25) NOT NULL,
     artist_id INT NOT NULL,
     PRIMARY KEY(album_id),
-    FOREIGN KEY(artist_id) REFERENCES artist(artist_id)
+    FOREIGN KEY(artist_id) REFERENCES SpotifyClone.artist(artist_id)
 ) engine = InnoDB;
 
 INSERT INTO SpotifyClone.album (album_name, artist_id)
@@ -61,12 +61,10 @@ VALUES
 
 CREATE TABLE SpotifyClone.song(
     song_id INT NOT NULL AUTO_INCREMENT,
-    song_name VARCHAR(25) NOT NULL,
-    artist_id INT NOT NULL,
+    song_name VARCHAR(250) NOT NULL,
     album_id INT NOT NULL,
     PRIMARY KEY(song_id),
-    FOREIGN KEY(artist_id) REFERENCES artist(artist_id),
-    FOREIGN KEY(album_id) REFERENCES album(album_id)
+    FOREIGN KEY(album_id) REFERENCES SpotifyClone.album(album_id)
 ) engine = InnoDB;
 
 INSERT INTO SpotifyClone.song (song_name, album_id)
@@ -94,8 +92,8 @@ CREATE TABLE SpotifyClone.customer_song(
     song_id INT NOT NULL,
     customer_id INT NOT NULL,
     CONSTRAINT PRIMARY KEY(customer_id, song_id),
-    FOREIGN KEY(song_id) REFERENCES song(song_id),
-    FOREIGN KEY(customer_id) REFERENCES customer(customer_id)
+    FOREIGN KEY(song_id) REFERENCES SpotifyClone.song(song_id),
+    FOREIGN KEY(customer_id) REFERENCES SpotifyClone.customer(customer_id)
 ) engine = InnoDB;
 
   INSERT INTO SpotifyClone.customer_song (customer_id, song_id)
@@ -119,8 +117,8 @@ CREATE TABLE SpotifyClone.customer_artist(
     artist_id INT NOT NULL,
     customer_id INT NOT NULL,
     CONSTRAINT PRIMARY KEY(artist_id, customer_id),
-    FOREIGN KEY(artist_id) REFERENCES artist(artist_id),
-    FOREIGN KEY(customer_id) REFERENCES customer(customer_id)
+    FOREIGN KEY(artist_id) REFERENCES SpotifyClone.artist(artist_id),
+    FOREIGN KEY(customer_id) REFERENCES SpotifyClone.customer(customer_id)
 ) engine = InnoDB;
   
   INSERT INTO SpotifyClone.customer_artist (customer_id, artist_id)
