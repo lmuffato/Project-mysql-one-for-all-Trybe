@@ -11,12 +11,12 @@ DELIMITER $$
 
 CREATE PROCEDURE albuns_do_artista(IN artistName VARCHAR(100)) 
 BEGIN 
-	SELECT per.singer_name AS artista,
-    al.title AS album
-    FROM performers AS per
-    INNER JOIN albums AS al ON per.singer_id = al.singer_id
-    WHERE singer_name LIKE artistName
-    ORDER BY album;
+SELECT per.singer_name AS artista,
+al.title AS album
+FROM performers AS per
+INNER JOIN albums AS al ON per.singer_id = al.singer_id
+WHERE singer_name LIKE artistName
+ORDER BY album;
 END $$
 
 DELIMITER ; 
