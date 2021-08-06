@@ -5,5 +5,5 @@ INNER JOIN SpotifyClone.historico_de_reproducoes AS s
 ON s.cancao_id = c.cancao_id
 GROUP BY cancao
 ORDER BY reproducoes DESC, cancao
-LIMIT 2;
+LIMIT 2
 );
