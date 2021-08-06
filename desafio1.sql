@@ -11,7 +11,7 @@ CREATE TABLE plans(
 ) engine = InnoDB;
 
 CREATE TABLE users(
-  user_id INT PRIMARY KEY AUTO_INCREMENT,
+  user_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   plan_id INT NOT NULL,
   user_name VARCHAR(50) NOT NULL,
   age INT NOT NULL,
@@ -19,22 +19,22 @@ CREATE TABLE users(
 ) engine = InnoDB;
 
 CREATE TABLE artist(
-  artista_id INT PRIMARY KEY AUTO_INCREMENT,
+  artista_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   name_artist VARCHAR(40) NOT NULL
 ) engine = InnoDB;
 
-CREATE TABLE songs(
-  song_id INT PRIMARY KEY AUTO_INCREMENT,
-  artista_id INT NOT NULL,
-  song VARCHAR(255) NOT NULL,
-  FOREIGN KEY (artista_id) REFERENCES artist(artista_id)
-) engine = InnoDB;
-
 CREATE TABLE album(
-  album_id INT PRIMARY KEY AUTO_INCREMENT,
+  album_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   artista_id INT NOT NULL,
   name_album VARCHAR(40) NOT NULL,
   FOREIGN KEY (artista_id) REFERENCES artist(artista_id)
+) engine = InnoDB;
+
+CREATE TABLE songs(
+  song_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  album_id INT NOT NULL,
+  song VARCHAR(255) NOT NULL,
+  FOREIGN KEY (album_id) REFERENCES album(album_id)
 ) engine = InnoDB;
 
 CREATE TABLE following(
@@ -71,26 +71,26 @@ VALUES
   ('Lance Day'),
   ('Peter Strong');
 
-INSERT INTO songs (artista_id, song)
+INSERT INTO songs (album_id, song)
 VALUES
   (1, 'Soul For Us'),
   (1, 'Reflections Of Magic'),
   (1, 'Dance With Her Own'),
-  (1, 'Troubles Of My Inner Fire'),
-  (1, 'Time Fireworks'),
-  (4, 'Magic Circus'),
-  (4, 'Honey, So Do I'),
-  (4, "Sweetie, Let's Go Wild"),
-  (4, 'She Knows'),
-  (3, 'Fantasy For Me'),
-  (3, 'Celebration Of More'),
-  (3, 'Rock His Everything'),
-  (3, 'Home Forever'),
-  (3, 'Diamond Power'),
-  (3, "Honey, Let's Be Silly"),
-  (2, 'Thang Of Thunder'),
-  (2, 'Words Of Her Life'),
-  (2, 'Without My Streets');
+  (2, 'Troubles Of My Inner Fire'),
+  (2, 'Time Fireworks'),
+  (3, 'Magic Circus'),
+  (3, 'Honey, So Do I'),
+  (3, "Sweetie, Let's Go Wild"),
+  (3, 'She Knows'),
+  (4, 'Fantasy For Me'),
+  (4, 'Celebration Of More'),
+  (4, 'Rock His Everything'),
+  (4, 'Home Forever'),
+  (4, 'Diamond Power'),
+  (4, "Honey, Let's Be Silly"),
+  (5, 'Thang Of Thunder'),
+  (5, 'Words Of Her Life'),
+  (5, 'Without My Streets');
 
 INSERT INTO album (artista_id, name_album)
 VALUES
