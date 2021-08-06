@@ -13,12 +13,12 @@ describe('Queries de seleção', () => {
     try {
       await importer.import('./desafio1.sql');
     }
-    catch(error) {
+    catch (error) {
       console.log('Erro ao restaurar o dump!');
     }
 
     importer.disconnect();
-    sequelize = new Sequelize('SpotifyClone', process.env.MYSQL_USER, process.env.MYSQL_PASSWORD, {host:process.env.HOSTNAME, dialect: 'mysql'})
+    sequelize = new Sequelize('SpotifyClone', process.env.MYSQL_USER, process.env.MYSQL_PASSWORD, { host: process.env.HOSTNAME, dialect: 'mysql' })
   });
 
   afterAll(async () => {
@@ -59,7 +59,6 @@ describe('Queries de seleção', () => {
         WHERE TABLE_SCHEMA = 'SpotifyClone' AND TABLE_NAME = '${table}' AND CONSTRAINT_NAME = 'PRIMARY';`,
         { type: 'SELECT' },
       );
-
       return (pkCount > 1);
     };
 
@@ -398,7 +397,7 @@ describe('Queries de deleção', () => {
     try {
       await importer.import('./desafio1.sql');
     }
-    catch(error) {
+    catch (error) {
       console.log('Erro ao restaurar o dump!');
     }
 
