@@ -1,5 +1,4 @@
 DROP VIEW IF EXISTS top_3_artistas;
-USE SpotifyClone;
 
 CREATE VIEW top_3_artistas AS
 SELECT

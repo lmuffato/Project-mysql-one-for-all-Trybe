@@ -1,5 +1,4 @@
 DROP VIEW IF EXISTS faturamento_atual;
-USE SpotifyClone;
 
 CREATE VIEW faturamento_atual AS
 SELECT

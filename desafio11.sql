@@ -1,5 +1,4 @@
 DROP VIEW IF EXISTS cancoes_premium;
-USE SpotifyClone;
 
 CREATE VIEW cancoes_premium AS
 SELECT

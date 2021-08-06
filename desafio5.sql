@@ -1,5 +1,4 @@
 DROP VIEW IF EXISTS top_2_hits_do_momento;
-USE SpotifyClone;
 
 CREATE VIEW top_2_hits_do_momento AS
 SELECT

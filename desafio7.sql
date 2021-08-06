@@ -1,5 +1,4 @@
 DROP VIEW IF EXISTS perfil_artistas;
-USE SpotifyClone;
 
 CREATE VIEW perfil_artistas AS
 SELECT
