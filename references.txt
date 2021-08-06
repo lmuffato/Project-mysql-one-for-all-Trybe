@@ -11,3 +11,6 @@ https://www.youtube.com/watch?v=DJ054rHGhRw
 
 MySQL BEFORE DELETE Trigger
 https://www.mysqltutorial.org/mysql-triggers/mysql-before-delete-trigger/
+
+MySQL Stored Procedure Parameters
+https://www.mysqltutorial.org/stored-procedures-parameters.aspx
