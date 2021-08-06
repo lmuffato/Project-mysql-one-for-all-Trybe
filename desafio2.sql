@@ -1,8 +1,8 @@
 CREATE VIEW estatisticas_musicais AS (
-	SELECT
-	(SELECT COUNT(cancao) FROM SpotifyClone.cancoes) AS 'cancoes',
-	(SELECT COUNT(artista) FROM SpotifyClone.artistas) AS 'artistas',
-	(SELECT COUNT(album) FROM SpotifyClone.albuns) AS 'albuns' 
+SELECT
+(SELECT COUNT(cancao) FROM SpotifyClone.cancoes) AS 'cancoes',
+(SELECT COUNT(artista) FROM SpotifyClone.artistas) AS 'artistas',
+(SELECT COUNT(album) FROM SpotifyClone.albuns) AS 'albuns' 
 );
 
 -- tentei fazer por INNER JOIN e não consegui. Fiz com subqueries baseado no código da Ana Ventura.
