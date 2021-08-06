@@ -120,4 +120,3 @@ INSERT INTO SpotifyClone.followers(user_id, artist_id) VALUES
 (3, 2),
 (3, 3),
 (4, 4);
-
