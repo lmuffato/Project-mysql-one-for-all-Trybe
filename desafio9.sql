@@ -6,7 +6,7 @@ CREATE PROCEDURE albuns_do_artista(IN nome_do_artista VARCHAR(150))
 BEGIN
 SELECT
 artistas.artista,
-album.album
+albuns.album
 FROM
 SpotifyClone.artistas AS artistas
 INNER JOIN 
