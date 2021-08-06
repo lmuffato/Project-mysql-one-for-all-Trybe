@@ -1,5 +1,3 @@
-DROP VIEW IF EXISTS perfil_artistas;
-
 CREATE VIEW perfil_artistas AS
 SELECT
     ar.name AS artista,

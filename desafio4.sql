@@ -1,5 +1,3 @@
-DROP VIEW IF EXISTS top_3_artistas;
-
 CREATE VIEW top_3_artistas AS
 SELECT
     a.name AS artista,

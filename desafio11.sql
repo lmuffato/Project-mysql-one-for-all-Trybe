@@ -1,5 +1,3 @@
-DROP VIEW IF EXISTS cancoes_premium;
-
 CREATE VIEW cancoes_premium AS
 SELECT
     s.name AS nome,
@@ -12,9 +10,6 @@ INNER JOIN
 INNER JOIN
     SpotifyClone.user AS u
     ON u.user_id = h.user_id
-INNER JOIN
-    SpotifyClone.plan AS p
-    ON p.plan_id = u.plan_id
-WHERE p.name IN ('familiar', 'universitário')
+WHERE u.plan_id IN (2, 3)
 GROUP BY nome
 ORDER BY nome;
