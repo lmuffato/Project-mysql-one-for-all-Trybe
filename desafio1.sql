@@ -3,13 +3,13 @@ CREATE DATABASE SpotifyClone;
 USE SpotifyClone;
 
 CREATE TABLE plans(
-	plan_id INT AUTO_INCREMENT PRIMARY KEY,
+    plan_id INT AUTO_INCREMENT PRIMARY KEY,
     plan_name VARCHAR(20) NOT NULL,
     price DECIMAL(5, 2) NOT NULL
 );
 
 CREATE TABLE users(
-	user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     user_name VARCHAR(50) NOT NULL,
     age INT,
     plan_id INT NOT NULL,
@@ -17,26 +17,26 @@ CREATE TABLE users(
 );
 
 CREATE TABLE artists(
-	artist_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    artist_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     artist_name VARCHAR(80)
 );
 
 CREATE TABLE albums(
-	album_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    album_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     album_name VARCHAR(100),
     artist_id INT NOT NULL,
     FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
 );
 
 CREATE TABLE songs(
-	song_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    song_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     song_name VARCHAR(100),
     album_id INT NOT NULL,
     FOREIGN KEY (album_id) REFERENCES albums(album_id)
 );
 
 CREATE TABLE play_history(
-	user_id INT NOT NULL,
+    user_id INT NOT NULL,
     song_id INT NOT NULL,
     PRIMARY KEY(user_id, song_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id),
@@ -44,7 +44,7 @@ CREATE TABLE play_history(
 );
 
 CREATE TABLE followers(
-	user_id INT NOT NULL,
+    user_id INT NOT NULL,
     artist_id INT NOT NULL,
     PRIMARY KEY (user_id, artist_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id),
@@ -94,7 +94,7 @@ INSERT INTO SpotifyClone.songs(song_name, album_id) VALUES
 ('Thang Of Thunder', 5),
 ('Words Of Her Life', 5),
 ('Without My Streets', 5);
- 
+
 INSERT INTO SpotifyClone.play_history(user_id, song_id) VALUES
 (1, 1),
 (1, 6),
@@ -120,3 +120,4 @@ INSERT INTO SpotifyClone.followers(user_id, artist_id) VALUES
 (3, 2),
 (3, 3),
 (4, 4);
+
