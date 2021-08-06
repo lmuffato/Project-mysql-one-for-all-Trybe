@@ -8,4 +8,4 @@ ON usuarios.usuario_id = h.usuario_id
 INNER JOIN 
 SpotifyClone.cancoes AS cancoes
 ON  cancoes.cancao_id = h.cancao_id
-ORDER BY usuarios.usuario
+ORDER BY usuarios.usuario, `nome`
