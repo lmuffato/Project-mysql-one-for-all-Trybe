@@ -37,18 +37,20 @@ CREATE TABLE songs(
   FOREIGN KEY (album_id) REFERENCES album(album_id)
 ) engine = InnoDB;
 
-CREATE TABLE following(
-  user_id INT NOT NULL,
-  artista_id INT NOT NULL,
-  FOREIGN KEY (artista_id) REFERENCES artist(artista_id),
-  FOREIGN KEY (user_id) REFERENCES users(user_id)
-) engine = InnoDB;
-
 CREATE TABLE historic(
   user_id INT NOT NULL,
   song_id INT NOT NULL,
+  PRIMARY KEY(user_id, song_id),
   FOREIGN KEY (user_id) REFERENCES users(user_id),
   FOREIGN KEY (song_id) REFERENCES songs(song_id)
+) engine = InnoDB;
+
+CREATE TABLE following(
+  user_id INT NOT NULL,
+  artista_id INT NOT NULL,
+  PRIMARY KEY(user_id, artista_id),
+  FOREIGN KEY (artista_id) REFERENCES artist(artista_id),
+  FOREIGN KEY (user_id) REFERENCES users(user_id)
 ) engine = InnoDB;
 
 INSERT INTO plans (plan_name, value)
@@ -71,6 +73,14 @@ VALUES
   ('Lance Day'),
   ('Peter Strong');
 
+INSERT INTO album (artista_id, name_album)
+VALUES
+  (1, 'Envious'),
+  (1, 'Exuberant'),
+  (4, 'Hallowed Steam'),
+  (3, 'Incandescent'),
+  (2, 'Temporary Culture');
+
 INSERT INTO songs (album_id, song)
 VALUES
   (1, 'Soul For Us'),
@@ -92,25 +102,6 @@ VALUES
   (5, 'Words Of Her Life'),
   (5, 'Without My Streets');
 
-INSERT INTO album (artista_id, name_album)
-VALUES
-  (1, 'Envious'),
-  (1, 'Exuberant'),
-  (4, 'Hallowed Steam'),
-  (3, 'Incandescent'),
-  (2, 'Temporary Culture');
-
-INSERT INTO following (user_id, artista_id)
-VALUES
-  (1,1),
-  (1,2),
-  (1,3),
-  (2,1),
-  (2,3),
-  (3,4),
-  (3,1),
-  (4,2);
-
 INSERT INTO historic (user_id, song_id)
 VALUES
   (1,1),
@@ -127,3 +118,14 @@ VALUES
   (4,3),
   (4,11),
   (4,18);
+
+INSERT INTO following (user_id, artista_id)
+VALUES
+  (1,1),
+  (1,2),
+  (1,3),
+  (2,1),
+  (2,3),
+  (3,4),
+  (3,1),
+  (4,2);
