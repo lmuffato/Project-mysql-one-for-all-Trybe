@@ -6,6 +6,6 @@ FROM SpotifyClone.artists AS a
 JOIN SpotifyClone.artist_followers AS af
 JOIN SpotifyClone.users AS u
 ON u.user_id = af.user_id AND a.artist_id = af.artist_id
-GROUP BY a.artist HAVING COUNT(af.user_id) > 1
-ORDER BY COUNT(af.user_id) DESC, a.artist ASC
+GROUP BY `artista` HAVING `seguidores` > 1
+ORDER BY `seguidores` DESC, `artista` ASC
 );
