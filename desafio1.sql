@@ -5,35 +5,24 @@ CREATE DATABASE IF NOT EXISTS SpotifyClone;
 USE SpotifyClone;
 
 CREATE TABLE plan(
-  plan_id INT NOT NULL UNIQUE AUTO_INCREMENT,
+  plan_id INT NOT NULL AUTO_INCREMENT,
   plan_name VARCHAR(100) NOT NULL,
   value DECIMAL(5, 2) NOT NULL,
   PRIMARY KEY (plan_id)
 ) engine = InnoDB;
 
 CREATE TABLE IF NOT EXISTS users(
-  user_id INT NOT NULL UNIQUE AUTO_INCREMENT,
+  user_id INT NOT NULL AUTO_INCREMENT,
   plan_id INT NOT NULL,
-  history_id INT NOT NULL,
-  first_name VARCHAR(100) NOT NULL,
-  last_name VARCHAR(100) NOT NULL,
+  user_name VARCHAR(100) NOT NULL,
   age INT NOT NULL,
   PRIMARY KEY (user_id),
-  FOREIGN KEY (plan_id) REFERENCES plan(plan_id),
-  FOREIGN KEY (history_id) REFERENCES history(history_id)
-) engine = InnoDB;
-
-CREATE TABLE IF NOT EXISTS history(
-  history_id INT NOT NULL UNIQUE AUTO_INCREMENT,
-  user_id INT NOT NULL,
-  PRIMARY KEY (history_id),
-  FOREIGN KEY (user_id) REFERENCES users(user_id)
+  FOREIGN KEY (plan_id) REFERENCES plan(plan_id)
 ) engine = InnoDB;
 
 CREATE TABLE IF NOT EXISTS artist(
   artist_id INT NOT NULL UNIQUE AUTO_INCREMENT,
-  first_name VARCHAR(100) NOT NULL,
-  last_name VARCHAR(100) NOT NULL, 
+  artist_name VARCHAR(100) NOT NULL,
   PRIMARY KEY (artist_id)
 ) engine = InnoDB;
 
@@ -65,10 +54,10 @@ CREATE TABLE IF NOT EXISTS follower(
 
 CREATE TABLE IF NOT EXISTS music_history(
   music_id INT NOT NULL,
-  history_id INT NOT NULL,
-  PRIMARY KEY (music_id, history_id),
+  user_id INT NOT NULL,
+  PRIMARY KEY (music_id, user_id),
   FOREIGN KEY (music_id) REFERENCES music(music_id),
-  FOREIGN KEY (history_id) REFERENCES history(history_id)
+  FOREIGN KEY (user_id) REFERENCES users(user_id)
 ) engine = InnoDB;
 
 INSERT INTO plan(plan_id, plan_name, value)
@@ -77,26 +66,19 @@ INSERT INTO plan(plan_id, plan_name, value)
     (2, 'familiar', 7.99),
     (3, 'universitário', 5.99);
 
-INSERT INTO users(user_id, plan_id, history_id, first_name, last_name, age)
+INSERT INTO users(user_id, plan_id, user_name, age)
   VALUES
-    (1, 1, 1, 'Thati', '', 23),
-    (2, 2, 2, 'Cintia', '', 35),
-    (3, 3, 3, 'Bill', '', 20),
-    (4, 1, 4, 'Roger', '', 45);
+    (1, 1, 'Thati', 23),
+    (2, 2, 'Cintia', 35),
+    (3, 3, 'Bill', 20),
+    (4, 1, 'Roger', 45);
 
-INSERT INTO history(history_id, user_id)
+INSERT INTO artist(artist_id, artist_name)
   VALUES
-    (1, 1),
-    (2, 2),
-    (3, 3),
-    (4, 4);
-
-INSERT INTO artist(artist_id, first_name, last_name)
-  VALUES
-    (1, 'Walter', 'Phoenix'),
-    (2, 'Freedie', 'Shannon'),
-    (3, 'Lance', 'Day'),
-    (4, 'Peter', 'Strong');
+    (1, 'Walter Phoenix'),
+    (2, 'Freedie Shannon'),
+    (3, 'Lance Day'),
+    (4, 'Peter Strong');
 
 INSERT INTO album(album_id, album_name, artist_id)
   VALUES
@@ -138,7 +120,7 @@ INSERT INTO follower(user_id, artist_id)
     (3, 1),
     (4, 2);
 
-INSERT INTO music_history(music_id, history_id)
+INSERT INTO music_history(music_id, user_id)
   VALUES
     (1, 1),
     (6, 1),
@@ -154,4 +136,3 @@ INSERT INTO music_history(music_id, history_id)
     (3, 4),
     (18, 4),
     (11, 4);
-
