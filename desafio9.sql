@@ -12,5 +12,5 @@ BEGIN
     ab.artist_id = a.artist_id
     AND
     a.artist_name = art_name;
-END
+END $$
 DELIMITER ;
