@@ -9,5 +9,5 @@ AND h.cancao_id = c.cancao_id
 WHERE u.plano_id = 2
 OR u.plano_id = 3
 GROUP BY nome
-ORDER BY nome
+ORDER BY nome ASC
 );
