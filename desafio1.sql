@@ -17,19 +17,19 @@ CREATE TABLE users(
 ) engine = InnoDB;
 
 CREATE TABLE artists(
-  artist_id TINYINT PRIMARY KEY AUTO_INCREMENT,
+  follower_id TINYINT PRIMARY KEY AUTO_INCREMENT,
   artist VARCHAR(20) NOT NULL
 ) engine = InnoDB;
 
 CREATE TABLE albums(
   album_id TINYINT PRIMARY KEY AUTO_INCREMENT,
   album VARCHAR(20) NOT NULL,
-  artist_id TINYINT NOT NULL,
-  FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
+  follower_id TINYINT NOT NULL,
+  FOREIGN KEY (follower_id) REFERENCES artists(follower_id)
 ) engine = InnoDB;
 
 CREATE TABLE songs(
-  song_id TINYINT PRIMARY KEY AUTO_INCREMENT,
+  history_id TINYINT PRIMARY KEY AUTO_INCREMENT,
   song VARCHAR(30) NOT NULL,
   album_id TINYINT NOT NULL,
   FOREIGN KEY (album_id) REFERENCES albums(album_id)
