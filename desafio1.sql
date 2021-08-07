@@ -40,15 +40,15 @@ CREATE TABLE `history`(
   song_id TINYINT NOT NULL,
   FOREIGN KEY (user_id) REFERENCES users(user_id),
   FOREIGN KEY (song_id) REFERENCES songs(song_id),
-  CONSTRAINT PRIMARY KEY (user_id, song_id)
+  CONSTRAINT PRIMARY KEY(user_id, song_id)
 ) engine = InnoDB;
 
 CREATE TABLE followers(
   user_id TINYINT NOT NULL,
-  artist_id TINYINT NOT NULL,
+  follower TINYINT NOT NULL,
   FOREIGN KEY (user_id) REFERENCES users(user_id),
-  FOREIGN KEY (artist_id) REFERENCES artists(artist_id),
-  CONSTRAINT PRIMARY KEY(user_id, artist_id)
+  FOREIGN KEY (follower) REFERENCES artists(follower),
+  CONSTRAINT PRIMARY KEY(user_id, follower)
 ) engine = InnoDB;
 
 INSERT INTO plans (plan, price) VALUES
