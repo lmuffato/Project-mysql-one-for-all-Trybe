@@ -8,4 +8,3 @@ ON a.artista_id = s.artista_id
 GROUP BY `artista`
 ORDER BY `seguidores` DESC, `artista`
 LIMIT 3;
-

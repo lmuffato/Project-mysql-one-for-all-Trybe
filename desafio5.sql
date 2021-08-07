@@ -1,4 +1,4 @@
--- CREATE VIEW top_2_hits_do_momento AS
+CREATE VIEW top_2_hits_do_momento AS
   SELECT
     c.cancao AS `cancao`,
     COUNT(h.cancao_id) AS `reproducoes`
