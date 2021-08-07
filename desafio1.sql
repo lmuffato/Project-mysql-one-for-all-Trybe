@@ -53,7 +53,7 @@ FOREIGN KEY (user_id) REFERENCES user_info (user_id),
 FOREIGN KEY (song_id) REFERENCES songs (song_id)
 ) engine = InnoDB;
 
-INSERT INTO planos (nome, valor)
+INSERT INTO plan (plan_name, plan_value)
 VALUES ('gratuito', 0), ('familiar', 7.99), ('universitário', 5.99);
 
 INSERT INTO user_info (user_name, user_age, plan_id)
