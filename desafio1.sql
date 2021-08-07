@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS SpotfyClone;
 
 CREATE DATABASE SpotfyClone;
 
-USE SpotfyClone;
+  USE SpotfyClone;
 
 CREATE TABLE `PLAN`(
 PLAN_ID INT(11) PRIMARY KEY NOT NULL auto_increment,
@@ -70,7 +70,6 @@ VALUES ('Soul For Us',1,1),('Reflections Of Magic',1,1),('Dance With Her Own',1,
 ('Diamond Power',3,4),("Honey, Let's Be Silly",3,4),('Thang Of Thunder',4,5),
 ('Words Of Her Life',4,5),('Without My Streets',4,5);
 
-
 CREATE TABLE `HISTORY_MUSIC`(
 USER_ID INT(11) NOT NULL,
 MUSIC_ID INT(11) NOT NULL,
@@ -91,4 +90,3 @@ FOREIGN KEY (USER_ID) REFERENCES `USER`(USER_ID)
 
 INSERT INTO `FOLLOWED_ARTISTS`(USER_ID,ARTIST_ID)
 VALUES(1,1),(1,3),(1,4),(2,1),(2,3),(3,2),(3,1),(4,4);
- 
