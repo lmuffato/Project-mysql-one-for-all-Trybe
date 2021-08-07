@@ -45,6 +45,7 @@ CREATE TABLE Cancao(
 CREATE TABLE Usuario_Artista(
     usuario_id SMALLINT UNSIGNED NOT NULL,
     id_artista SMALLINT UNSIGNED NOT NULL,
+    PRIMARY KEY(usuario_id, id_artista),
     FOREIGN KEY (usuario_id) REFERENCES Usuario (usuario_id),
     FOREIGN KEY (id_artista) REFERENCES Artista (id_artista)
 ) engine = InnoDB;
@@ -52,6 +53,7 @@ CREATE TABLE Usuario_Artista(
 CREATE TABLE Usuario_Cancao(
     usuario_id SMALLINT UNSIGNED NOT NULL,
     id_cancao SMALLINT UNSIGNED NOT NULL,
+    PRIMARY KEY(usuario_id, id_cancao),
     FOREIGN KEY (usuario_id) REFERENCES Usuario (usuario_id),
     FOREIGN KEY (id_cancao) REFERENCES Cancao (id_cancao)
 ) engine = InnoDB;
