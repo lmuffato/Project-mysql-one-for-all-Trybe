@@ -10,7 +10,7 @@ FROM SpotifyClone.historico_de_reproducoes
 WHERE usuario_id = userId
 INTO totalMusicas ;
 RETURN totalMusicas;
-   
+
 END $$
 
 DELIMITER ;
