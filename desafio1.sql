@@ -96,19 +96,14 @@ VALUES
     (8, 'Sweetie Lets Go Wild', 3),
     (9, 'She Knows', 3),
     (10, 'Fantasy For Me', 4),
-    (11, 'Magic Circus', 3),
-    (12, 'Honey, So Do I', 3),
-    (13, 'Sweetie Lets Go Wild', 3),
-    (14, 'She Knows', 3),
-    (15, 'Fantasy For Me', 4),
-    (16, 'Celebration Of More', 4),
-    (17, 'Rock His Everything', 4),
-    (18, 'Home Forever', 4),
-    (19, 'Diamond Power', 4),
-    (20, 'Honey, Lets Be Silly', 4),
-    (21, 'Thang Of Thnuder', 5),
-    (22, 'Words Of Her Life', 5),
-    (23, 'Without My Streets', 5);
+    (11, 'Celebration Of More', 4),
+    (12, 'Rock His Everything', 4),
+    (13, 'Home Forever', 4),
+    (14, 'Diamond Power', 4),
+    (15, 'Honey, Lets Be Silly', 4),
+    (16, 'Thang Of Thnuder', 5),
+    (17, 'Words Of Her Life', 5),
+    (18, 'Without My Streets', 5);
 
 INSERT INTO Usuario_Artista(usuario_id, id_artista)
 VALUES
