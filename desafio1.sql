@@ -37,18 +37,18 @@ CREATE TABLE songs(
 
 CREATE TABLE `history`(
   user_id TINYINT NOT NULL,
-  song_id TINYINT NOT NULL,
+  history_id TINYINT NOT NULL,
   FOREIGN KEY (user_id) REFERENCES users(user_id),
-  FOREIGN KEY (song_id) REFERENCES songs(song_id),
-  CONSTRAINT PRIMARY KEY(user_id, song_id)
+  FOREIGN KEY (history_id) REFERENCES songs(history_id),
+  CONSTRAINT PRIMARY KEY(user_id, history_id)
 ) engine = InnoDB;
 
 CREATE TABLE followers(
   user_id TINYINT NOT NULL,
-  follower TINYINT NOT NULL,
+  follower_id TINYINT NOT NULL,
   FOREIGN KEY (user_id) REFERENCES users(user_id),
-  FOREIGN KEY (follower) REFERENCES artists(follower),
-  CONSTRAINT PRIMARY KEY(user_id, follower)
+  FOREIGN KEY (follower_id) REFERENCES artists(follower_id),
+  CONSTRAINT PRIMARY KEY(user_id, follower_id)
 ) engine = InnoDB;
 
 INSERT INTO plans (plan, price) VALUES
@@ -68,7 +68,7 @@ INSERT INTO artists (artist) VALUES
 ('Lance Day'),
 ('Freedie Shannon');
 
-INSERT INTO albums (album, artist_id) VALUES
+INSERT INTO albums (album, follower_id) VALUES
 ('Envious', 1),
 ('Exuberant', 1),
 ('Hallowed Steam', 2),
@@ -95,7 +95,7 @@ INSERT INTO songs (song, album_id) VALUES
 ('Words Of Her Life', 5),
 ('Without My Streets', 5);
 
-INSERT INTO `history` (user_id, song_id) VALUES
+INSERT INTO `history` (user_id, history_id) VALUES
 (1, 1),
 (1, 6),
 (1, 14),
@@ -111,7 +111,7 @@ INSERT INTO `history` (user_id, song_id) VALUES
 (4, 18),
 (4, 11);
 
-INSERT INTO followers (user_id, artist_id) VALUES
+INSERT INTO followers (user_id, follower_id) VALUES
 (1, 1),
 (1, 4),
 (1, 3),
