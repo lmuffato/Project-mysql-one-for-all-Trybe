@@ -58,54 +58,54 @@ CREATE TABLE Usuario_Cancao(
     FOREIGN KEY (id_cancao) REFERENCES Cancao (id_cancao)
 ) engine = InnoDB;
 
-INSERT INTO Plano(id_plano, nome, valor)
+INSERT INTO Plano(nome, valor)
 VALUES
-  (1, 'Gratuito', '0.00'),
-  (2, 'Familiar', '7.99'),
-  (3, 'Universitario', '5.99');
+  ('Gratuito', '0.00'),
+  ('Familiar', '7.99'),
+  ('Universitario', '5.99');
 
-INSERT INTO Usuario(usuario_id, usuario, idade, id_plano)
+INSERT INTO Usuario(usuario, idade, id_plano)
 VALUES
-  (1, 'Thati', '23', 1),
-  (2, 'Cintia', '35', 2),
-  (3, 'Bill', '20', 3),
-  (4, 'Roger', '45', 1);
+  ('Thati', '23', 1),
+  ('Cintia', '35', 2),
+  ('Bill', '20', 3),
+  ('Roger', '45', 1);
 
-INSERT INTO Artista(id_artista, nome)
+INSERT INTO Artista(nome)
 VALUES
-  (1, 'Walter Phoenix'),
-  (2, 'Peter Strong'),
-  (3, 'Lance Day'),
-  (4, 'Freedie Shannon');
+  ('Walter Phoenix'),
+  ('Peter Strong'),
+  ('Lance Day'),
+  ('Freedie Shannon');
 
-INSERT INTO Album(id_album, id_artista, nome)
+INSERT INTO Album(id_artista, nome)
 VALUES
-    (1, 1, 'Envious'),
-    (2, 1, 'Exuberant'),
-    (3, 2, 'Hallowed Steam'),
-    (4, 3, 'Incandescent'),
-    (5, 4, 'Temporary Culture');
+    (1, 'Envious'),
+    (1, 'Exuberant'),
+    (2, 'Hallowed Steam'),
+    (3, 'Incandescent'),
+    (4, 'Temporary Culture');
 
-INSERT INTO Cancao(id_cancao, nome, id_album)
+INSERT INTO Cancao(nome, id_album)
 VALUES
-    (1, 'Soul For Us', 1),
-    (2, 'Reflections Of Magic', 1),
-    (3, 'Dance With Her Own', 1),
-    (4, 'Troubles Of My Inner Fire', 2),
-    (5, 'Time Fireworks', 2),
-    (6, 'Magic Circus', 3),
-    (7, 'Honey, So Do I', 3),
-    (8, 'Sweetie Lets Go Wild', 3),
-    (9, 'She Knows', 3),
-    (10, 'Fantasy For Me', 4),
-    (11, 'Celebration Of More', 4),
-    (12, 'Rock His Everything', 4),
-    (13, 'Home Forever', 4),
-    (14, 'Diamond Power', 4),
-    (15, 'Honey, Lets Be Silly', 4),
-    (16, 'Thang Of Thnuder', 5),
-    (17, 'Words Of Her Life', 5),
-    (18, 'Without My Streets', 5);
+    ('Soul For Us', 1),
+    ('Reflections Of Magic', 1),
+    ('Dance With Her Own', 1),
+    ('Troubles Of My Inner Fire', 2),
+    ('Time Fireworks', 2),
+    ('Magic Circus', 3),
+    ('Honey, So Do I', 3),
+    ('Sweetie Lets Go Wild', 3),
+    ('She Knows', 3),
+    ('Fantasy For Me', 4),
+    ('Celebration Of More', 4),
+    ('Rock His Everything', 4),
+    ('Home Forever', 4),
+    ('Diamond Power', 4),
+    ('Honey, Lets Be Silly', 4),
+    ('Thang Of Thnuder', 5),
+    ('Words Of Her Life', 5),
+    ('Without My Streets', 5);
 
 INSERT INTO Usuario_Artista(usuario_id, id_artista)
 VALUES
@@ -121,16 +121,16 @@ VALUES
 INSERT INTO Usuario_Cancao(usuario_id, id_cancao)
 VALUES
     (1, 1),
-    (1, 11),
-    (1, 19),
-    (1, 21),
-    (2, 18),
-    (2, 22),
+    (1, 6),
+    (1, 14),
+    (1, 16),
+    (2, 13),
+    (2, 17),
     (2, 2),
-    (2, 20),
+    (2, 15),
     (3, 4),
-    (3, 21),
-    (3, 11),
+    (3, 16),
+    (3, 6),
     (4, 3),
-    (4, 23),
-    (4, 16);
+    (4, 18),
+    (4, 11);
