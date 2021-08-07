@@ -1,16 +1,16 @@
 {
-    "coluna_usuario": "UserID",
+    "coluna_usuario": "UserName",
     "tabela_que_contem_usuario": "USERS",
-    "coluna_plano": "PlanID",
+    "coluna_plano": "PlanName",
     "tabela_que_contem_plano": "PLANS",
-    "coluna_historico_de_reproducoes": "PlayedID",
+    "coluna_historico_de_reproducoes": "SongID",
     "tabela_que_contem_historico_de_reproducoes": "HISTORY_PLAYED_SONGS",
     "coluna_seguindo_artistas": "SingFollowID",
     "tabela_que_contem_seguindo_artistas": "SINGER_FOLLOWERS",
-    "coluna_artista": "SingerID",
+    "coluna_artista": "SingerName",
     "tabela_que_contem_artista": "SINGERS",
-    "coluna_album": "AlbumID",
+    "coluna_album": "AlbumName",
     "tabela_que_contem_album": "ALBUNS",
-    "coluna_cancoes": "SongID",
+    "coluna_cancoes": "SongName",
     "tabela_que_contem_cancoes": "SONGS"
 }
