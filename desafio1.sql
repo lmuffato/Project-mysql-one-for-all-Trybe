@@ -1,8 +1,8 @@
 DROP DATABASE IF EXISTS SpotfyClone;
 
-CREATE DATABASE SpotfyClone;
+CREATE DATABASE SpotifyClone;
 
-  USE SpotfyClone;
+  USE SpotifyClone;
 
 CREATE TABLE `PLAN`(
 PLAN_ID INT(11) PRIMARY KEY NOT NULL auto_increment,
