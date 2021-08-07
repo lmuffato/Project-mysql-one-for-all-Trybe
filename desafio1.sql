@@ -17,7 +17,7 @@ CREATE TABLE Usuario(
     idade INT NOT NULL,
     id_plano SMALLINT UNSIGNED NOT NULL,
     PRIMARY KEY (usuario_id),
-	FOREIGN KEY (id_plano) REFERENCES Plano (id_plano)
+    FOREIGN KEY (id_plano) REFERENCES Plano (id_plano)
 ) engine = InnoDB;
 
 CREATE TABLE Artista(
@@ -43,14 +43,14 @@ CREATE TABLE Cancao(
 ) engine = InnoDB;
 
 CREATE TABLE Usuario_Artista(
-	usuario_id SMALLINT UNSIGNED NOT NULL,
+    usuario_id SMALLINT UNSIGNED NOT NULL,
     id_artista SMALLINT UNSIGNED NOT NULL,
     FOREIGN KEY (usuario_id) REFERENCES Usuario (usuario_id),
     FOREIGN KEY (id_artista) REFERENCES Artista (id_artista)
 ) engine = InnoDB;
 
 CREATE TABLE Usuario_Cancao(
-	usuario_id SMALLINT UNSIGNED NOT NULL,
+    usuario_id SMALLINT UNSIGNED NOT NULL,
     id_cancao SMALLINT UNSIGNED NOT NULL,
     FOREIGN KEY (usuario_id) REFERENCES Usuario (usuario_id),
     FOREIGN KEY (id_cancao) REFERENCES Cancao (id_cancao)
@@ -78,7 +78,7 @@ VALUES
 
 INSERT INTO Album(id_album, id_artista, nome)
 VALUES
-	(1, 1, 'Envious'),
+    (1, 1, 'Envious'),
     (2, 1, 'Exuberant'),
     (3, 2, 'Hallowed Steam'),
     (4, 3, 'Incandescent'),
@@ -86,7 +86,7 @@ VALUES
 
 INSERT INTO Cancao(id_cancao, nome, id_album)
 VALUES
-	(1, 'Soul For Us', 1),
+    (1, 'Soul For Us', 1),
     (2, 'Reflections Of Magic', 1),
     (3, 'Dance With Her Own', 1),
     (4, 'Troubles Of My Inner Fire', 2),
@@ -112,7 +112,7 @@ VALUES
 
 INSERT INTO Usuario_Artista(usuario_id, id_artista)
 VALUES
-	(1, 1),
+    (1, 1),
     (1, 4),
     (1, 3),
     (2, 1),
@@ -123,7 +123,7 @@ VALUES
 
 INSERT INTO Usuario_Cancao(usuario_id, id_cancao)
 VALUES
-	(1, 1),
+    (1, 1),
     (1, 11),
     (1, 19),
     (1, 21),
