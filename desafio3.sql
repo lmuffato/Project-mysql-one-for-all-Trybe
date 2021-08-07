@@ -1,0 +1,1 @@
+SELECT * FROM SpotifyClone.historico_reproducao_usuarios;
