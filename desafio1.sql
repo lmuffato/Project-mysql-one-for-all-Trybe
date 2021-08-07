@@ -58,7 +58,7 @@ CREATE TABLE Artist_followers (
   Artist_followers_id INT AUTO_INCREMENT  NOT NULL,
   user_id INT,
   Artist_id INT,
-  PRIMARY KEY (Artist_followers_id, user_id, Artist_id),
+  PRIMARY KEY (user_id, Artist_id),
   FOREIGN KEY (user_id) REFERENCES User(user_id),
   FOREIGN KEY (Artist_id) REFERENCES Artist(Artist_id)
 ) ENGINE = InnoDB;
@@ -112,22 +112,22 @@ VALUES
 ('Words Of Her Life', 5),
 ('Without My Streets', 5);
 
-INSERT INTO History(User_id, Song_id, History_id)
+INSERT INTO History(User_id, Song_id)
 VALUES
-(1,1,1),
-(1,6,2),
-(1,14,3),
-(1,16,4),
-(2,13,5),
-(2,17,6),
-(2,2,7),
-(2,15,8),
-(3,4,9),
-(3,16,10),
-(3,6,11),
-(4,3,12),
-(4,18,13),
-(4,11,14);
+(1,1),
+(1,6),
+(1,14),
+(1,16),
+(2,13),
+(2,17),
+(2,2),
+(2,15),
+(3,4),
+(3,16),
+(3,6),
+(4,3),
+(4,18),
+(4,11);
 
 INSERT INTO User_plan (user_id, plan_id)
 VALUES
@@ -136,13 +136,13 @@ VALUES
 (3,3),
 (4,1);
 
-INSERT INTO Artist_followers (Artist_followers_id, user_id, Artist_id)
+INSERT INTO Artist_followers (user_id, Artist_id)
 VALUES
-(1,1,1),
-(2,1,2),
-(3,1,3),
-(4,2,1),
-(5,2,3),
-(6,3,4),
-(7,3,1),
-(8,4,2);
+(1,1),
+(1,2),
+(1,3),
+(2,1),
+(2,3),
+(3,4),
+(3,1),
+(4,2);
