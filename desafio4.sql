@@ -8,5 +8,3 @@ GROUP BY t1.nome
 ORDER BY COUNT(t2.usuario_id) DESC, t1.nome
 LIMIT 3
 );
-
-
