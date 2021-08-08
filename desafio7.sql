@@ -1,8 +1,8 @@
 CREATE VIEW faturamento_atual AS (
 SELECT
-	a.artist_name AS 'artista',
-    al.album_name AS 'album',
-    COUNT(f.artist_id) AS 'seguidores'
+a.artist_name AS 'artista',
+al.album_name AS 'album',
+COUNT(f.artist_id) AS 'seguidores'
 FROM SpotifyClone.artist AS a
 INNER JOIN SpotifyClone.album AS al ON a.artist_id = al.artist_id
 INNER JOIN SpotifyClone.follow AS f ON a.artist_id = f.artist_id
