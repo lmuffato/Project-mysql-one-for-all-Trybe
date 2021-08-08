@@ -12,7 +12,7 @@ CREATE Table `PLANO` (
 
 INSERT INTO `PLANO` (`nome`, `valor`)
 VALUES
-('gratuito', 0),
+('gratuito', 0.00),
 ('familiar', 7.99),
 ('universitário', 5.99);
 
@@ -55,7 +55,7 @@ VALUES
 ('Envious', 1),
 ('Exuberant', 1),
 ('Hallowed Steam', 2),
-('Freedie Shannon', 3),
+('Incandescent', 3),
 ('Temporary Culture', 4);
 
 CREATE Table `CANCAO` (
