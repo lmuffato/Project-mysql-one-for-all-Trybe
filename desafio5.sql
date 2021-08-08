@@ -4,7 +4,7 @@ CREATE VIEW SpotifyClone.top_2_hits_do_momento AS
     COUNT(music_name) AS `reproducoes`
   FROM SpotifyClone.MUSIC AS m
   INNER JOIN SpotifyClone.PLAYBACK_HISTORY AS ph
-  ON m.songs_id = ph.songs_id
+  ON m.music_id = ph.music_id
   GROUP BY music_name
   ORDER BY `reproducoes` DESC, `cancao` ASC
   LIMIT 2;
