@@ -7,7 +7,9 @@ USE SpotifyClone;
 CREATE TABLE user(
     user_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     name_user VARCHAR(50) NOT NULL,
-    user_age INT NOT NULL
+    user_age INT NOT NULL,
+    plan_id INT NOT NULL,
+    FOREIGN KEY plan_id REFERENCES plans(plan_id)
 ) engine = InnoDB;
 
 CREATE TABLE plans(
@@ -20,12 +22,14 @@ CREATE TABLE songs(
     songs_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     songs_name VARCHAR(50) NOT NULL,
     albuns_id INT NOT NULL
+    FOREIGN KEY albuns_id REFERENCES albuns(albuns_id)
 ) engine = InnoDB;
 
 CREATE TABLE albuns(
     albuns_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     albuns_name VARCHAR(50) NOT NULL,
     artist_id INT NOT NULL
+    FOREIGN KEY artist_id REFERENCES artists(artists_id)
 ) engine = InnoDB;
 
 CREATE TABLE artists(
@@ -35,12 +39,18 @@ CREATE TABLE artists(
 
 CREATE TABLE history(
     user_id INT NOT NULL,
-    songs_id INT NOT NULL
+    songs_id INT NOT NULL,
+    CONSTRAINT PRIMARY KEY (user_id, songs_id),
+    FOREIGN KEY user_id REFERENCES user(user_id)
+    FOREIGN KEY songs_id REFERENCES songs(songs_id)
 ) engine = InnoDB;
 
 CREATE TABLE artists_follows(
     user_id INT NOT NULL,
     artist_id INT NOT NULL
+    CONSTRAINT PRIMARY KEY (user_id, artist_id),
+    FOREIGN KEY user_id REFERENCES user(user_id)
+    FOREIGN KEY artist_id REFERENCES artists(artist_id)
 ) engine = InnoDB;
 
 INSERT INTO user (user_id, name_user, user_age)
