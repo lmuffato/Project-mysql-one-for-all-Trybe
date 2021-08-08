@@ -26,7 +26,7 @@ CREATE TABLE SpotifyClone.artistas(
 
 CREATE TABLE SpotifyClone.albuns(
   album_id INT NOT NULL AUTO_INCREMENT,
-  album VARCHAR(150) NOT NULL,
+  album VARCHAR(100) NOT NULL,
   artista_id INT NOT NULL,
   PRIMARY KEY (album_id),
   FOREIGN KEY (artista_id) REFERENCES SpotifyClone.artistas (artista_id)
