@@ -54,21 +54,21 @@ CREATE TABLE SpotifyClone.Historico_reproduçoes(
 ) ENGINE = InnoDB;
 
 INSERT INTO SpotifyClone.Plano (categoria,valor)
-VALUES ("GRATUITO", 0.00),("UNIVERSITÁRIO", 5.99),("FAMÍLIA",7.99);
+VALUES ("Gratuito", 0.00),("Uiniversitário", 5.99),("Família",7.99);
 
 INSERT INTO SpotifyClone.Usuario(nome_usuario,idade,plano_ID)
-VALUES ('THATI',23,1),('CINTIA',35,2),('BILL',20,3),('ROGER',45,1);
+VALUES ('Thati',23,1),('Cintia',35,2),('Bill',20,3),('Roger',45,1);
 
 INSERT INTO SpotifyClone.Artista (nome_artista)
-VALUES ('WALTER PLOENIX'),('PETE STRONG'),('LANCE DAY'),('FREEDIE SHANNON');
+VALUES ('Walter Ploenix'),('Pete Strong'),('Lance Day'),('Freedie Shannon');
 
 INSERT INTO SpotifyClone.Seguidores_Artista (usuario_ID,artista_ID)
 VALUES (1,1),(1,3),(1,4),(2,1),(2,3),(3,2),(3,1),(4,4);
 
 INSERT INTO SpotifyClone.Album (nome_album,artista_ID)
 VALUES 
-    ('ENVIAIS',1),('EXUBERANT',1),('HALLOWED STREAM',2),('INCANDESCENT',3),
-    ('TEMPARAY CULTURE',4);
+    ('Enviais',1),('Exuberant',1),('Hallowed Stream',2),('Incandescent',3),
+    ('Temparay Culture',4);
 
 INSERT INTO SpotifyClone.Cançoes (nome_cançao,artista_ID,album_ID)
 VALUES
