@@ -3,18 +3,18 @@ CREATE DATABASE SpotifyClone;
 USE SpotifyClone;
 
 CREATE TABLE planos (
-    `plano_id` INT NOT NULL AUTO_INCREMENT,
-    `planos_disponiveis` VARCHAR(50) NOT NULL,
-    `valor_plano` DOUBLE NOT NULL,
+    plano_id INT NOT NULL AUTO_INCREMENT,
+    planos_disponiveis VARCHAR(50) NOT NULL,
+    valor_plano DOUBLE NOT NULL,
     PRIMARY KEY (`plano_id`)
 )engine = InnoDB;
 
 
 CREATE TABLE user (
-    `user_id` INT NOT NULL AUTO_INCREMENT,
-    `user_name` VARCHAR(50) NOT NULL,
-    `user_age` INT NOT NULL,
-    `plano_id` INT NOT NULL,
+    user_id INT NOT NULL AUTO_INCREMENT,
+    user_name VARCHAR(50) NOT NULL,
+    user_age INT NOT NULL,
+    plano_id INT NOT NULL,
     PRIMARY KEY (`user_id`),
     INDEX `fk_user_plano_idx` (`plano_id` ASC) VISIBLE,
     CONSTRAINT `fk_user_plano`
@@ -26,14 +26,14 @@ CREATE TABLE user (
 )engine = InnoDB;
 
 CREATE TABLE artista (
-    `artista_id` INT NOT NULL AUTO_INCREMENT,
-    `artista` VARCHAR(100) NOT NULL,
+    artista_id INT NOT NULL AUTO_INCREMENT,
+    artista VARCHAR(100) NOT NULL,
     PRIMARY KEY (`artista_id`)
 )engine = InnoDB;
 CREATE TABLE Album (
-    `album_id` INT NOT NULL AUTO_INCREMENT,
-    `album` VARCHAR(50) NOT NULL,
-    `artista_id` INT NOT NULL,
+    album_id INT NOT NULL AUTO_INCREMENT,
+    album VARCHAR(50) NOT NULL,
+    artista_id INT NOT NULL,
     PRIMARY KEY (`album_id`),
     INDEX `fk_Album_artista_idx` (`artista_id` ASC) VISIBLE,
     CONSTRAINT `fk_Album_artista`
