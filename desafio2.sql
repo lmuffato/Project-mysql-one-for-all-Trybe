@@ -18,4 +18,3 @@ SELECT
     FROM
       SpotifyClone.albuns
   ) AS albuns;
-  

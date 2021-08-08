@@ -9,4 +9,3 @@ FROM
 ORDER BY
   usuario,
   nome;
-  
