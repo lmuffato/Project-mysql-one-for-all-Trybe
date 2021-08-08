@@ -1,4 +1,4 @@
-REATE VIEW historico_reproducao_usuarios AS
+CREATE VIEW historico_reproducao_usuarios AS
 SELECT
 nome_usuario AS `usuario`,
 (
