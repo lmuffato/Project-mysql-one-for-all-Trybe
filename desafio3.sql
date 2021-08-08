@@ -8,4 +8,3 @@ CREATE VIEW SpotifyClone.historico_reproducao_usuarios AS
   INNER JOIN SpotifyClone.MUSIC AS m
   ON ph.music_id = m.music_id
   ORDER BY `usuario` ASC, `nome` ASC;
-  
