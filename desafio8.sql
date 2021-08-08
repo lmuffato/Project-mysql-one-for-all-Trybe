@@ -6,8 +6,8 @@ CREATE TRIGGER trigger_usuario_delete
     BEFORE DELETE
     ON SpotifyClone.USUARIO FOR EACH ROW
 BEGIN
-    DELETE FROM history WHERE usuario_id = OLD.user_id;
-    DELETE FROM following WHERE usuario_id = OLD.user_id;
+    DELETE FROM HISTORICO_REPRODUCAO WHERE usuario_id = OLD.usuario_id;
+    DELETE FROM SEGUINDO_ARTISTA WHERE usuario_id = OLD.usuario_id;
 END$$    
 
 DELIMITER ;
