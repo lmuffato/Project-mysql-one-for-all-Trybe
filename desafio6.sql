@@ -8,3 +8,6 @@ FROM SpotifyClone.plan AS p
 INNER JOIN SpotifyClone.user_info AS i
 ON p.plan_id = i.plan_id
 );
+
+-- uso o inner join para juntar com a quantidade de planos que tenho na tabela user_info, assim quando faço o avg, 
+-- pego a media de quantas pessoas estao usandos os planos
