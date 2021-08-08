@@ -69,24 +69,24 @@ CREATE Table `CANCAO` (
 
 INSERT INTO `CANCAO` (`nome_cancao`, `album_id`, `artista_id`)
 VALUES
-('Celebration Of More', 4, 3),
-('Dance With Her Own', 1 , 1),
-('Diamond Power', 3 , 3),
-('Fantasy For Me', 4 , 3),
-('Home Forever', 4 , 3),
-('Honey, Let`s Be Silly', 4 , 3),
-('Honey, Let`s Be Silly', 3 , 2),
-('Magic Circus', 3 , 2),
-('Reflections Of Magic', 1 , 1),
-('Rock His Everything', 4 , 3),
-('She Knows', 3 , 2),
-('Soul For Us', 1 , 1),
-('Sweetie, Let`s Go Wild', 3 , 2),
-('Thang Of Thunder', 5 , 4),
-('Time Fireworks', 2 , 1),
-('Troubles Of My Inner Fire', 2 , 1),
-('Without My Streets', 5 , 4),
-('Words Of Her Life', 5 , 4);
+("Celebration Of More", 4, 3),
+("Dance With Her Own", 1 , 1),
+("Diamond Power", 3 , 3),
+("Fantasy For Me", 4 , 3),
+("Home Forever", 4 , 3),
+("Honey, Let's Be Silly", 4 , 3),
+("Honey, So Do I", 3 , 2),
+("Magic Circus", 3 , 2),
+("Reflections Of Magic", 1 , 1),
+("Rock His Everything", 4 , 3),
+("She Knows", 3 , 2),
+("Soul For Us", 1 , 1),
+("Sweetie, Let's Go Wild", 3 , 2),
+("Thang Of Thunder", 5 , 4),
+("Time Fireworks", 2 , 1),
+("Troubles Of My Inner Fire", 2 , 1),
+("Without My Streets", 5 , 4),
+("Words Of Her Life", 5 , 4);
 
 CREATE Table `SEGUINDO_ARTISTA` (
   `seguindo_id` INT AUTO_INCREMENT,
@@ -107,7 +107,6 @@ VALUES
 (3, 2),
 (3, 1),
 (4, 4);
-
 
 CREATE Table `HISTORICO_REPRODUCAO` (
   `reproducao_id` INT AUTO_INCREMENT,
