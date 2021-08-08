@@ -30,9 +30,9 @@ CREATE TABLE artista (
     artista VARCHAR(100) NOT NULL,
     PRIMARY KEY (`artista_id`)
 )engine = InnoDB;
-CREATE TABLE Album (
+CREATE TABLE album (
     album_id INT NOT NULL AUTO_INCREMENT,
-    album VARCHAR(50) NOT NULL,
+    album_name VARCHAR(50) NOT NULL,
     artista_id INT NOT NULL,
     PRIMARY KEY (`album_id`),
     INDEX `fk_Album_artista_idx` (`artista_id` ASC) VISIBLE,
@@ -53,7 +53,7 @@ CREATE TABLE songs (
     INDEX `fk_songs_album_idx` (`album_id` ASC) VISIBLE,
     CONSTRAINT `fk_songs_album`
   FOREIGN KEY (`album_id`)
-  REFERENCES `SpotifyClone`.`Album` (`album_id`)
+  REFERENCES `SpotifyClone`.`album` (`album_id`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION
 )engine = InnoDB;
@@ -115,7 +115,7 @@ VALUES
   ('Lance Day'),
   ('Freedie Shannon');
   
-  INSERT INTO `Album` (album,artista_id)
+  INSERT INTO album (album_name,artista_id)
 VALUES
   ('Envious',1),
   ('Exuberant',1),
