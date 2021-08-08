@@ -9,6 +9,3 @@ GROUP BY h.song_id
 ORDER BY COUNT(h.song_id) DESC, s.song_name ASC
 LIMIT 2
 );
-
--- SELECT song_id, COUNT(song_id) FROM SpotifyClone.history_user
--- GROUP BY song_id
