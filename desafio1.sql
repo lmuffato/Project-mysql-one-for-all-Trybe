@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS SpotfyClone;
+DROP DATABASE IF EXISTS SpotifyClone;
 
 CREATE DATABASE SpotifyClone;
 
@@ -6,13 +6,14 @@ CREATE DATABASE SpotifyClone;
 
 CREATE TABLE `PLAN`(
 PLAN_ID INT(11) PRIMARY KEY NOT NULL auto_increment,
-PLAN_NAME VARCHAR(250)
+PLAN_NAME VARCHAR(250),
+PLAN_VALUE DECIMAL(6,2) NOT NULL
 )ENGINE=InnoDB;
 
-INSERT INTO `PLAN`(PLAN_NAME)
-VALUES ('gratuito'),
-('familiar'),
-('universitário');
+INSERT INTO `PLAN`(PLAN_NAME, PLAN_VALUE)
+VALUES ('gratuito', 0.00),
+('familiar', 7.99),
+('universitário', 5.99);
 
 CREATE TABLE `ARTIST` (
 ARTIST_ID INT(11) PRIMARY KEY NOT NULL auto_increment,
