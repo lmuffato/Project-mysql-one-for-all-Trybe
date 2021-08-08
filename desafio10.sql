@@ -1,4 +1,4 @@
-USE SpotifyClone; -- obrigatório para criar a função no banco correto
+USE SpotifyClone;
 DELIMITER $$
 
 CREATE FUNCTION quantidade_musicas_no_historico(userId INT)
