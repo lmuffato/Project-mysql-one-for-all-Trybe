@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS SpotifyClone;
 CREATE DATABASE SpotifyClone;
 USE SpotifyClone;
 
-CREATE TABLE `planos` (
+CREATE TABLE planos (
     `plano_id` INT NOT NULL AUTO_INCREMENT,
     `planos_disponiveis` VARCHAR(50) NOT NULL,
     `valor_plano` DOUBLE NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE `planos` (
 )engine = InnoDB;
 
 
-CREATE TABLE `user` (
+CREATE TABLE user (
     `user_id` INT NOT NULL AUTO_INCREMENT,
     `user_name` VARCHAR(50) NOT NULL,
     `user_age` INT NOT NULL,
@@ -25,12 +25,12 @@ CREATE TABLE `user` (
     
 )engine = InnoDB;
 
-CREATE TABLE `artista` (
+CREATE TABLE artista (
     `artista_id` INT NOT NULL AUTO_INCREMENT,
     `artista` VARCHAR(100) NOT NULL,
     PRIMARY KEY (`artista_id`)
 )engine = InnoDB;
-CREATE TABLE `Album` (
+CREATE TABLE Album (
     `album_id` INT NOT NULL AUTO_INCREMENT,
     `album` VARCHAR(50) NOT NULL,
     `artista_id` INT NOT NULL,
@@ -44,11 +44,11 @@ CREATE TABLE `Album` (
 )engine = InnoDB;
 
 
-CREATE TABLE `songs` (
-    `song_id` INT NOT NULL AUTO_INCREMENT,
-    `song` VARCHAR(100) NOT NULL,
-    `album_id` INT NOT NULL,
-    `artista_id` INT NOT NULL,
+CREATE TABLE songs (
+    song_id INT NOT NULL AUTO_INCREMENT,
+    song VARCHAR(100) NOT NULL,
+    album_id INT NOT NULL,
+    artista_id INT NOT NULL,
     PRIMARY KEY (`song_id`),
     INDEX `fk_songs_album_idx` (`album_id` ASC) VISIBLE,
     CONSTRAINT `fk_songs_album`
@@ -58,9 +58,9 @@ CREATE TABLE `songs` (
   ON UPDATE NO ACTION
 )engine = InnoDB;
 
-CREATE TABLE `historico` (
-    `user_id` INT NOT NULL,
-    `song_id` INT NOT NULL,
+CREATE TABLE historico (
+    user_id INT NOT NULL,
+    song_id INT NOT NULL,
     PRIMARY KEY(`user_id`,`song_id`),
     INDEX `fk_historico_songs_idx` (`song_id` ASC) VISIBLE,
     INDEX `fk_historico_user_idx` (`user_id` ASC) VISIBLE,
@@ -77,9 +77,9 @@ CREATE TABLE `historico` (
 )engine = InnoDB;
 
 
-CREATE TABLE `Follow` (
-    `user_id` INT NOT NULL,
-    `artista_id` INT NOT NULL,
+CREATE TABLE Follow (
+    user_id INT NOT NULL,
+    artista_id INT NOT NULL,
     PRIMARY KEY(`user_id`,`artista_id`),
     INDEX `fk_Follow_artista_idx` (`artista_id` ASC) VISIBLE,
     INDEX `fk_Follow_user_idx` (`user_id` ASC) VISIBLE,
@@ -95,20 +95,20 @@ CREATE TABLE `Follow` (
   ON UPDATE NO ACTION
 )engine = InnoDB;
 
-    INSERT INTO `planos` (planos_disponiveis,valor_plano)
+    INSERT INTO planos (planos_disponiveis,valor_plano)
 VALUES
   ('gratuito',0),
   ('familiar',7.99),
   ('universitário',5.99);
 
-    INSERT INTO `user` (user_name,user_age,plano_id)
+    INSERT INTO user (user_name,user_age,plano_id)
 VALUES
   ('Thati', 23,1),
   ('Cintia', 35,2),
   ('Bill',20,3),
   ('Roger',45,1);
   
-  INSERT INTO `artista`(artista)
+  INSERT INTO artista (artista)
 VALUES
   ('Walter Phoenix'),
   ('Peter Strong'),
