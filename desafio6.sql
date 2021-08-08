@@ -8,4 +8,3 @@ FROM
     Plan AS p
         INNER JOIN
     User_plan AS u ON p.plan_id = u.plan_id;
-    
