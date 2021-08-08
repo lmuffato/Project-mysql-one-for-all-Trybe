@@ -78,7 +78,7 @@ VALUES
   ('Envious',1),
   ('Exuberant',1),
   ('Hallowed Steam',2),
-  ('Incadescent',3),
+  ('Incandescent',3),
   ('Temporary Culture',4);
 
 INSERT INTO cancao(cancao_nome, album_id) 
