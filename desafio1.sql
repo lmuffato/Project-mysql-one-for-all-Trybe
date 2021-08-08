@@ -5,9 +5,9 @@ CREATE DATABASE IF NOT EXISTS SpotifyClone;
 USE SpotifyClone;
 
 CREATE TABLE planos(
-	plano_id INT AUTO_INCREMENT PRIMARY KEY,
-    plano VARCHAR(50) NOT NULL,
-	valor_plano DECIMAL(6, 2)
+ plano_id INT AUTO_INCREMENT PRIMARY KEY,
+ plano VARCHAR(50) NOT NULL,
+ valor_plano DECIMAL(6, 2)
 );
 
 INSERT INTO planos (plano, valor_plano) VALUES ('gratuito', 0);
@@ -15,11 +15,11 @@ INSERT INTO planos (plano, valor_plano) VALUES ('familiar', 7.99);
 INSERT INTO planos (plano, valor_plano) VALUES ('universitário', 5.99);
 
 CREATE TABLE usuario(
-	usuario_id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(50) NOT NULL,
-    idade TINYINT,
-    plano_id INT NOT NULL,
-    FOREIGN KEY (plano_id) REFERENCES planos (plano_id)
+ usuario_id INT AUTO_INCREMENT PRIMARY KEY,
+ nome VARCHAR(50) NOT NULL,
+ idade TINYINT,
+ plano_id INT NOT NULL,
+ FOREIGN KEY (plano_id) REFERENCES planos (plano_id)
 );
 
 INSERT INTO usuario (nome, idade, plano_id) VALUES ('Thati', 23, 1);
@@ -28,8 +28,8 @@ INSERT INTO usuario (nome, idade, plano_id) VALUES ('Bill', 20, 3);
 INSERT INTO usuario (nome, idade, plano_id) VALUES ('Roger', 35, 1);
 
 CREATE TABLE artista(
-	artista_id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(50)
+ artista_id INT AUTO_INCREMENT PRIMARY KEY,
+ nome VARCHAR(50)
 );
 
 INSERT INTO artista (nome) VALUES ('Walter Phoenix');
@@ -38,11 +38,11 @@ INSERT INTO artista (nome) VALUES ('Lance Day');
 INSERT INTO artista (nome) VALUES ('Freedie Shannon');
 
 CREATE TABLE seguindo_artista(
-	artista_id INT NOT NULL,
-    usuario_id INT NOT NULL,
-    CONSTRAINT PRIMARY KEY(artista_id, usuario_id),
-    FOREIGN KEY (artista_id) REFERENCES artista (artista_id),
-    FOREIGN KEY (usuario_id) REFERENCES usuario (usuario_id)
+ artista_id INT NOT NULL,
+ usuario_id INT NOT NULL,
+ CONSTRAINT PRIMARY KEY(artista_id, usuario_id),
+ FOREIGN KEY (artista_id) REFERENCES artista (artista_id),
+ FOREIGN KEY (usuario_id) REFERENCES usuario (usuario_id)
 );
 
 INSERT INTO seguindo_artista (artista_id, usuario_id) VALUES (1, 1);
@@ -55,10 +55,10 @@ INSERT INTO seguindo_artista (artista_id, usuario_id) VALUES (2, 3);
 INSERT INTO seguindo_artista (artista_id, usuario_id) VALUES (4, 4);
 
 CREATE TABLE album(
-	album_id INT AUTO_INCREMENT PRIMARY KEY,
-    album VARCHAR(100) NOT NULL,
-	artista_id INT NOT NULL,
-    FOREIGN KEY (artista_id) REFERENCES artista (artista_id)
+ album_id INT AUTO_INCREMENT PRIMARY KEY,
+ album VARCHAR(100) NOT NULL,
+ artista_id INT NOT NULL,
+ FOREIGN KEY (artista_id) REFERENCES artista (artista_id)
 );
 
 INSERT INTO album (album, artista_id) VALUES ('Envious', 1);
@@ -68,12 +68,12 @@ INSERT INTO album (album, artista_id) VALUES ('Incandescent', 3);
 INSERT INTO album (album, artista_id) VALUES ('Temporary Culture', 4);
 
 CREATE TABLE cancoes(
-	cancao_id INT AUTO_INCREMENT PRIMARY KEY,
-    cancao VARCHAR(100),
-    artista_id INT NOT NULL,
-    album_id INT NOT NULL,
-    FOREIGN KEY (artista_id) REFERENCES artista (artista_id),
-    FOREIGN KEY (album_id) REFERENCES album (album_id)
+ cancao_id INT AUTO_INCREMENT PRIMARY KEY,
+ cancao VARCHAR(100),
+ artista_id INT NOT NULL,
+ album_id INT NOT NULL,
+ FOREIGN KEY (artista_id) REFERENCES artista (artista_id),
+ FOREIGN KEY (album_id) REFERENCES album (album_id)
 );
 
 INSERT INTO cancoes (cancao, artista_id, album_id) VALUES ('Soul For Us', 1, 1);
@@ -96,11 +96,11 @@ INSERT INTO cancoes (cancao, artista_id, album_id) VALUES ('Words Of Her Life', 
 INSERT INTO cancoes (cancao, artista_id, album_id) VALUES ('Without My Streets', 4, 5);
 
 CREATE TABLE historico_reproducoes(
-	usuario_id INT NOT NULL,
-	cancao_id INT NOT NULL,
-    CONSTRAINT PRIMARY KEY (usuario_id, cancao_id),
-    FOREIGN KEY (usuario_id) REFERENCES usuario (usuario_id),
-    FOREIGN KEY (cancao_id) REFERENCES cancoes (cancao_id)
+ usuario_id INT NOT NULL,
+ cancao_id INT NOT NULL,
+ CONSTRAINT PRIMARY KEY (usuario_id, cancao_id),
+ FOREIGN KEY (usuario_id) REFERENCES usuario (usuario_id),
+ FOREIGN KEY (cancao_id) REFERENCES cancoes (cancao_id)
 );
 
 INSERT INTO historico_reproducoes (usuario_id, cancao_id) VALUES (1, 1);
