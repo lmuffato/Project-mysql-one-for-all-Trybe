@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS SpotifyClone;
 CREATE DATABASE SpotifyClone;
 USE SpotifyClone;
 
@@ -59,6 +60,7 @@ CREATE TABLE `songs` (
 CREATE TABLE `historico` (
     `user_id` INT NOT NULL,
     `song_id` INT NOT NULL,
+    PRIMARY KEY(`user_id`,`song_id`),
     INDEX `fk_historico_songs_idx` (`song_id` ASC) VISIBLE,
     INDEX `fk_historico_user_idx` (`user_id` ASC) VISIBLE,
     CONSTRAINT `fk_historico_songs`
@@ -77,6 +79,7 @@ CREATE TABLE `historico` (
 CREATE TABLE `Follow` (
     `user_id` INT NOT NULL,
     `artista_id` INT NOT NULL,
+    PRIMARY KEY(`user_id`,`artista_id`),
     INDEX `fk_Follow_artista_idx` (`artista_id` ASC) VISIBLE,
     INDEX `fk_Follow_user_idx` (`user_id` ASC) VISIBLE,
     CONSTRAINT `fk_Follow_artista`
