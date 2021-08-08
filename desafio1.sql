@@ -82,7 +82,7 @@ VALUES
 ('Envious', 1),
 ('Exuberant', 1),
 ('Hallowed Steam', 2),
-('Freedie Shannon', 3),
+('Incandescent', 3),
 ('Temporary Culture', 4);
 
 INSERT INTO `MUSIC` (`music_name`, `album_id`, `artist_id`)
