@@ -1,21 +1,13 @@
-USE SpotifyClone;
-
+-- https://www.mysqltutorial.org/mysql-triggers/mysql-before-delete-trigger/
+-- FEITO COM AUXILIO DO RAFAEL MEIDEIROS
 DELIMITER $$
 
 CREATE TRIGGER trigger_usuario_delete
-  BEFORE DELETE ON 
-    SpotifyClone.USUARIO
-  FOR EACH ROW
+    BEFORE DELETE
+    ON SpotifyClone.USUARIO FOR EACH ROW
 BEGIN
-  DELETE FROM 
-    SpotifyClone.HISTORICO_REPRODUCAO
-  WHERE 
-    usuario_id = OLD.usuario_id;
-
-  DELETE FROM
-    SpotifyClone.SEGUINDO_ARTISTAS
-  WHERE 
-    usuario_id = OLD.usuario_id;
-END $$
+    DELETE FROM history WHERE usuario_id = OLD.user_id;
+    DELETE FROM following WHERE usuario_id = OLD.user_id;
+END$$    
 
 DELIMITER ;
