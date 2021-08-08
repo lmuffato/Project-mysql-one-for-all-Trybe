@@ -1,4 +1,4 @@
-CREATE VIEW faturamento_total AS
+CREATE VIEW faturamento_atual AS
 SELECT
 MIN(valor_plano) AS `faturamento minimo`,
 MAX(valor_plano) AS `faturamento_maximo`,
