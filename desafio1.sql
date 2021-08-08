@@ -60,7 +60,7 @@ INSERT INTO SpotifyClone.Usuario(nome_usuario,idade,plano_ID)
 VALUES ('Thati',23,1),('Cintia',35,2),('Bill',20,3),('Roger',45,1);
 
 INSERT INTO SpotifyClone.Artista (nome_artista)
-VALUES ('Walter Ploenix'),('Pete Strong'),('Lance Day'),('Freedie Shannon');
+VALUES ('Walter Phoenix'),('Pete Strong'),('Lance Day'),('Freedie Shannon');
 
 INSERT INTO SpotifyClone.Seguidores_Artista (usuario_ID,artista_ID)
 VALUES (1,1),(1,3),(1,4),(2,1),(2,3),(3,2),(3,1),(4,4);
