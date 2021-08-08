@@ -1,4 +1,3 @@
-DROP DATABASE IF EXISTS SpotifyClone;
 CREATE DATABASE SpotifyClone;
 USE SpotifyClone;
 
@@ -7,7 +6,7 @@ CREATE TABLE `planos` (
     `planos_disponiveis` VARCHAR(50) NOT NULL,
     `valor_plano` DOUBLE NOT NULL,
     PRIMARY KEY (`plano_id`)
-);
+)engine = InnoDB;
 
 
 CREATE TABLE `user` (
@@ -23,13 +22,13 @@ CREATE TABLE `user` (
   ON DELETE CASCADE
   ON UPDATE NO ACTION
     
-);
+)engine = InnoDB;
 
 CREATE TABLE `artista` (
     `artista_id` INT NOT NULL AUTO_INCREMENT,
     `artista` VARCHAR(100) NOT NULL,
     PRIMARY KEY (`artista_id`)
-);
+)engine = InnoDB;
 CREATE TABLE `Album` (
     `album_id` INT NOT NULL AUTO_INCREMENT,
     `album` VARCHAR(50) NOT NULL,
@@ -41,7 +40,7 @@ CREATE TABLE `Album` (
   REFERENCES `SpotifyClone`.`artista` (`artista_id`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION
-);
+)engine = InnoDB;
 
 
 CREATE TABLE `songs` (
@@ -55,7 +54,7 @@ CREATE TABLE `songs` (
   REFERENCES `SpotifyClone`.`Album` (`album_id`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION
-);
+)engine = InnoDB;
 
 CREATE TABLE `historico` (
     `user_id` INT NOT NULL,
@@ -72,7 +71,7 @@ CREATE TABLE `historico` (
   REFERENCES `SpotifyClone`.`user` (`user_id`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION
-);
+)engine = InnoDB;
 
 
 CREATE TABLE `Follow` (
@@ -90,7 +89,7 @@ CREATE TABLE `Follow` (
   REFERENCES `SpotifyClone`.`user` (`user_id`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION
-);
+)engine = InnoDB;
 
     INSERT INTO `planos` (planos_disponiveis,valor_plano)
 VALUES
