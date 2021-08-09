@@ -12,4 +12,3 @@ WHERE A.NOME_DO_ARTISTA = nome
 ORDER BY `album` ASC;
 END $$
 DELIMITER ;
-
