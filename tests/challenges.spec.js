@@ -2,6 +2,8 @@ const { readFileSync } = require('fs');
 const { Sequelize } = require('sequelize');
 const Importer = require('mysql-import');
 
+// jest.setTimeout(30000); 
+
 describe('Queries de seleção', () => {
   let sequelize;
 
@@ -31,6 +33,8 @@ describe('Queries de seleção', () => {
     await importer.import('./desafio1.sql');
     await importer.disconnect();
   });
+
+// jest.setTimeout(30000); 
 
   describe('1 - Normalize as tabelas para a 3ª Forma Normal', () => {
     const hasForeignKey = async (table, referencedTable) => {
@@ -324,7 +328,7 @@ describe('Queries de seleção', () => {
     });
   });
 
-  describe('10 - Crie uma function chamada de `quantidade_musicas_no_historico` que exibe a quantidade de músicas que estão presente atualmente no histórico de reprodução de uma pessoa usuária', () => {
+  describe.only('10 - Crie uma function chamada de `quantidade_musicas_no_historico` que exibe a quantidade de músicas que estão presente atualmente no histórico de reprodução de uma pessoa usuária', () => {
     it('Verifica o desafio 10', async () => {
       const {
         tabela_que_contem_usuario: userTable,
@@ -375,9 +379,7 @@ describe('Queries de seleção', () => {
   });
 });
 
-jest.setTimeout(30000); 
-
-describe.only('Queries de deleção', () => {
+describe('Queries de deleção', () => {
   let importer;
   let sequelize;
 
@@ -409,9 +411,7 @@ describe.only('Queries de deleção', () => {
 
   afterEach(async () => await sequelize.query('DROP DATABASE SpotifyClone;', { type: 'RAW' }));
 
-jest.setTimeout(30000); 
-
-  describe.only('8 - Crie uma trigger chamada `trigger_usuario_delete` que deve ser disparada sempre que uma pessoa usuária for excluída do banco de dados, refletindo essa exclusão em todas as tabelas que ela estiver', () => {
+  describe('8 - Crie uma trigger chamada `trigger_usuario_delete` que deve ser disparada sempre que uma pessoa usuária for excluída do banco de dados, refletindo essa exclusão em todas as tabelas que ela estiver', () => {
     it('Verifica o desafio 8', async () => {
       const {
         tabela_que_contem_usuario: userTable,
