@@ -20,9 +20,7 @@ CREATE TABLE user(
     
 CREATE TABLE artist(
   id_artist INT PRIMARY KEY AUTO_INCREMENT,
-  name_artist VARCHAR(80) NOT NULL,
-  -- id_user INT,
-  -- FOREIGN KEY (id_user) REFERENCES user(id_user)
+  name_artist VARCHAR(80) NOT NULL
   );
     
 CREATE TABLE following(
@@ -65,10 +63,10 @@ INSERT INTO user(name_user, birthdate, id_plan) VALUES ('Bill', '2001-12-04' , 3
 INSERT INTO user(name_user, birthdate, id_plan) VALUES ('Roger', '1976-10-25' , 1);
 
 
-INSERT INTO artist(name_artist, id_user) VALUES ('Walter Phoenix', 1);
-INSERT INTO artist(name_artist, id_user) VALUES ('Peter Strong', 2);
-INSERT INTO artist(name_artist, id_user) VALUES ('Lance Day', 3);
-INSERT INTO artist(name_artist, id_user) VALUES ('Freedie Shannon', 4);
+INSERT INTO artist(name_artist) VALUES ('Walter Phoenix');
+INSERT INTO artist(name_artist) VALUES ('Peter Strong');
+INSERT INTO artist(name_artist) VALUES ('Lance Day');
+INSERT INTO artist(name_artist) VALUES ('Freedie Shannon');
 
 INSERT INTO following(id_user, id_artist) VALUES (1, 1);
 INSERT INTO following(id_user, id_artist) VALUES (1, 4);
