@@ -1,6 +1,6 @@
 DELIMITER $$
 
-CREATE FUNCTION quantidade_musicas_no_historico (u_id INT)
+CREATE FUNCTION SpotifyClone.quantidade_musicas_no_historico (u_id INT)
 RETURNS INT READS SQL DATA
 BEGIN
 DECLARE quantidade_musicas_no_historico INT ;

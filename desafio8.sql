@@ -1,5 +1,5 @@
 DELIMITER $$
-CREATE TRIGGER trigger_usuario_delete
+CREATE TRIGGER SpotifyClone.trigger_usuario_delete
 BEFORE DELETE ON SpotifyClone.Usuario
 FOR EACH ROW
 BEGIN
