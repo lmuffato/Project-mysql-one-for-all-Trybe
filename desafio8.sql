@@ -1,5 +1,3 @@
--- USE SpotifyClone;
-
 DELIMITER $$
 
 CREATE TRIGGER trigger_usuario_delete
@@ -11,5 +9,3 @@ BEGIN
 END $$
 
 DELIMITER ;
-
-DELETE FROM SpotifyClone.usuarios WHERE usuario_id = 1;
