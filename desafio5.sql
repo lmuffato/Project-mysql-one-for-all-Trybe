@@ -6,4 +6,5 @@ CREATE VIEW top_2_hits_do_momento AS
   INNER JOIN history AS h
   ON m.id_music = h.id_music
   GROUP BY m.id_music
-  ORDER BY 2 DESC, 1;
+  ORDER BY 2 DESC, 1
+  LIMIT 2;
