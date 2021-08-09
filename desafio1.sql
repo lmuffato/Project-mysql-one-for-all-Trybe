@@ -39,9 +39,9 @@ CREATE TABLE albuns(
     FOREIGN KEY (artista_id) REFERENCES artistas (artista_id)
 ) engine = InnoDB;
 
-CREATE TABLE cancoes(
-    cancao_id INT NOT NULL PRIMARY KEY,
-    cancao VARCHAR(100) NOT NULL,
+CREATE TABLE musicas(
+    musica_id INT NOT NULL PRIMARY KEY,
+    musica VARCHAR(100) NOT NULL,
     artista_id INT NOT NULL,
     album_id INT NOT NULL,
     FOREIGN KEY (artista_id) REFERENCES artistas (artista_id),
@@ -50,10 +50,10 @@ CREATE TABLE cancoes(
 
 CREATE TABLE historico(
     usuario_id INT NOT NULL,
-    cancao_id INT NOT NULL,
-    CONSTRAINT PRIMARY KEY (cancao_id, cancao_id),
+    musica_id INT NOT NULL,
+    CONSTRAINT PRIMARY KEY (usuario_id, musica_id),
     FOREIGN KEY (usuario_id) REFERENCES usuarios (usuario_id),
-    FOREIGN KEY (cancao_id) REFERENCES cancoes (cancao_id)
+    FOREIGN KEY (musica_id) REFERENCES musicas (musica_id)
 ) engine = InnoDB;
 
 INSERT INTO planos (plano_id, plano, valor_plano)
@@ -95,7 +95,7 @@ VALUES
   (4,	'Incandescent',	3),
   (5,	'Temporary Culture',	4);
 
-INSERT INTO cancoes (cancao_id, cancao, artista_id, album_id)
+INSERT INTO musicas (musica_id, musica, artista_id, album_id)
 VALUES
   (1,	"Soul For Us",	1,	1),
   (2,	"Reflections Of Magic",	1,	1),
@@ -116,7 +116,7 @@ VALUES
   (17,	"Words Of Her Life",	4,	5),
   (18,	"Without My Streets",	4,	5);
 
-INSERT INTO historico (usuario_id, cancao_id)
+INSERT INTO historico (usuario_id, musica_id)
 VALUES
   (1,	1),
   (1,	6),
