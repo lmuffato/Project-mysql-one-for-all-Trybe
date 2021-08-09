@@ -19,7 +19,7 @@ CREATE TABLE SpotifyClone.cancoes (
 CREATE TABLE SpotifyClone.planos (
   plano_id INT AUTO_INCREMENT PRIMARY KEY,
   plano VARCHAR(50) NOT NULL,
-  valor_plano DOUBLE NOT NULL
+  valor_plano DECIMAL(5, 2) NOT NULL
 );
 CREATE TABLE SpotifyClone.usuarios (
   usuario_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -45,7 +45,7 @@ CREATE TABLE SpotifyClone.historico_de_reproducoes (
 INSERT INTO
   SpotifyClone.planos (plano, valor_plano)
 VALUES
-  ('gratuito', 0),
+  ('gratuito', 0.00),
   ('familiar', 7.99),
   ('universitário', 5.99);
 INSERT INTO

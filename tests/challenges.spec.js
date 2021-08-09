@@ -237,7 +237,7 @@ describe('Queries de seleção', () => {
     });
   });
 
-  describe.only('4 - Exibe top 3 artistas com maior quantidade de pessoas seguidoras', () => {
+  describe('4 - Exibe top 3 artistas com maior quantidade de pessoas seguidoras', () => {
     it('Verifica o desafio 4', async () => {
       const challengeQuery = readFileSync('desafio4.sql', 'utf8');
 
@@ -270,7 +270,7 @@ describe('Queries de seleção', () => {
     });
   });
 
-  describe('6 - Exibe o relatório de faturamento da empresa', () => {
+  describe.only('6 - Exibe o relatório de faturamento da empresa', () => {
     it('Verifica o desafio 6', async () => {
       const challengeQuery = readFileSync('desafio6.sql', 'utf8');
 
