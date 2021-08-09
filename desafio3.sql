@@ -7,3 +7,5 @@ ON reproducoes.usuario_id = usuarios.usuario_id
 INNER JOIN musicas AS musicas
 ON musicas.musica_id = reproducoes.musica_id
 ORDER BY usuario, nome;
+
+-- Acrescentando comentário para conseguir reenviar
