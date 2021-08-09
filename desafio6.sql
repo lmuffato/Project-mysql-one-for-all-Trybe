@@ -1,4 +1,4 @@
-REATE VIEW faturamento_atual AS
+CREATE VIEW faturamento_atual AS
     SELECT 
         CONVERT( ROUND(MIN(pl.valores), 2) , CHAR) AS "faturamento_minimo",
         CONVERT( ROUND(MAX(pl.valores), 2) , CHAR) AS "faturamento_maximo",
