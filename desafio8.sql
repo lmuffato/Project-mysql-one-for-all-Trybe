@@ -4,12 +4,12 @@ BEFORE DELETE ON SpotifyClone.usuarios
 FOR EACH ROW
 BEGIN
   DELETE FROM
-  SpotifyClone.historico_de_reproducoes h
+  SpotifyClone.historico_de_reproducoes
   WHERE
-    h.usuario_id = OLD.usuario_id;
+    usuario_id = OLD.usuario_id;
   DELETE FROM
-    SpotifyClone.artistas_favorito af
+    SpotifyClone.artistas_favorito
   WHERE
-    af.usuario_id = OLD.usuario_id;
+    usuario_id = OLD.usuario_id;
 END $$
 DELIMITER ;
