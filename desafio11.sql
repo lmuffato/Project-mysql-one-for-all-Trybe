@@ -10,6 +10,6 @@ CREATE VIEW cancoes_premium AS
     SpotifyClone.USUARIO AS U ON U.usuario_id = HR.usuario_id
       INNER JOIN
     SpotifyClone.PLANO AS P ON P.plano_id = U.plano_id
-  WHERE P.plano IN ('familiar', 'universitário')
-GROUP BY `nome`
+  WHERE P.nome IN ('familiar', 'universitário')
+GROUP BY C.nome_cancao
 ORDER BY `nome`;

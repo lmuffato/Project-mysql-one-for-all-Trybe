@@ -1,5 +1,5 @@
 -- https://www.mysqltutorial.org/mysql-triggers/mysql-before-delete-trigger/
--- FEITO COM AUXILIO DO RAFAEL MEIDEIROS
+-- FEITO COM AUXILIO DO RAFAEL MEDEIROS
 DELIMITER $$
 
 CREATE TRIGGER trigger_usuario_delete
