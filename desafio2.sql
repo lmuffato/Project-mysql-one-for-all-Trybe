@@ -5,5 +5,3 @@ SELECT COUNT(song) AS cancoes,
 (SELECT COUNT(album_name) FROM SpotifyClone.album) AS albuns
 FROM SpotifyClone.songs;
 SELECT * FROM estatisticas_musicais;
-
-

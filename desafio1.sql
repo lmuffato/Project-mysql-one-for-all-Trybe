@@ -15,14 +15,9 @@ CREATE TABLE user (
     user_name VARCHAR(50) NOT NULL,
     user_age INT NOT NULL,
     plano_id INT NOT NULL,
-    PRIMARY KEY (`user_id`),
-    INDEX `fk_user_plano_idx` (`plano_id` ASC) VISIBLE,
-    CONSTRAINT `fk_user_plano`
+  CONSTRAINT `fk_user_plano`
   FOREIGN KEY (`plano_id`)
   REFERENCES `SpotifyClone`.`planos` (`plano_id`)
-  ON DELETE CASCADE
-  ON UPDATE NO ACTION
-    
 )engine = InnoDB;
 
 CREATE TABLE artista (
@@ -35,12 +30,9 @@ CREATE TABLE album (
     album_name VARCHAR(50) NOT NULL,
     artista_id INT NOT NULL,
     PRIMARY KEY (`album_id`),
-    INDEX `fk_Album_artista_idx` (`artista_id` ASC) VISIBLE,
-    CONSTRAINT `fk_Album_artista`
+  CONSTRAINT `fk_Album_artista`
   FOREIGN KEY (`artista_id`)
   REFERENCES `SpotifyClone`.`artista` (`artista_id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION
 )engine = InnoDB;
 
 
@@ -50,30 +42,21 @@ CREATE TABLE songs (
     album_id INT NOT NULL,
     artista_id INT NOT NULL,
     PRIMARY KEY (`song_id`),
-    INDEX `fk_songs_album_idx` (`album_id` ASC) VISIBLE,
-    CONSTRAINT `fk_songs_album`
+  CONSTRAINT `fk_songs_album`
   FOREIGN KEY (`album_id`)
   REFERENCES `SpotifyClone`.`album` (`album_id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION
 )engine = InnoDB;
 
 CREATE TABLE historico (
     user_id INT NOT NULL,
     song_id INT NOT NULL,
     PRIMARY KEY(`user_id`,`song_id`),
-    INDEX `fk_historico_songs_idx` (`song_id` ASC) VISIBLE,
-    INDEX `fk_historico_user_idx` (`user_id` ASC) VISIBLE,
-    CONSTRAINT `fk_historico_songs`
+  CONSTRAINT `fk_historico_songs`
   FOREIGN KEY (`song_id`)
-  REFERENCES `SpotifyClone`.`songs` (`song_id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION,
+  REFERENCES `SpotifyClone`.`songs` (`song_id`),
   CONSTRAINT `fk_historico_user`
   FOREIGN KEY (`user_id`)
   REFERENCES `SpotifyClone`.`user` (`user_id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION
 )engine = InnoDB;
 
 
@@ -81,18 +64,12 @@ CREATE TABLE Follow (
     user_id INT NOT NULL,
     artista_id INT NOT NULL,
     PRIMARY KEY(`user_id`,`artista_id`),
-    INDEX `fk_Follow_artista_idx` (`artista_id` ASC) VISIBLE,
-    INDEX `fk_Follow_user_idx` (`user_id` ASC) VISIBLE,
-    CONSTRAINT `fk_Follow_artista`
+  CONSTRAINT `fk_Follow_artista`
   FOREIGN KEY (`artista_id`)
-  REFERENCES `SpotifyClone`.`artista` (`artista_id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION,
+  REFERENCES `SpotifyClone`.`artista` (`artista_id`),
   CONSTRAINT `fk_Follow_user`
   FOREIGN KEY (`user_id`)
   REFERENCES `SpotifyClone`.`user` (`user_id`)
-  ON DELETE NO ACTION
-  ON UPDATE NO ACTION
 )engine = InnoDB;
 
     INSERT INTO planos (planos_disponiveis,valor_plano)

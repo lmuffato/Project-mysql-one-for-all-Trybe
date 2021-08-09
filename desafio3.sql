@@ -9,4 +9,3 @@ INNER JOIN SpotifyClone.songs AS s
 ON s.song_id = h.song_id
 ORDER BY `usuario`,`nome`;
 SELECT * FROM historico_reproducao_usuarios;
-
