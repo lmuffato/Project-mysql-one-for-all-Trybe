@@ -1,3 +1,4 @@
+CREATE VIEW historico_reproducao_usuarios AS
 SELECT u.usuario, c.cancao AS nome
 FROM SpotifyClone.historico AS h
 JOIN SpotifyClone.usuarios AS u
