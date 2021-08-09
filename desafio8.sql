@@ -1,3 +1,5 @@
+USE SpotifyClone;
+DELIMITER $$
 CREATE TRIGGER trigger_usuario_delete
 AFTER DELETE ON USUARIOS
 FOR EACH ROW
