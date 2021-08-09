@@ -1,14 +1,14 @@
 USE SpotifyClone;
 
 DELIMITER $$
-CREATE PROCEDURE albuns_do_artista(IN Artist_name VARCHAR(100))
+CREATE PROCEDURE albuns_do_artista(IN name VARCHAR(100))
 BEGIN
-SELECT Artist_name AS artista, Album_name AS album
+SELECT a.Artist_name AS artista, alb.Album_name AS album
 FROM Artist AS a
 INNER JOIN Album AS alb
 ON a.Artist_id = alb.Artist_id
 GROUP BY `artista`,`album`
-HAVING `artista` = Artist_name
+HAVING a.Artist_name = name
 ORDER BY `album`;
 END $$
 
