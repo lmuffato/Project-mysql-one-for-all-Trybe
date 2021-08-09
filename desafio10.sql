@@ -1,14 +1,15 @@
 DELIMITER $$
 
-CREATE PROCEDURE quantidade_musicas_no_historico(IN user_check INT)
+CREATE FUNCTION quantidade_musicas_no_historico(user_check INT)
+RETURNS INT READS SQL DATA
 BEGIN
-  SELECT 
-    COUNT(his.usuario_id) AS quantidade_musicas_no_historico
+  DECLARE musicas_tocadas INT;
+  SELECT COUNT(his.usuario_id)
   FROM SpotifyClone.historico_reproducoes AS his
   INNER JOIN SpotifyClone.usuario AS us
   ON his.usuario_id = us.usuario_id
-  WHERE his.usuario_id = user_check
-  ORDER BY quantidade_musicas_no_historico;
+  WHERE his.usuario_id = user_check INTO musicas_tocadas;
+    RETURN musicas_tocadas;
 END $$
 
 DELIMITER ;
