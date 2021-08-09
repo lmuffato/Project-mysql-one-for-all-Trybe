@@ -9,7 +9,7 @@ BEGIN
     SpotifyClone.historico_de_reproducoes h
   JOIN
     SpotifyClone.artistas_favoritos af
-  ON-
+  ON
     af.usuario_id = h.usuario_id
   WHERE
     h.usuario_id = OLD.usuario_id
