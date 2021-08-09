@@ -32,8 +32,6 @@ describe('Queries de seleção', () => {
     await importer.disconnect();
   });
 
-  // jest.setTimeout(30000); 
-
   describe('1 - Normalize as tabelas para a 3ª Forma Normal', () => {
     const hasForeignKey = async (table, referencedTable) => {
       const [{ REFERENCE_COUNT: referenceCount }] = await sequelize.query(
@@ -377,7 +375,9 @@ describe('Queries de seleção', () => {
   });
 });
 
-describe('Queries de deleção', () => {
+// jest.setTimeout(30000); 
+
+describe.only('Queries de deleção', () => {
   let importer;
   let sequelize;
 
@@ -409,7 +409,7 @@ describe('Queries de deleção', () => {
 
   afterEach(async () => await sequelize.query('DROP DATABASE SpotifyClone;', { type: 'RAW' }));
 
-  describe('8 - Crie uma trigger chamada `trigger_usuario_delete` que deve ser disparada sempre que uma pessoa usuária for excluída do banco de dados, refletindo essa exclusão em todas as tabelas que ela estiver', () => {
+  describe.only('8 - Crie uma trigger chamada `trigger_usuario_delete` que deve ser disparada sempre que uma pessoa usuária for excluída do banco de dados, refletindo essa exclusão em todas as tabelas que ela estiver', () => {
     it('Verifica o desafio 8', async () => {
       const {
         tabela_que_contem_usuario: userTable,
