@@ -209,7 +209,7 @@ describe('Queries de seleção', () => {
     });
   });
 
-  describe.only('3 - Exibe o histórico de reprodução para cada pessoa usuária', () => {
+  describe('3 - Exibe o histórico de reprodução para cada pessoa usuária', () => {
     it('Verifica o desafio 3', async () => {
       const challengeQuery = readFileSync('desafio3.sql', 'utf8');
 
@@ -237,7 +237,7 @@ describe('Queries de seleção', () => {
     });
   });
 
-  describe('4 - Exibe top 3 artistas com maior quantidade de pessoas seguidoras', () => {
+  describe.only('4 - Exibe top 3 artistas com maior quantidade de pessoas seguidoras', () => {
     it('Verifica o desafio 4', async () => {
       const challengeQuery = readFileSync('desafio4.sql', 'utf8');
 
