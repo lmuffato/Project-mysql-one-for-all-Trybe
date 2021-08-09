@@ -21,13 +21,14 @@ CREATE TABLE user(
 CREATE TABLE artist(
   id_artist INT PRIMARY KEY AUTO_INCREMENT,
   name_artist VARCHAR(80) NOT NULL,
-  id_user INT,
-  FOREIGN KEY (id_user) REFERENCES user(id_user)
+  -- id_user INT,
+  -- FOREIGN KEY (id_user) REFERENCES user(id_user)
   );
     
 CREATE TABLE following(
   id_user INT,
   id_artist INT,
+  PRIMARY KEY (id_user, id_artist),
   FOREIGN KEY (id_user) REFERENCES user(id_user),
   FOREIGN KEY (id_artist) REFERENCES artist(id_artist)
   );
@@ -49,6 +50,7 @@ CREATE TABLE music(
 CREATE TABLE history(
   id_user INT,
   id_music INT,
+  PRIMARY KEY (id_user, id_music),
   FOREIGN KEY (id_user) REFERENCES user(id_user),
   FOREIGN KEY (id_music) REFERENCES music(id_music)
   );
