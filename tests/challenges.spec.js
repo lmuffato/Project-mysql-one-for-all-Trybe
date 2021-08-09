@@ -290,7 +290,7 @@ describe('Queries de seleção', () => {
     });
   });
 
-  describe.only('7 - Exibe uma relação de todos os álbuns produzidos por cada artista', () => {
+  describe('7 - Exibe uma relação de todos os álbuns produzidos por cada artista', () => {
     it('Verifica o desafio 7', async () => {
       const challengeQuery = readFileSync('desafio7.sql', 'utf8');
 
@@ -409,7 +409,7 @@ describe('Queries de deleção', () => {
 
   afterEach(async () => await sequelize.query('DROP DATABASE SpotifyClone;', { type: 'RAW' }));
 
-  describe('8 - Crie uma trigger chamada `trigger_usuario_delete` que deve ser disparada sempre que uma pessoa usuária for excluída do banco de dados, refletindo essa exclusão em todas as tabelas que ela estiver', () => {
+  describe.only('8 - Crie uma trigger chamada `trigger_usuario_delete` que deve ser disparada sempre que uma pessoa usuária for excluída do banco de dados, refletindo essa exclusão em todas as tabelas que ela estiver', () => {
     it('Verifica o desafio 8', async () => {
       const {
         tabela_que_contem_usuario: userTable,
