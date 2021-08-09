@@ -15,6 +15,7 @@ CREATE TABLE user (
     user_name VARCHAR(50) NOT NULL,
     user_age INT NOT NULL,
     plano_id INT NOT NULL,
+  PRIMARY KEY (`user_id`),
   CONSTRAINT `fk_user_plano`
   FOREIGN KEY (`plano_id`)
   REFERENCES `SpotifyClone`.`planos` (`plano_id`)
