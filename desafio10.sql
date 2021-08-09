@@ -9,7 +9,7 @@ BEGIN
   INNER JOIN SpotifyClone.usuario AS us
   ON his.usuario_id = us.usuario_id
   WHERE his.usuario_id = user_check INTO musicas_tocadas;
-    RETURN musicas_tocadas;
+  RETURN musicas_tocadas;
 END $$
 
 DELIMITER ;
