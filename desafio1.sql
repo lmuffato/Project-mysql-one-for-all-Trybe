@@ -57,10 +57,10 @@ CREATE TABLE conexoes(
 
 INSERT INTO artistas (artista_nome)
 VALUES
-    ('Freedie Shannon'),
-    ('Lance Day'),
+    ('Walter Phoenix'),
     ('Peter Strong'),
-    ('Walter Phoenix');
+    ('Lance Day'),
+    ('Freedie Shannon');
 
 INSERT INTO planos (plano_nome, plano_valor)
 VALUES
@@ -70,9 +70,9 @@ VALUES
   
 INSERT INTO usuarios (usuario_nome, usuario_idade, plano_id)
 VALUES
-    ('Bill', 20, 2),
-    ('Cintia', 35, 3),
     ('Thati', 23, 1),
+    ('Cintia', 35, 3),
+    ('Bill', 20, 2),
     ('Roger', 45, 1);  
   
 INSERT INTO albuns (album_nome, artista_id)
