@@ -7,5 +7,5 @@ CREATE View top_3_artistas as (
   on artf.user_id = usr.user_id and art.artist_id = artf.artist_id
   group by `artista`
   having count(artf.user_id) > 1
-  order by `artista`, `seguidores` desc
+  order by `seguidores` desc, `artista`
 );
