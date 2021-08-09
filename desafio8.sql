@@ -1,3 +1,5 @@
+USE SpotifyClone;
+
 DELIMITER $$
 CREATE TRIGGER trigger_usuario_delete
 BEFORE DELETE ON SpotifyClone.user_info
@@ -8,4 +10,3 @@ BEGIN
 END
 DELIMITER $$ ;
 
--- uso before pois SpotifyClone.follow SpotifyClone.history_user são dependendes de user_id, então primeiro preciso deletar as dependencias 
