@@ -1,4 +1,3 @@
-DROP VIEW IF EXISTS faturamento_atual;
 CREATE VIEW faturamento_atual AS
 SELECT
   MIN(p.valor_plano) AS faturamento_minimo,
