@@ -1,0 +1,1 @@
+MYSQL_USER=firstUser MYSQL_PASSWORD=12345 HOSTNAME=localhost npm test
