@@ -12,5 +12,3 @@ BEGIN
 END $$
 
 DELIMITER $$ ;
-
-DELETE FROM SpotifyClone.Users WHERE usuario_id = 1
