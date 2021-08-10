@@ -4,7 +4,8 @@ SELECT
 FROM SpotifyClone.cancao) AS `cancoes`,
 (SELECT COUNT(*)
 FROM SpotifyClone.artista) AS `artistas`,
-COUNT(*) AS `albuns`
-FROM SpotifyClone.album;
+(SELECT COUNT(*)
+FROM SpotifyClone.album) AS `albuns`;
 
-SELECT * FROM estatisticas_musicais;
+-- SELECT * FROM estatisticas_musicais;
+-- DROP VIEW estatisticas_musicais;
