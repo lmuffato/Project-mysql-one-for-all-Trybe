@@ -5,4 +5,5 @@ INNER JOIN SpotifyClone.seguindoArtistas AS t2
 INNER JOIN SpotifyClone.usuarios AS t3
 ON t1.artista_id = t2.artista_id AND t3.usuario_id = t2.usuario_id
 GROUP BY artista
-ORDER BY seguidores DESC, artista;
+ORDER BY seguidores DESC, artista
+LIMIT 3;
