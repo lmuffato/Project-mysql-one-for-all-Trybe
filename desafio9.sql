@@ -9,4 +9,4 @@ WHERE sart.artista = artist
 ORDER BY 1 ASC, 2 ASC;
 END $$
 
-DELIMITER ;
+DELIMITER;
