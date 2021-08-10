@@ -7,5 +7,5 @@ CREATE View perfil_artistas as (
   inner join SpotifyClone.albuns as alns
   on (arts.artist_id = artf.artist_id) and (artf.artist_id = alns.artist_id)
   group by `artista`, `album`
-  order by `seguidores` desc, `artista`
+  order by `seguidores` desc, `artista`, `album`
 );
