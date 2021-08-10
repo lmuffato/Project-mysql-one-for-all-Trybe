@@ -26,28 +26,28 @@ CREATE TABLE Artist(
 CREATE TABLE Album(
     album_id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
     album VARCHAR(255) NOT NULL,
-	artista_id INTEGER NOT NULL,
+artista_id INTEGER NOT NULL,
     FOREIGN KEY (artista_id) REFERENCES Artist (artista_id)
 ) engine = InnoDB;
 
 CREATE TABLE Songs(
     cancoes_id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
     cancoes VARCHAR(255) NOT NULL,
-	album_id INTEGER NOT NULL,
+album_id INTEGER NOT NULL,
     FOREIGN KEY (album_id) REFERENCES Album (album_id)
 ) engine = InnoDB;
 
 CREATE TABLE Followers(
-	usuario_id INTEGER NOT NULL,
-	artista_id INTEGER NOT NULL,
+usuario_id INTEGER NOT NULL,
+artista_id INTEGER NOT NULL,
     PRIMARY KEY (usuario_id, artista_id),
     FOREIGN KEY (usuario_id) REFERENCES Users (usuario_id),
     FOREIGN KEY (artista_id) REFERENCES Artist (artista_id)
 ) engine = InnoDB;
 
 CREATE TABLE Songs_Played(
-	usuario_id INTEGER NOT NULL,
-	cancoes_id INTEGER NOT NULL,
+usuario_id INTEGER NOT NULL,
+cancoes_id INTEGER NOT NULL,
     PRIMARY KEY (usuario_id, cancoes_id),
     FOREIGN KEY (usuario_id) REFERENCES Users (usuario_id),
     FOREIGN KEY (cancoes_id) REFERENCES Songs (cancoes_id)
