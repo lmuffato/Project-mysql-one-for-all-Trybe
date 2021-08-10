@@ -52,7 +52,7 @@ INSERT INTO SpotifyClone.cancao(cancao, album_id) VALUES ("Without My Streets", 
 CREATE TABLE SpotifyClone.plano(
   plano_id INT PRIMARY KEY AUTO_INCREMENT,
   plano VARCHAR(100) NOT NULL,
-  valor_plano DOUBLE NOT NULL
+  valor_plano DECIMAL(3, 2) NOT NULL
 ) ENGINE=InnoDB;
 
 INSERT INTO SpotifyClone.plano(plano, valor_plano) VALUES ("gratuito", 0);
