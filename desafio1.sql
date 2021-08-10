@@ -73,9 +73,9 @@ INSERT INTO SpotifyClone.usuario(usuario, idade, plano_id) VALUES ("Bill", 20, 3
 INSERT INTO SpotifyClone.usuario(usuario, idade, plano_id) VALUES ("Roger", 45, 1);
 
 CREATE TABLE SpotifyClone.seguindo(
-  seguindo_id INT PRIMARY KEY AUTO_INCREMENT,
   usuario_id INT NOT NULL,
   artista_id INT NOT NULL,
+  CONSTRAINT PRIMARY KEY (usuario_id, artista_id),
   FOREIGN KEY (usuario_id) REFERENCES SpotifyClone.usuario(usuario_id),
   FOREIGN KEY (artista_id) REFERENCES SpotifyClone.artista(artista_id)
 ) ENGINE=InnoDB;
@@ -90,9 +90,9 @@ INSERT INTO SpotifyClone.seguindo(usuario_id, artista_id) VALUES (3, 1);
 INSERT INTO SpotifyClone.seguindo(usuario_id, artista_id) VALUES (4, 4);
 
 CREATE TABLE SpotifyClone.historico_reproducao(
-  reproducao_id INT PRIMARY KEY AUTO_INCREMENT,
   usuario_id INT NOT NULL,
   cancao_id INT NOT NULL,
+  CONSTRAINT PRIMARY KEY (usuario_id, cancao_id),
   FOREIGN KEY (usuario_id) REFERENCES SpotifyClone.usuario(usuario_id),
   FOREIGN KEY (cancao_id) REFERENCES SpotifyClone.cancao(cancao_id)
 ) ENGINE=InnoDB;
