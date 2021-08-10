@@ -3,9 +3,7 @@ CREATE TRIGGER trigger_usuario_delete
     BEFORE DELETE ON SpotifyClone.users
     FOR EACH ROW
 BEGIN
-    DELETE FROM SpotifyClone.reproduction_history AS r
-    WHERE OLD.user_id = r.user_id;
-    DELETE FROM SpotifyClone.following AS f
-    WHERE OLD.user_id = f.user_id;
+    DELETE FROM SpotifyClone.reproduction_history WHERE OLD.user_id = user_id;
+    DELETE FROM SpotifyClone.following WHERE OLD.user_id = user_id;
 END $$
 DELIMITER ;
