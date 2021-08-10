@@ -1,6 +1,6 @@
 CREATE View perfil_artistas as (
   select arts.artist_name as artista,
-  alns.albuns_name as albuns,
+  alns.albuns_name as album,
   count(artf.user_id) as seguidores
   from SpotifyClone.artists_follows as artf
   inner join SpotifyClone.artists as arts
