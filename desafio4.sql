@@ -9,3 +9,4 @@ GROUP BY ar.artist_name
 HAVING COUNT(fol.user_id) > 1
 ORDER BY COUNT(fol.user_id) DESC, ar.artist_name ASC
 );
+

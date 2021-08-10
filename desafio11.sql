@@ -9,3 +9,4 @@ AND (u.plan_id IN(2, 3))
 GROUP BY s.song_name
 ORDER BY s.song_name ASC
 );
+

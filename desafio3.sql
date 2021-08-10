@@ -7,3 +7,4 @@ INNER JOIN SpotifyClone.songs AS s
 ON uph.user_id = u.user_id AND s.song_id = uph.song_id
 ORDER BY u.user_name ASC, s.song_name ASC
 );
+

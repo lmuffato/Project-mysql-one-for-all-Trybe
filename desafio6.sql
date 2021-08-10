@@ -7,3 +7,4 @@ FROM SpotifyClone.plans AS p
 INNER JOIN SpotifyClone.users AS u
 ON u.plan_id = p.plan_id
 );
+

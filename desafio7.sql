@@ -9,3 +9,4 @@ ON (ar.artist_id = fol.artist_id) AND (al.artist_id = ar.artist_id)
 GROUP BY al.album_name, ar.artist_name
 ORDER BY COUNT(fol.user_id) DESC, ar.artist_name ASC, al.album_name ASC
 );
+

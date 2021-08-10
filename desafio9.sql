@@ -11,3 +11,4 @@ ON al.artist_id = ar.artist_id AND nome_artista = ar.artist_name
 ORDER BY al.album_name ASC;
 END $$
 DELIMITER ;
+

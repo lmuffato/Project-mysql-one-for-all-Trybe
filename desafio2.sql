@@ -4,3 +4,4 @@ SELECT
 (SELECT COUNT(artist_name) from SpotifyClone.artists) AS 'artistas',
 (SELECT COUNT(album_name) from SpotifyClone.albums) AS 'albuns'
 );
+
