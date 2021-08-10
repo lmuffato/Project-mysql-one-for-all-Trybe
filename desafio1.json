@@ -5,7 +5,7 @@
   "tabela_que_contem_plano": "membership",
   "coluna_historico_de_reproducoes": "song_id",
   "tabela_que_contem_historico_de_reproducoes": "listening_history",
-  "coluna_seguindo_artistas": "followed_artist_id",
+  "coluna_seguindo_artistas": "artist_id",
   "tabela_que_contem_seguindo_artistas": "followed_artists",
   "coluna_artista": "artist_name",
   "tabela_que_contem_artista": "artists",
