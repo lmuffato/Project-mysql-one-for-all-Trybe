@@ -8,6 +8,6 @@ albs.albuns_name AS 'album'
 FROM artists  arts
 INNER JOIN albuns  albs
 ON albs.artist_id = arts.artist_id AND artist_name = arts.artist_name
-ORDER BY `album `ASC;
+ORDER BY `album` ASC;
 END $$
 DELIMITER ;
