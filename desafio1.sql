@@ -1,3 +1,7 @@
+/*
+  * Consultei o repositorio do LeonarDev para resolver essa parte.
+  * Link: https://github.com/tryber/sd-09-mysql-one-for-all/tree/leonardev-one-4-all
+*/
 DROP DATABASE IF EXISTS SpotifyClone;
 CREATE DATABASE SpotifyClone;
 CREATE TABLE IF NOT EXISTS SpotifyClone.PLANOS (
