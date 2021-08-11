@@ -1,3 +1,4 @@
+-- agradecimentos, Nathalia zebral, Marilia cegalla pelo apoio no projeto
 USE SpotifyClone;
 
 DELIMITER $$
