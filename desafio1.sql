@@ -62,8 +62,8 @@ CREATE TABLE `historical_reproduction` (
 
 INSERT INTO `plans` (`name`, `price`) 
 VALUES ('gratuito', 0),
-       ('universitário', 5.99),
-       ('familiar', 7.99);
+        ('universitário', 5.99),
+        ('familiar', 7.99);
 
 INSERT INTO `users` (`name`, `age`, `plan_id`) 
 VALUES ('Thati', 23, 1),
