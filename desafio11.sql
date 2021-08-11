@@ -8,4 +8,4 @@ ON a.cancoes_ID = h.cancoes_ID
 WHERE h.usuario_ID IN(2,3)
 GROUP BY `nome`
 ORDER BY `nome`;
--- SELECT*FROM cancoes_premium; 
+SELECT*FROM cancoes_premium; 
