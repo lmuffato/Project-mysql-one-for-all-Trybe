@@ -64,7 +64,7 @@ ALTER TABLE users
     ADD COLUMN
         plan_id INT,
     ADD CONSTRAINT
-        FOREIGN KEY (plan_id) REFERENCES plans(plan_id),
+        FOREIGN KEY (plan_id) REFERENCES plans(plan_id);
 
 ALTER TABLE follow_artist
     ADD CONSTRAINT
