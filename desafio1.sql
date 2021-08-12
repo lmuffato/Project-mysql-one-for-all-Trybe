@@ -142,7 +142,7 @@ ALTER TABLE users
     ADD COLUMN
         plan_id INT,
     ADD CONSTRAINT
-        FOREIGN KEY (plan_id) REFERENCES plans(plan_id)
+        FOREIGN KEY (plan_id) REFERENCES plans(plan_id),
     ADD COLUMN
         artist_id INT,
     ADD CONSTRAINT
@@ -159,3 +159,31 @@ ALTER TABLE history_reproductions
         FOREIGN KEY (user_id) REFERENCES users(user_id),
     ADD CONSTRAINT
         FOREIGN KEY (song_id) REFERENCES songs(song_id);
+
+INSERT INTO follow_artist (user_id, artist_id)
+VALUES
+(1, 1),
+(1, 4),
+(1, 3),
+(2, 1),
+(2, 3),
+(3, 2),
+(3, 1),
+(4, 4);
+
+INSERT INTO history_reproductions (user_id, song_id)
+VALUES
+(1, 1),
+(1, 6),
+(1, 14),
+(1, 16),
+(2, 13),
+(2, 17),
+(2, 2),
+(2, 15),
+(3, 4),
+(3, 16),
+(3, 6),
+(4, 3),
+(4, 18),
+(4, 11);
