@@ -48,60 +48,6 @@ CREATE TABLE IF NOT EXISTS history_reproductions(
     PRIMARY KEY (user_id, song_id)
 ) ENGINE=INNODB;
 
-INSERT INTO 
-    users(user, age, plan_id)
-VALUES 
-    ('Thati', 23, 1),
-    ('Cintia', 35, 3),
-    ('Bill', 20, 2),
-    ('Roger', 45, 1);
-
-INSERT INTO 
-    plans(plan, plan_value)
-VALUES
-    ('gratuito', 0),
-    ('universitário', 5.99),
-    ('familiar', 7.99);
-
-INSERT INTO
-    songs(song, id_album)
-VALUES
-    ('Soul For US', 1),
-    ('Reflections Of Magic', 1),
-    ('Dance With Her Own', 1),
-    ('Troubles Of My Inner Fire', 2),
-    ('Time Fireworks', 2),
-    ('Magic circus', 3),
-    ('Honey, So Do I', 3),
-    ("Sweetie, Let's Go Wild", 3),
-    ('She Knows', 3),
-    ('Fantasy For Me', 4),
-    ('Celebration Of More', 4),
-    ('Rock His Everything', 4),
-    ('Home Forever', 4),
-    ('Diamond Power', 4),
-    ("Honey, Let's Be Silly", 4),
-    ('Thang Of Thunder', 5),
-    ('Words Of Her Life', 5),
-    ('Without My Streets', 5);
-
-INSERT INTO
-    artists(name)
-VALUES
-    ('Walter Phoenix'),
-    ('Peter Strong'),
-    ('Lance Day'),
-    ('Freedie Shannon');
-
-INSERT INTO
-    albums(album, id_artist)
-VALUES
-    ('Envious', 1),
-    ('Exuberant', 1),
-    ('Hallowed Steam', 2),
-    ('Incandescent', 3),
-    ('Temporary Culture', 4);
-
 ALTER TABLE albums
     ADD COLUMN
         artist_id INT,
@@ -159,6 +105,60 @@ ALTER TABLE history_reproductions
         FOREIGN KEY (user_id) REFERENCES users(user_id),
     ADD CONSTRAINT
         FOREIGN KEY (song_id) REFERENCES songs(song_id);
+
+INSERT INTO 
+    users(user, age)
+VALUES 
+    ('Thati', 23),
+    ('Cintia', 35),
+    ('Bill', 20),
+    ('Roger', 45);
+
+INSERT INTO 
+    plans(plan, plan_value)
+VALUES
+    ('gratuito', 0),
+    ('universitário', 5.99),
+    ('familiar', 7.99);
+
+INSERT INTO
+    songs(song)
+VALUES
+    ('Soul For US'),
+    ('Reflections Of Magic'),
+    ('Dance With Her Own'),
+    ('Troubles Of My Inner Fire'),
+    ('Time Fireworks'),
+    ('Magic circus'),
+    ('Honey, So Do I'),
+    ("Sweetie, Let's Go Wild"),
+    ('She Knows'),
+    ('Fantasy For Me'),
+    ('Celebration Of More'),
+    ('Rock His Everything'),
+    ('Home Forever'),
+    ('Diamond Power'),
+    ("Honey, Let's Be Silly"),
+    ('Thang Of Thunder'),
+    ('Words Of Her Life'),
+    ('Without My Streets');
+
+INSERT INTO
+    artists(name)
+VALUES
+    ('Walter Phoenix'),
+    ('Peter Strong'),
+    ('Lance Day'),
+    ('Freedie Shannon');
+
+INSERT INTO
+    albums(album)
+VALUES
+    ('Envious'),
+    ('Exuberant'),
+    ('Hallowed Steam'),
+    ('Incandescent'),
+    ('Temporary Culture');
 
 INSERT INTO follow_artist (user_id, artist_id)
 VALUES
