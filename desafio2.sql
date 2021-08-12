@@ -9,4 +9,3 @@ CREATE VIEW estatisticas_musicais AS
         spotifyClone.artists a USING (song_id)
     INNER JOIN
         spotifyClone.albums al USING (song_id);
-    
