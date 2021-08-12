@@ -61,14 +61,17 @@ VALUES
     ('Time Fireworks'),
     ('Magic circus'),
     ('Honey, So Do I'),
-    ('Sweetie, "Let''s" Go Wild'),
+    ("Sweetie, Let's Go Wild"),
     ('She Knows'),
     ('Fantasy For Me'),
     ('Celebration Of More'),
     ('Rock His Everything'),
     ('Home Forever'),
     ('Diamond Power'),
-    ('Honey, "Let''s" Be Silly');
+    ("Honey, Let's Be Silly"),
+    ('Thang Of Thunder'),
+    ('Words Of Her Life'),
+    ('Without My Streets');
 
 INSERT INTO
     artists(name)
