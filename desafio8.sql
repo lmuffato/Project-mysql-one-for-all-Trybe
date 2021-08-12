@@ -10,3 +10,4 @@ END $$
 DELIMITER ;
 
 -- DELETE FROM SpotifyClone.Users WHERE username = 'Thati';
+SELECT * FROM SpotifyClone.Users;
