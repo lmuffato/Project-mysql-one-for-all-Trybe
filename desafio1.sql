@@ -113,7 +113,7 @@ VALUES
 INSERT INTO
     songs(song, album_id)
 VALUES
-    ('Soul For US', 1),
+    ('Soul For Us', 1),
     ('Reflections Of Magic', 1),
     ('Dance With Her Own', 1),
     ('Troubles Of My Inner Fire', 2),
