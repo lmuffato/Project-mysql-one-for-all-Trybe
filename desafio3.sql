@@ -1,4 +1,4 @@
-CREATE VIEW historico_reproducao_usuarios AS
+CREATE VIEW historico_reproducao_usuarios AS (
     SELECT 
         u.user usuario, 
         s.song nome
@@ -11,4 +11,5 @@ CREATE VIEW historico_reproducao_usuarios AS
         SpotifyClone.songs s 
     ON hr.song_id = s.song_id
     ORDER BY 
-        1, 2;
+        1, 2
+);
