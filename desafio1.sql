@@ -135,12 +135,14 @@ ALTER TABLE users
 
 CREATE TABLE IF NOT EXISTS follow_artist(
     user_id INT,
-    artist_id INT
+    artist_id INT,
+    PRIMARY KEY (user_id, artist_id)
 ) ENGINE=INNODB;
 
 CREATE TABLE IF NOT EXISTS history_reproductions(
     user_id INT,
-    song_id INT
+    song_id INT,
+    PRIMARY KEY (user_id, song_id)
 ) ENGINE=INNODB;
 
 ALTER TABLE follow_artist
