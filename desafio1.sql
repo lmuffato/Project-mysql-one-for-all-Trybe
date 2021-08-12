@@ -137,14 +137,14 @@ ALTER TABLE users
         FOREIGN KEY (artist_id) REFERENCES artists(artist_id);
 
 CREATE TABLE IF NOT EXISTS follow_artist(
-    user_id INT,
-    artist_id INT,
+    user_id INT(10),
+    artist_id INT(10),
     PRIMARY KEY (user_id, artist_id)
 ) ENGINE=INNODB;
 
 CREATE TABLE IF NOT EXISTS history_reproductions(
-    user_id INT,
-    song_id INT,
+    user_id INT(10),
+    song_id INT(10),
     PRIMARY KEY (user_id, song_id)
 ) ENGINE=INNODB;
 
