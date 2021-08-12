@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS plans (
 CREATE TABLE IF NOT EXISTS users (
     user_id INT(10) AUTO_INCREMENT,
     user VARCHAR(255) NOT NULL,
-    age INT,
+    age INT(10),
     PRIMARY KEY (user_id)
 )  ENGINE=INNODB;
 
