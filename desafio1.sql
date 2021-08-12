@@ -154,5 +154,3 @@ ALTER TABLE history_reproductions
         FOREIGN KEY (user_id) REFERENCES users(user_id),
     ADD CONSTRAINT
         FOREIGN KEY (song_id) REFERENCES songs(song_id);
-
-
