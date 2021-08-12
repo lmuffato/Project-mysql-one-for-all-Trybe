@@ -53,23 +53,7 @@ ALTER TABLE albums
         artist_id INT,
     ADD CONSTRAINT
         fk_artist_id
-        FOREIGN KEY (artist_id) REFERENCES artists(artist_id),
-    ADD COLUMN
-        song_id INT,
-    ADD CONSTRAINT
-        fk_song_id
-        FOREIGN KEY (song_id) REFERENCES songs(song_id);
-
-ALTER TABLE artists
-    ADD COLUMN
-        album_id INT,
-    ADD CONSTRAINT
-        FOREIGN KEY (album_id) REFERENCES albums(album_id),
-    ADD COLUMN
-        song_id INT,
-    ADD CONSTRAINT
-        FOREIGN KEY (song_id) REFERENCES songs(song_id);
-
+        FOREIGN KEY (artist_id) REFERENCES artists(artist_id);
 ALTER TABLE songs
     ADD COLUMN
         album_id INT,
@@ -78,21 +62,9 @@ ALTER TABLE songs
 
 ALTER TABLE users
     ADD COLUMN
-        album_id INT,
-    ADD CONSTRAINT
-        FOREIGN KEY (album_id) REFERENCES albums(album_id),
-    ADD COLUMN
-        song_id INT,
-    ADD CONSTRAINT
-        FOREIGN KEY (song_id) REFERENCES songs(song_id),
-    ADD COLUMN
         plan_id INT,
     ADD CONSTRAINT
         FOREIGN KEY (plan_id) REFERENCES plans(plan_id),
-    ADD COLUMN
-        artist_id INT,
-    ADD CONSTRAINT
-        FOREIGN KEY (artist_id) REFERENCES artists(artist_id);
 
 ALTER TABLE follow_artist
     ADD CONSTRAINT
