@@ -36,6 +36,18 @@ CREATE TABLE IF NOT EXISTS users (
     PRIMARY KEY (user_id)
 )  ENGINE=INNODB;
 
+CREATE TABLE IF NOT EXISTS follow_artist(
+    user_id INT(10),
+    artist_id INT(10),
+    PRIMARY KEY (user_id, artist_id)
+) ENGINE=INNODB;
+
+CREATE TABLE IF NOT EXISTS history_reproductions(
+    user_id INT(10),
+    song_id INT(10),
+    PRIMARY KEY (user_id, song_id)
+) ENGINE=INNODB;
+
 INSERT INTO 
     users(user, age)
 VALUES 
@@ -135,18 +147,6 @@ ALTER TABLE users
         artist_id INT,
     ADD CONSTRAINT
         FOREIGN KEY (artist_id) REFERENCES artists(artist_id);
-
-CREATE TABLE IF NOT EXISTS follow_artist(
-    user_id INT(10),
-    artist_id INT(10),
-    PRIMARY KEY (user_id, artist_id)
-) ENGINE=INNODB;
-
-CREATE TABLE IF NOT EXISTS history_reproductions(
-    user_id INT(10),
-    song_id INT(10),
-    PRIMARY KEY (user_id, song_id)
-) ENGINE=INNODB;
 
 ALTER TABLE follow_artist
     ADD CONSTRAINT
