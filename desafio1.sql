@@ -95,6 +95,7 @@ VALUES
   (2, 1),
   (2, 3),
   (3, 2),
+  (3, 1),
   (4, 4);
 
 CREATE TABLE historico_reproducoes(
