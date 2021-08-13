@@ -47,7 +47,8 @@ CREATE TABLE SpotifyClone.playback_history(
 song INT NOT NULL,
 user_id INT NOT NULL,
 FOREIGN KEY (song) REFERENCES SpotifyClone.songs(id),
-FOREIGN KEY (user_id) REFERENCES SpotifyClone.users(id)
+FOREIGN KEY (user_id) REFERENCES SpotifyClone.users(id),
+PRIMARY KEY (song, user_id)
 ) ENGINE=InnoDB;
 
 INSERT INTO SpotifyClone.artists(artist)
