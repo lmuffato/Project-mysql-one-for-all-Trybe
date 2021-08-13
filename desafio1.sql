@@ -53,7 +53,7 @@ VALUES
   ('Envious', 1),
   ('Exuberant', 1),
   ('Hallowed Steam', 2),
-  ('Incandercent', 3),
+  ('Incandescent', 3),
   ('Temporary Culture', 4);
 
 CREATE TABLE cancoes(
