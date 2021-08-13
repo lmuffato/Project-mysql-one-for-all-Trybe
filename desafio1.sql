@@ -75,7 +75,7 @@ VALUES
 INSERT INTO SpotifyClone.songs(song, album)
 VALUES
 ('Soul For Us', 1),
-('Reflections of Magic', 1),
+('Reflections Of Magic', 1),
 ('Dance With Her Own', 1),
 ('Troubles Of My Inner Fire', 2),
 ('Time Fireworks', 2),
@@ -89,7 +89,7 @@ VALUES
     ('Home Forever', 4),
     ('Diamond Power', 4),
     ('Honey, Let\'s Be Silly', 4),
-    ('Thang of Thunder', 5),
+    ('Thang Of Thunder', 5),
     ('Words Of Her Life', 5),
     ('Without My Streets', 5);
 
