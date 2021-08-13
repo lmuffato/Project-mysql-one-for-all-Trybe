@@ -9,4 +9,3 @@ CREATE VIEW historico_reproducao_usuarios AS
   INNER JOIN SpotifyClone.cancoes AS cancoes
   ON historico.cancao_id=cancoes.cancao_id
   ORDER BY nome_do_usuario, cancao;
-  
