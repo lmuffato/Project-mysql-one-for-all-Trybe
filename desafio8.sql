@@ -1,6 +1,7 @@
 -- challenge 8;
 
 DELIMITER $$
+
 CREATE TRIGGER trigger_usuario_delete
   AFTER DELETE ON SpotifyClone.usuarios
   FOR EACH ROW
