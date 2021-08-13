@@ -10,7 +10,7 @@ BEGIN
     INNER JOIN 
         albums al USING (artist_id)
     WHERE 
-        a.artist_name LIKE CONCAT("%",nameSearch,"%")
+        a.name LIKE CONCAT("%",nameSearch,"%")
     ORDER BY 
         2;
 END
