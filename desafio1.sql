@@ -1,3 +1,5 @@
+-- https://github.com/tryber/sd-010-a-mysql-one-for-all/pull/102/commits/a29bf889a73c4574107bdb4e2ec5c16af3a206da
+
 DROP DATABASE IF EXISTS SpotifyClone;
 
 CREATE DATABASE SpotifyClone;
@@ -84,6 +86,7 @@ VALUES
 CREATE TABLE artistas_seguidos(
   usuario_id INT NOT NULL,
   artista_id INT NOT NULL,
+  CONSTRAINT PRIMARY KEY (usuario_id, artista_id),
   FOREIGN KEY (usuario_id) REFERENCES usuarios (usuario_id),
   FOREIGN KEY (artista_id) REFERENCES artistas (artista_id)
 ) engine = InnoDB;
@@ -101,6 +104,7 @@ VALUES
 CREATE TABLE historico_reproducoes(
   usuario_id INT NOT NULL,
   cancao_id INT NOT NULL,
+  CONSTRAINT PRIMARY KEY (usuario_id, cancao_id),
   FOREIGN KEY (usuario_id) REFERENCES usuarios (usuario_id),
   FOREIGN KEY (cancao_id) REFERENCES cancoes (cancao_id)
 ) engine = InnoDB;
