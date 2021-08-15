@@ -7,7 +7,7 @@ BEGIN
     al.album AS `album`
   FROM SpotifyClone.artists AS ar
   INNER JOIN SpotifyClone.albums AS al
-  ON ar.id = al.artist
+  ON ar.artist = artist AND ar.id = al.artist
   ORDER BY `album` ASC;
 END $$
 
