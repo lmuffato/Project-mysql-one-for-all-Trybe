@@ -9,5 +9,3 @@ INNER JOIN SpotifyClone.seguindo AS se
 ON art.artista_ID = se.artista_ID
 GROUP BY `artista`, `album`
 ORDER BY `seguidores` DESC, `artista` ASC, `album`;
- -- where se.artista_id = art.artista_id
- 
