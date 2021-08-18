@@ -11,49 +11,49 @@ plan_price DECIMAL(5, 2) NOT NULL
 ) ENGINE = InnoDB;
 
 CREATE TABLE artists(
-	artist_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	artist_name VARCHAR(50) NOT NULL
-	) ENGINE = InnoDB;
+artist_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+artist_name VARCHAR(50) NOT NULL
+) ENGINE = InnoDB;
     
 CREATE TABLE albuns(
-	album_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	album_name VARCHAR(50) NOT NULL,
-	artist_id INT NOT NULL,
-		FOREIGN KEY (artist_id) 
-    REFERENCES artists (artist_id)
-	) ENGINE = InnoDB;
+album_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+album_name VARCHAR(50) NOT NULL,
+artist_id INT NOT NULL,
+FOREIGN KEY (artist_id) 
+REFERENCES artists (artist_id)
+) ENGINE = InnoDB;
     
 CREATE TABLE musics(
-	music_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	music_name VARCHAR(255) NOT NULL,
-	album_id INT NOT NULL,
-		FOREIGN KEY (album_id) 
-    REFERENCES albuns (album_id)
-	) ENGINE = InnoDB;
+music_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+music_name VARCHAR(255) NOT NULL,
+album_id INT NOT NULL,
+FOREIGN KEY (album_id) 
+REFERENCES albuns (album_id)
+) ENGINE = InnoDB;
 
 CREATE TABLE users(
-	user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	user_name VARCHAR(100) NOT NULL,
-	age INTEGER,
-	plan_id INT NOT NULL, 
-		FOREIGN KEY (plan_id) 
-    REFERENCES plans (plan_id)
-	) ENGINE = InnoDB;
+user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+user_name VARCHAR(100) NOT NULL,
+age INTEGER,
+plan_id INT NOT NULL, 
+FOREIGN KEY (plan_id) 
+REFERENCES plans (plan_id)
+) ENGINE = InnoDB;
     
 CREATE TABLE follow_artists(
-  user_id INT NOT NULL,
-  artist_id INT NOT NULL,
-  CONSTRAINT PRIMARY KEY (user_id, artist_id),
-    FOREIGN KEY (user_id) REFERENCES users(user_id),
-    FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
+user_id INT NOT NULL,
+artist_id INT NOT NULL,
+CONSTRAINT PRIMARY KEY (user_id, artist_id),
+FOREIGN KEY (user_id) REFERENCES users(user_id),
+FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE history_play(
-  user_id INT NOT NULL,
-  music_id INT NOT NULL,
-  CONSTRAINT PRIMARY KEY (user_id, music_id),
-    FOREIGN KEY (user_id) REFERENCES users(user_id),
-    FOREIGN KEY (music_id) REFERENCES musics(music_id)
+user_id INT NOT NULL,
+music_id INT NOT NULL,
+CONSTRAINT PRIMARY KEY (user_id, music_id),
+FOREIGN KEY (user_id) REFERENCES users(user_id),
+FOREIGN KEY (music_id) REFERENCES musics(music_id)
 ) ENGINE = InnoDB;
 
 INSERT INTO plans (plan_name, plan_price) VALUES
