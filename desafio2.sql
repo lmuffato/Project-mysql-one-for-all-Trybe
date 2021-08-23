@@ -1,4 +1,4 @@
-/* 2. Crie uma VIEW chamada estatisticas_musicais que exiba três colunas: */
+/* Desafio 2 - Crie uma VIEW chamada estatisticas_musicais que exiba três colunas: */
 -- USE SpotifyClone;
 CREATE VIEW estatisticas_musicais AS
   SELECT

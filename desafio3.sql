@@ -1,4 +1,4 @@
-/* 3. Crie uma VIEW chamada historico_reproducao_usuarios.
+/* Desafio 3 - Crie uma VIEW chamada historico_reproducao_usuarios.
 Essa VIEW deverá ter apenas duas colunas:
 1. A primeira coluna deve possuir o alias "usuario" e exibir o nome
 da pessoa usuária.
