@@ -5,5 +5,9 @@ da pessoa usuária.
 2. A segunda coluna deve possuir o alias "nome" e exibir o nome da
 canção ouvida pela pessoa com base no seu histórico de reprodução. */
 
-/*USE SpotifyClone;
-SELECT * FROM historic;*/
+-- USE SpotifyClone;
+SELECT *
+  FROM historic AS hi
+INNER JOIN users AS us
+  ON hi.user_id = us.user_id
+ORDER BY us.user_name;
