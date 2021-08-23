@@ -56,9 +56,9 @@ CREATE TABLE historic(
 INSERT INTO plans
   (plan_name, plan_price)
 VALUES
-  ('gratuito', '0'),
-  ('familiar', '7.99'),
-  ('universitario', '5.99');
+  ('gratuito', 0),
+  ('familiar', 7.99),
+  ('universitário', 5.99);
 
 INSERT INTO users
   (user_name, user_age, plan_id)
