@@ -6,6 +6,7 @@ pessoa artista.
 2. A segunda coluna deve ter o alias "seguidores" e exibir a quantidade
 de pessoas que estão seguindo aquela pessoa artista.*/
 -- USE SpotifyClone;
+CREATE VIEW top_3_artistas AS
 SELECT
   ar.artist_name AS `artista`,
   COUNT(fo.user_id) AS `seguidores` 
