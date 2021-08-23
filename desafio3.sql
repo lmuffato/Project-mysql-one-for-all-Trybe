@@ -10,4 +10,6 @@ SELECT *
   FROM historic AS hi
 INNER JOIN users AS us
   ON hi.user_id = us.user_id
+INNER JOIN songs AS so
+  ON hi.song_id = so.song_id
 ORDER BY us.user_name;
