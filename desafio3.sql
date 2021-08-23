@@ -4,12 +4,16 @@ Essa VIEW deverá ter apenas duas colunas:
 da pessoa usuária.
 2. A segunda coluna deve possuir o alias "nome" e exibir o nome da
 canção ouvida pela pessoa com base no seu histórico de reprodução. */
-
 -- USE SpotifyClone;
-SELECT *
+CREATE VIEW historico_reproducao_usuarios AS
+SELECT
+  us.user_name AS "usuario",
+  so.song_name AS "nome"
   FROM historic AS hi
 INNER JOIN users AS us
   ON hi.user_id = us.user_id
 INNER JOIN songs AS so
   ON hi.song_id = so.song_id
-ORDER BY us.user_name;
+ORDER BY
+  us.user_name ASC,
+  so.song_name ASC;
