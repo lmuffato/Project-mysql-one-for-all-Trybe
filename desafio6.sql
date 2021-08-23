@@ -14,6 +14,7 @@ valor médio dos planos possuídos por pessoas usuárias até o momento.
 4. Por fim, a quarta coluna deve ter o alias "faturamento_total" e exibir
 o valor total obtido com os planos possuídos por pessuasusuárias. */
 -- USE SpotifyClone;
+CREATE VIEW aturamento_medio AS
 SELECT
   ROUND(MIN(plan_price), 2) AS "faturamento_minimo",
   ROUND(MAX(plan_price), 2) AS "faturamento_maximo",
