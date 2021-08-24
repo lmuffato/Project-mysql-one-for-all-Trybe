@@ -4,13 +4,13 @@ CREATE DATABASE SpotifyClone;
 
 USE SpotifyClone;
 
-CREATE TABLE `tab_plano`(
+CREATE TABLE "tab_plano"(
     `plano_id` int primary key auto_increment,
     `name` varchar(30),
     `price` decimal(3,2)    
 ) engine = InnoDB;
 
-CREATE TABLE `tab_usuario`(
+CREATE TABLE "tab_usuario"(
     `user_id` INT PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(60) NOT NULL,
     `age` INT NOT NULL,
@@ -19,12 +19,12 @@ CREATE TABLE `tab_usuario`(
         REFERENCES plans (plan_id)
 ) engine = InnoDB;
 
-CREATE TABLE `tab_artista` (
+CREATE TABLE "tab_artista" (
     `artist_id` INT PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(50) NOT NULL
 ) ENGINE = InnoDB;
 
-CREATE TABLE `tab_album` (
+CREATE TABLE "tab_album" (
     `album_id` INT PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(50) NOT NULL,
     `artist_id` INT NOT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE `tab_album` (
         REFERENCES artists (artist_id)
 )  ENGINE=INNODB;
 
-CREATE TABLE `tab_cancoes`(
+CREATE TABLE "tab_cancoes"(
     `song_id` INT PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(50) NOT NULL,
     `album_id` INT NOT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE `tab_cancoes`(
         REFERENCES albums (album_id)
 )  ENGINE=INNODB;
 
-CREATE TABLE `tab_seguindo_artistas` (
+CREATE TABLE "tab_seguindo_artistas" (
     `user_id` INT NOT NULL,
     `artist_id` INT NOT NULL,
     FOREIGN KEY (user_id)
@@ -50,7 +50,7 @@ CREATE TABLE `tab_seguindo_artistas` (
     PRIMARY KEY (user_id , artist_id)
 )  ENGINE=INNODB;
 
-CREATE TABLE `tab_historico_reproducoes` (
+CREATE TABLE "tab_historico_reproducoes" (
     `user_id` INT NOT NULL,
     `song_id` INT NOT NULL,
     FOREIGN KEY (user_id)
@@ -60,31 +60,31 @@ CREATE TABLE `tab_historico_reproducoes` (
     PRIMARY KEY (user_id , song_id)
 )  ENGINE=INNODB;
 
-INSERT INTO `planos` (`name`, `price`) 
+INSERT INTO "tab_plano" (`name`, `price`) 
 VALUES ('gratuito', 0),
         ('universitário', 5.99),
         ('familiar', 7.99);
 
-INSERT INTO `usuarios` (`name`, `age`, `plan_id`) 
+INSERT INTO "tab_usuario" (`name`, `age`, `plan_id`) 
 VALUES ('Thati', 23, 1),
         ('Cintia', 35, 3),
         ('Bill', 20, 2),
         ('Roger', 45, 1);
 
-INSERT INTO `artistas` (`name`) 
+INSERT INTO "tab_artista" (`name`) 
 VALUES ('Walter Phoenix'),
         ('Peter Strong'),
         ('Lance Day'),
         ('Freedie Shannon');
 
-INSERT INTO `albuns` (`name`, `artist_id`) 
+INSERT INTO "tab_album" (`name`, `artist_id`) 
 VALUES ('Envious', 1),
         ('Exuberant', 1),
         ('Hallowed Steam', 2),
         ('Incandescent', 3),
         ('Temporary Culture', 4);
 
-INSERT INTO `cancoes` (`name`, `album_id`) 
+INSERT INTO "tab_cancoes" (`name`, `album_id`) 
 VALUES ('Soul For Us', 1),
         ('Reflections Of Magic', 1),
         ('Dance With Her Own', 1),
@@ -104,7 +104,7 @@ VALUES ('Soul For Us', 1),
         ('Words Of Her Life', 5),
         ('Without My Streets', 5);
 
-INSERT INTO `seguindo_artistas` (`user_id`, `artist_id`) 
+INSERT INTO "tab_seguindo_artistas" (`user_id`, `artist_id`) 
 VALUES (1, 1),
         (1, 4),
         (1, 3),
@@ -114,7 +114,7 @@ VALUES (1, 1),
         (3, 1),
         (4, 4);
 
-INSERT INTO `historico_reproducoes` (`user_id`, `song_id`) 
+INSERT INTO "tab_historico_reproducoes" (`user_id`, `song_id`) 
 VALUES (1, 1),
         (1, 6),
         (1, 14),
