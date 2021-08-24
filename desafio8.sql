@@ -5,15 +5,18 @@ dados, refletindo essa exclusão em todas as tabelas que ela estiver.
 este a funcionalidade correta de sua trigger, fazendo a exclusão
 da usuária "Thati".*/
 -- USE SpotifyClone;
+SET SQL_SAFE_UPDATES = 0;
 DELIMITER $$
+
 CREATE TRIGGER trigger_usuario_delete
     BEFORE DELETE ON users
     FOR EACH ROW
 BEGIN
-    DELETE FROM following WHERE user_id = OLD.user_id,
-    DELETE FROM historic WHERE user_id = OLD.user_id
+    DELETE FROM following WHERE user_id = OLD.user_id;
+    DELETE FROM historic WHERE user_id = OLD.user_id;
 END $$
-DELIMITER;
+
+DELIMITER ;
 
 /* Teste do trigger */
 -- SET SQL_SAFE_UPDATES = 0;
