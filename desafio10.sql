@@ -8,21 +8,15 @@ pessoa usuária com o nome igual a "Bill". */
 -- USE SpotifyClone;
 DELIMITER $$
 
-CREATE FUNCTION quantidade_musicas_no_historico(userName VARCHAR(50))
+CREATE FUNCTION quantidade_musicas_no_historico(userId INT)
 RETURNS INT READS SQL DATA
 BEGIN
-DECLARE quantidade INT;
-SELECT
-  COUNT(*) AS `quantidade_musicas_no_historico`
-FROM
-  historic AS hi
-INNER JOIN users AS us
-  ON hi.user_id = us.user_id
-WHERE user_name = userName
-INTO quantidade;
-RETURN quantidade;  
+  DECLARE quantidade INT;
+  SELECT COUNT(*) FROM historic WHERE user_id = userId
+  INTO quantidade;
+  RETURN quantidade;  
 END $$
 
 DELIMITER ;
 
--- SELECT quantidade_musicas_no_historico("Bill");
+-- SELECT quantidade_musicas_no_historico(3);
