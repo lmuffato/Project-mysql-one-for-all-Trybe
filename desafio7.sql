@@ -13,3 +13,21 @@ Seus resultados devem estar ordenados de forma decrescente, baseando-se no
 número de pessoas seguidoras. Em caso de empate no número de pessoas, ordene
 os resultados pelo nome da pessoa artista em ordem alfabética e caso há
 artistas com o mesmo nome, ordene os resultados pelo nome do álbum alfabeticamente. */
+-- USE SpotifyClone;
+CREATE VIEW perfil_artistas AS
+SELECT
+  ar.artist_name AS `artista`,
+  al.album_name AS `album`,
+  COUNT(fo.user_id) AS `seguidores`
+FROM albums AS al
+INNER JOIN artists AS ar
+  ON al.artist_id = ar.artist_id
+INNER JOIN `following` AS fo
+  ON al.artist_id = fo.artist_id
+GROUP BY
+  al.album_name,
+  ar.artist_name
+ORDER BY
+  `seguidores` DESC,
+  `artista` ASC,
+  `album` ASC;
