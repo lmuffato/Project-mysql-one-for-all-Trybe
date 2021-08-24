@@ -14,7 +14,7 @@ igual a "Walter Phoenix". */
 DELIMITER $$
 
 CREATE PROCEDURE
-    albuns_do_artista(IN artist VARCHAR(100))
+    albuns_do_artista(IN artistName VARCHAR(100))
 BEGIN
 SELECT
   ar.artist_name AS `artista`,
@@ -22,12 +22,12 @@ SELECT
 FROM artists AS ar
 INNER JOIN albums AS al
   ON ar.artist_id = al.artist_id
-WHERE artist_name = artist
+WHERE artist_name = artistName
 ORDER BY
   `album` ASC;
 END $$
 
 DELIMITER ;
 
- /* Teste da Procedure */
+/* Teste da Procedure */
 -- CALL albuns_do_artista("Walter Phoenix");
