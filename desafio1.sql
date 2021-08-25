@@ -61,17 +61,17 @@ INSERT INTO SpotifyClone.plan (category, value_plan)
 
 INSERT INTO SpotifyClone.user(name_user, age_user, plan_ID)
   VALUES
-    ("THATI", 23, 1),
-    ("CINTIA", 35, 2),
-    ("BILL", 20, 3),
-    ("ROGER", 45, 1);
+    ("Thati", 23, 1),
+    ("Cintia", 35, 2),
+    ("Bill", 20, 3),
+    ("Roger", 45, 1);
 
 INSERT INTO SpotifyClone.artists (name_artists)
   VALUES
-    ("WALTER PLOENIX"),
-    ("PETE STRONG"),
-    ("LANCE DAY"),
-    ("FREEDIE SHANNON");
+    ("Walter Phoenix"),
+    ("Pete Strong"),
+    ("Lance Day"),
+    ("Freedie Shannon");
 
 INSERT INTO SpotifyClone.follower_artists (user_ID, artists_ID)
   VALUES
