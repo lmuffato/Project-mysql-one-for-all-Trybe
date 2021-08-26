@@ -4,6 +4,7 @@ use SpotifyClone;
 /* tabela encorporada pelo colega Guilherme de Prais T10-A
  diferença dada por minha tabela album receber música, isso faria aumentar a quantidade de linhas.*/
 
+
 create table paymeds (
   paymed_id int primary key auto_increment,
   paymed varchar(20) not null,
@@ -77,6 +78,7 @@ values ("Soul For Us", 1),
   ("Without My Streets", 5);
 
 create table following_artists (
+  following_id int primary key auto_increment, 
   user_id int not null,
   artist_id int not null,
   constraint primary key (user_id, artist_id),
@@ -94,6 +96,7 @@ values (1, 1),
   (4, 4);
 
 create table history (
+  history_id int primary key auto_increment,
   user_id int not null,
   song_id int not null,
   constraint primary key (user_id, song_id),
