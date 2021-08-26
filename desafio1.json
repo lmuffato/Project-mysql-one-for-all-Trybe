@@ -1,5 +1,5 @@
 {
-  "coluna_usuario": "user",
+  "coluna_usuario": "name",
   "tabela_que_contem_usuario": "users",
   "coluna_plano": "paymed",
   "tabela_que_contem_plano": "paymeds",
@@ -10,7 +10,7 @@
   "coluna_artista": "artist",
   "tabela_que_contem_artista": "artists",
   "coluna_album": "album",
-  "tabela_que_contem_album": "albums",
+  "tabela_que_contem_album": "albuns",
   "coluna_cancoes": "song",
   "tabela_que_contem_cancoes": "songs"
 }

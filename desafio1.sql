@@ -16,12 +16,12 @@ values ('gratuito', 0.00),
 
 create table users (
   user_id int primary key auto_increment,
-  user varchar(20) not null,
+  name varchar(20) not null,
   age int,
   paymed_id int,
   foreign key (paymed_id) references paymeds (paymed_id)
 ) engine  InnoDB;
-insert into users (user, age, paymed_id)
+insert into users (name, age, paymed_id)
 values ("Thati", 23, 1),
   ("Cintia", 35, 2),
   ("Bill", 20, 3),
