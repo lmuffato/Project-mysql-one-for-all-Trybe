@@ -1,16 +1,16 @@
 {
-  "coluna_usuario": "usuario",
-  "tabela_que_contem_usuario": "USUARIOS",
-  "coluna_plano": "plano",
-  "tabela_que_contem_plano": "PLANOS",
-  "coluna_historico_de_reproducoes": "historico_id",
-  "tabela_que_contem_historico_de_reproducoes": "HISTORICOS",
-  "coluna_seguindo_artistas": "follow_id",
-  "tabela_que_contem_seguindo_artistas": "ARTISTAS_FOLLOW",
-  "coluna_artista": "artista",
-  "tabela_que_contem_artista": "ARTISTAS",
+  "coluna_usuario": "name",
+  "tabela_que_contem_usuario": "users",
+  "coluna_plano": "paymed",
+  "tabela_que_contem_plano": "paymeds",
+  "coluna_historico_de_reproducoes": "song_id",
+  "tabela_que_contem_historico_de_reproducoes": "history",
+  "coluna_seguindo_artistas": "artist_id",
+  "tabela_que_contem_seguindo_artistas": "following_artists",
+  "coluna_artista": "artist",
+  "tabela_que_contem_artista": "artists",
   "coluna_album": "album",
-  "tabela_que_contem_album": "ALBUMS",
+  "tabela_que_contem_album": "albuns",
   "coluna_cancoes": "song",
-  "tabela_que_contem_cancoes": "SONGS"
+  "tabela_que_contem_cancoes": "songs"
 }

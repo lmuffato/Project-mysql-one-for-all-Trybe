@@ -1,66 +1,63 @@
-DROP DATABASE IF EXISTS SpotifyClone;
-CREATE DATABASE SpotifyClone;
-USE SpotifyClone;
-CREATE TABLE PLANOS (
-  plano_id INT PRIMARY KEY AUTO_INCREMENT,
-  plano VARCHAR(20) NOT NULL,
-  valor DECIMAL(3, 2)
+drop database if exists SpotifyClone;
+create database SpotifyClone;
+use SpotifyClone;
+/* tabela encorporada pelo colega Guilherme de Prais T10-A
+ diferença dada por minha tabela album receber música, isso faria aumentar a quantidade de linhas.*/
+
+create table paymeds (
+  paymed_id int primary key auto_increment,
+  paymed varchar(20) not null,
+  price decimal(3,2)
 ) engine = InnoDB;
-INSERT INTO
-  PLANOS (plano, valor)
-VALUES
-  ('gratuito', 0.00),
+insert into paymeds(paymed, price)
+values ('gratuito', 0.00),
   ('familiar', 7.99),
   ('universitário', 5.99);
-CREATE TABLE USUARIOS (
-    usuario_id INT PRIMARY KEY AUTO_INCREMENT,
-    usuario VARCHAR(20) NOT NULL,
-    idade INT,
-    plano_id INT,
-    FOREIGN KEY (plano_id) REFERENCES PLANOS (plano_id)
-  ) engine = InnoDB;
-INSERT INTO
-  USUARIOS (usuario, idade, plano_id)
-VALUES
-  ("Thati", 23, 1),
+
+create table users (
+  user_id int primary key auto_increment,
+  name varchar(20) not null,
+  age int,
+  paymed_id int,
+  foreign key (paymed_id) references paymeds (paymed_id)
+) engine  InnoDB;
+insert into users (name, age, paymed_id)
+values ("Thati", 23, 1),
   ("Cintia", 35, 2),
   ("Bill", 20, 3),
   ("Roger", 45, 1);
-CREATE TABLE ARTISTAS (
-    artista_id INT PRIMARY KEY AUTO_INCREMENT,
-    artista VARCHAR(50)
-  ) engine = InnoDB;
-INSERT INTO
-  ARTISTAS (artista)
-VALUES
-  ("Walter Phoenix"),
+
+create table artists (
+  artist_id int primary key auto_increment,
+  artist varchar(50)
+) engine  InnoDB;
+insert into artists (artist)
+values ("Walter Phoenix"),
   ("Peter Strong"),
   ("Lance Day"),
   ("Freedie Shannon");
-CREATE TABLE ALBUMS (
-    album_id INT PRIMARY KEY AUTO_INCREMENT,
-    album VARCHAR(50),
-    artista_id INT,
-    FOREIGN KEY (artista_id) REFERENCES ARTISTAS (artista_id)
-  ) engine = InnoDB;
-INSERT INTO
-  ALBUMS (album, artista_id)
-VALUES
-  ("Envious", 1),
+
+create table albuns (
+  album_id int primary key auto_increment,
+  album varchar(50),
+  artist_id int,
+  foreign key(artist_id) references artists(artist_id)
+) engine = InnoDB;
+insert into albuns (album, artist_id)
+values ("Envious", 1),
   ("Exuberant", 1),
   ("Hallowed Steam", 2),
   ("Incandescent", 3),
   ("Temporary Culture", 4);
-CREATE TABLE SONGS (
-    song_id INT PRIMARY KEY AUTO_INCREMENT,
-    song VARCHAR(50),
-    album_id INT,
-    FOREIGN KEY (album_id) REFERENCES ALBUMS (album_id)
-  ) engine = InnoDB;
-INSERT INTO
-  SONGS (song, album_id)
-VALUES
-  ("Soul For Us", 1),
+
+create table songs (
+  song_id int primary key auto_increment,
+  song varchar(50),
+  album_id int,
+  foreign key(album_id) references albuns(album_id)
+) engine = InnoDB;
+insert into songs (song, album_id)
+values ("Soul For Us", 1),
   ("Reflections Of Magic", 1),
   ("Dance With Her Own", 1),
   ("Troubles Of My Inner Fire", 2),
@@ -78,18 +75,16 @@ VALUES
   ("Thang Of Thunder", 5),
   ("Words Of Her Life", 5),
   ("Without My Streets", 5);
-CREATE TABLE ARTISTAS_FOLLOW (
-    follow_id INT AUTO_INCREMENT,
-    usuario_id INT NOT NULL,
-    artista_id INT NOT NULL,
-    PRIMARY KEY (follow_id, usuario_id, artista_id),
-    FOREIGN KEY (usuario_id) REFERENCES USUARIOS (usuario_id),
-    FOREIGN KEY (artista_id) REFERENCES ARTISTAS (artista_id)
-  ) engine = InnoDB;
-INSERT INTO
-  ARTISTAS_FOLLOW (usuario_id, artista_id)
-VALUES
-  (1, 1),
+
+create table following_artists (
+  user_id int not null,
+  artist_id int not null,
+  constraint primary key (user_id, artist_id),
+  foreign key (user_id) references users(user_id),
+  foreign key (artist_id) references artists(artist_id)
+) engine = InnoDB;
+insert into following_artists (user_id, artist_id)
+values (1, 1),
   (1, 4),
   (1, 3),
   (2, 1),
@@ -97,18 +92,16 @@ VALUES
   (3, 2),
   (3, 1),
   (4, 4);
-CREATE TABLE HISTORICOS (
-    historico_id INT AUTO_INCREMENT,
-    usuario_id INT NOT NULL,
-    song_id INT NOT NULL,
-    PRIMARY KEY (historico_id, usuario_id, song_id),
-    FOREIGN KEY (usuario_id) REFERENCES USUARIOS (usuario_id),
-    FOREIGN KEY (song_id) REFERENCES SONGS (song_id)
-  ) engine = InnoDB;
-INSERT INTO
-  HISTORICOS (usuario_id, song_id)
-VALUES
-  (1, 1),
+
+create table history (
+  user_id int not null,
+  song_id int not null,
+  constraint primary key (user_id, song_id),
+  foreign key (user_id) references users(user_id),
+  foreign key (song_id) references songs(song_id)
+) engine = InnoDB;
+insert into history (user_id, song_id)
+values (1, 1),
   (1, 6),
   (1, 14),
   (1, 16),
