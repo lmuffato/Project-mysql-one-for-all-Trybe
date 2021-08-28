@@ -6,8 +6,6 @@ al.album album
 from albuns al
 join artists a on al.artist_id = a.artist_id
 where a.artist like nome_artist
-group by album;
+order by album;
 end $$
 delimiter ;
-
-call albuns_do_artista("Walter Phoenix");
