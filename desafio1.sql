@@ -61,7 +61,7 @@ INTO
     songs
     (Name, ArtistId, AlbumId) 
 VALUES
-    ('Soul for Us', 1, 1),  (
+    ('Soul For Us', 1, 1),  (
         'Reflections Of Magic', 1, 1
     ),  (
         'Dance With Her Own', 1, 1
@@ -88,7 +88,7 @@ VALUES
     ),   (
         'Diamond Power', 3, 4
     ),   (
-        'Honey, Lets Be Silly', 3, 4
+        "Honey, Let's Be Silly", 3, 4
     ),   (
         'Thang Of Thunder', 4, 5
     ),   (
