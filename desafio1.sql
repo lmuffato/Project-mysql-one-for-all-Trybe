@@ -69,7 +69,7 @@ INSERT INTO SpotifyClone.user(name_user, age_user, plan_ID)
 INSERT INTO SpotifyClone.artists (name_artists)
   VALUES
     ("Walter Phoenix"),
-    ("Pete Strong"),
+    ("Peter Strong"),
     ("Lance Day"),
     ("Freedie Shannon");
 
@@ -86,11 +86,11 @@ INSERT INTO SpotifyClone.follower_artists (user_ID, artists_ID)
 
 INSERT INTO SpotifyClone.album (name_album, artists_ID)
   VALUES
-    ("ENVIAIS", 1),
-    ("EXUBERANT", 2),
-    ("HALLOWED STREAM", 3),
-    ("INCANDESCENT", 4),
-    ("TEMPARAY CULTURE", 4);
+    ("Envious", 1),
+    ("Exuberant", 1),
+    ("Hallowed Steam", 2),
+    ("Incandescent", 3),
+    ("Temporary Culture", 4);
 
 INSERT INTO SpotifyClone.musics (name_music, artists_ID, album_ID)
   VALUES
