@@ -6,8 +6,8 @@ CREATE TABLE artists(  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,   name varcha
 CREATE TABLE users(  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,   PlanId INTEGER,   Name varchar(100) NOT NULL,   Age INTEGER NOT NULL,   FOREIGN KEY (PlanId) REFERENCES plans (id) ) engine = InnoDB;
 CREATE TABLE albuns(  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,   Name varchar(100) NOT NULL,   ArtistId INTEGER,  FOREIGN KEY (ArtistId) REFERENCES artists (id) ) engine = InnoDB;
 CREATE TABLE songs(  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,   Name varchar(100) NOT NULL,   ArtistId INTEGER,   AlbumId INTEGER,  FOREIGN KEY (ArtistId) REFERENCES artists (id),   FOREIGN KEY (AlbumId) REFERENCES albuns (id) ) engine = InnoDB;
-CREATE TABLE follow_artists(  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,   UserId INTEGER,   ArtistId INTEGER,  FOREIGN KEY (UserId) REFERENCES users (id),   FOREIGN KEY (ArtistId) REFERENCES artists (id) ) engine = InnoDB;
-CREATE TABLE user_history(  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,   UserId INTEGER,   SongId INTEGER,  FOREIGN KEY (UserId) REFERENCES users (id),   FOREIGN KEY (SongId) REFERENCES songs (id) ) engine = InnoDB;
+CREATE TABLE follow_artists(  CONSTRAINT PRIMARY KEY (UserId, ArtistId),   UserId INTEGER,   ArtistId INTEGER,  FOREIGN KEY (UserId) REFERENCES users (id),   FOREIGN KEY (ArtistId) REFERENCES artists (id) ) engine = InnoDB;
+CREATE TABLE user_history(  CONSTRAINT PRIMARY KEY (UserId, SongId),   UserId INTEGER,   SongId INTEGER,  FOREIGN KEY (UserId) REFERENCES users (id),   FOREIGN KEY (SongId) REFERENCES songs (id) ) engine = InnoDB;
 INSERT 
 INTO
     plans
