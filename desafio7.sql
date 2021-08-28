@@ -1,3 +1,4 @@
+CREATE VIEW perfil_artistas AS
 SELECT
     art.name AS 'artista',
     alb.Name AS 'album',
