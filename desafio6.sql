@@ -1,3 +1,4 @@
+CREATE VIEW faturamento_atual AS
 SELECT
     ROUND(MIN(p.Value),
     2) AS 'faturamento_minimo',

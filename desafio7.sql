@@ -17,4 +17,3 @@ ORDER BY
     seguidores DESC,
     artista,
     album;
-    
