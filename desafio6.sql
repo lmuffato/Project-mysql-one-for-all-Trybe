@@ -6,4 +6,4 @@ CREATE VIEW `SpotifyClone`.faturamento_atual AS
     SUM(`p`.Value) AS `faturamento_total`
   FROM
     `SpotifyClone`.plans AS `p`
-    INNER JOIN `SpotifyClone`.users AS `u` ON `u`.PlanId = `plans`.id;
+    INNER JOIN `SpotifyClone`.users AS `u` ON `u`.PlanId = `p`.id;
