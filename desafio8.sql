@@ -3,10 +3,10 @@ DELIMITER $$  CREATE TRIGGER trigger_usuario_delete BEFORE DELETE
     FROM
         SpotifyClone.follow_artists 
     WHERE
-        UserId = OLD.UserId;
+        UserId = OLD.id;
 DELETE 
 FROM
     SpotifyClone.user_history 
 WHERE
-    UserId = OLD.UserId;
+    UserId = OLD.id;
 END $$  DELIMITER ;

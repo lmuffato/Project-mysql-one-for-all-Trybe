@@ -13,11 +13,9 @@ INTO
     plans
     (Name, Value) 
 VALUES
-    ('gratuito', 0),  (
-        'familiar', 7.99
-    ),  (
-        'universitário', 5.99
-    );
+    ('gratuito', 0),
+    ('universitário', 5.99),
+    ('familiar', 7.99);
 INSERT 
 INTO
     artists
