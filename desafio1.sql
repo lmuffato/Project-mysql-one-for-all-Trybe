@@ -90,7 +90,7 @@ VALUES
   (2, 3),
   (3, 2),
   (3, 1),
-  (4, 1);
+  (4, 4);
 
 INSERT INTO cancao (album_id, cancao_nome)
 VALUES
