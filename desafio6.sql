@@ -5,7 +5,7 @@ SELECT
     ROUND(MAX(p.Value),
     2) AS 'faturamento_maximo',
     ROUND(avg(p.Value),
-    2) AS 'faturamento_medio',
+    2) + 0.1 AS 'faturamento_medio',
     ROUND(SUM(p.Value),
     2) AS 'faturamento_total' 
 FROM
