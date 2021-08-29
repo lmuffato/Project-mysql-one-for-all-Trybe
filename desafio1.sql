@@ -5,13 +5,13 @@ CREATE DATABASE SpotifyClone;
 USE SpotifyClone;
 
 CREATE TABLE plans( 
-	plan_id INT(11) NOT NULL PRIMARY KEY,
+	plan_id INT NOT NULL PRIMARY KEY,
     plan_name VARCHAR(30) NOT NULL,
     value_plan DECIMAL(5, 2) NOT NULL
 ) engine = InnoDB;
 
 CREATE TABLE users( 
-	user_id INT(11) NOT NULL PRIMARY KEY,
+	user_id INT NOT NULL PRIMARY KEY,
     user_name VARCHAR(100) NOT NULL,
     age INTEGER NOT NULL,
     plan_id INTEGER NOT NULL,
@@ -19,38 +19,38 @@ CREATE TABLE users(
 ) engine = InnoDB;
 
 CREATE TABLE artists( 
-	artist_id INT(11) NOT NULL PRIMARY KEY,
+	artist_id INT NOT NULL PRIMARY KEY,
     artist_name VARCHAR(30) NOT NULL
 ) engine = InnoDB;
 
 CREATE TABLE albums( 
-	album_id INT(11) NOT NULL PRIMARY KEY,
+	album_id INT NOT NULL PRIMARY KEY,
     album_name VARCHAR(30) NOT NULL,
-    artist_id INTEGER NOT NULL,
+    artist_id INTEGER,
     FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
 ) engine = InnoDB;
 
 CREATE TABLE songs( 
-	song_id INT(11) NOT NULL PRIMARY KEY,
+	song_id INT NOT NULL PRIMARY KEY,
     song_name VARCHAR(30) NOT NULL,
-    album_id INTEGER NOT NULL,
-    artist_id INTEGER NOT NULL,
+    album_id INTEGER,
+    artist_id INTEGER,
     FOREIGN KEY (album_id) REFERENCES albums(album_id),
     FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
 ) engine = InnoDB;
 
 CREATE TABLE reproduction_history( 
-    user_id INTEGER NOT NULL,
-		FOREIGN KEY (user_id) REFERENCES users(user_id),
-    song_id INTEGER NOT NULL,
+    user_id INTEGER,
+    song_id INTEGER,
+    FOREIGN KEY (user_id) REFERENCES users(user_id),
 		FOREIGN KEY (song_id) REFERENCES songs(song_id),
 	PRIMARY KEY (user_id, song_id)
 ) engine = InnoDB;
 
 CREATE TABLE following_artists( 
-    user_id INTEGER NOT NULL,
-		FOREIGN KEY (user_id) REFERENCES users(user_id),
-    artist_id INTEGER NOT NULL,
+    user_id INTEGER,
+    artist_id INTEGER,
+    FOREIGN KEY (user_id) REFERENCES users(user_id),
 		FOREIGN KEY (artist_id) REFERENCES artists(artist_id),
 	PRIMARY KEY (user_id, artist_id)
 ) engine = InnoDB;
