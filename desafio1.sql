@@ -71,7 +71,7 @@ VALUES
 ('Walter Phoenix'),
 ('Peter Strong'),
 ('Lance Day'),
-('Freddie Shannon');
+('Freedie Shannon');
 
 INSERT INTO albums (album_title, artist_id)
 VALUES
