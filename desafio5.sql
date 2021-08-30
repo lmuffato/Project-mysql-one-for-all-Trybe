@@ -5,5 +5,6 @@ SELECT
 FROM songs AS songs
 INNER JOIN history AS history
   ON history.song_id = songs.song_id
+GROUP BY songs.song
 ORDER BY reproducoes DESC, cancao
 LIMIT 2;
