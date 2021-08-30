@@ -12,3 +12,4 @@ INNER JOIN
 ORDER BY
     u.nome_do_usuario,
     s.cancao;
+    
