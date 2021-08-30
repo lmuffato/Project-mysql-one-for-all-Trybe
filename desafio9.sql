@@ -2,7 +2,7 @@ DELIMITER $$
 
 CREATE PROCEDURE albuns_do_artista(IN artistName VARCHAR(100))
 BEGIN
-SELECT artists.artist, albums.album
+SELECT artists.artist AS artista, albums.album
 FROM artists AS artists
 RIGHT JOIN albums AS albums
   ON artists.artist_id = albums.artist_id

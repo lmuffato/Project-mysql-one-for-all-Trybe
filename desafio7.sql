@@ -9,5 +9,5 @@ JOIN albums AS albums
   ON albums.artist_id = artists.artist_id;
 JOIN followers AS followers
   ON followers.artist_id = artists.artist_id
-GROUP BY artista, album
+GROUP BY 1, 2
 ORDER BY seguidores DESC, artista, album;
