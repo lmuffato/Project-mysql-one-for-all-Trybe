@@ -5,7 +5,7 @@ RETURNS INT READS SQL DATA
 BEGIN
 DECLARE HistoricoMusical INT;
 SELECT COUNT(hr.cancao_id)
-FROM HistoricoReproducoes hr 
+FROM HistoricoReproducoes hr
 WHERE hr.usuario_id = id_usuario
 INTO HistoricoMusical;
 RETURN HistoricoMusical;
