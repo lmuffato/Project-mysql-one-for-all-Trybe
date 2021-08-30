@@ -54,9 +54,7 @@ CREATE TABLE songs_history(
 
 INSERT INTO plans(plan_name, plan_price)
 VALUES
-  ('Free plan', 0),
   ('Student plan', 9.90),
-  ('Standart plan', 19.90),
   ('Duo plan', 24.90),
   ('Family plan', 34.90);
 
