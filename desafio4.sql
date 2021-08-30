@@ -5,7 +5,7 @@ FROM
     SpotifyClone.artistas_seguidos AS seg 
 INNER JOIN
     SpotifyClone.artistas AS art 
-        ON art.artista_id = seg.Artist_id 
+        ON art.artista_id = seg.artista_id 
 GROUP BY
     art.artista_id 
 ORDER BY
