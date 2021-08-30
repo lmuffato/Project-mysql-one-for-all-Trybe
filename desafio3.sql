@@ -12,6 +12,5 @@ SpotifyClone.cancoes s
 ON
 f.cancao_id = s.cancao_id 
 ORDER BY
-u.nome_do_usuario,
-s.cancao;   
+u.nome_do_usuario, s.cancao;   
  
