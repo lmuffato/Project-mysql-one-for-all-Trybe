@@ -77,7 +77,8 @@ VALUES
   ('a Society in which no tear is shed is inconceivably mediocre', 1),
   ('<Atrás/Além>', 2),
   ('Inside', 3),
-  ('Reaching for a star', 4);
+  ('Reaching for a star', 4),
+  ('Death of a bachelor', 4);
 
 INSERT INTO songs(song_name, album_id)
 VALUES 
@@ -90,9 +91,9 @@ VALUES
   ('Welcome to the internet', 3),
   ('Comedy', 3),
   ('All eyes on me', 3),
-  ('Victorious', 4),
-  ('dont threaten me with a good time', 4),
-  ('Hallelujah', 4),
+  ('Victorious', 5),
+  ('dont threaten me with a good time', 5),
+  ('Hallelujah', 5),
   ('take me there', 4),
   ('bossa uh', 4),
   ('im closing my eyes', 4),
