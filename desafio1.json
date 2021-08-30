@@ -5,12 +5,12 @@
   "tabela_que_contem_plano": "plans",
   "coluna_historico_de_reproducoes": "played_id",
   "tabela_que_contem_historico_de_reproducoes": "played",
-  "coluna_seguindo_artistas": "conection_id",
+  "coluna_seguindo_artistas": "played_id",
   "tabela_que_contem_seguindo_artistas": "social",
   "coluna_artista": "artist_id",
   "tabela_que_contem_artista": "artists",
   "coluna_album": "album_id",
   "tabela_que_contem_album": "albums",
   "coluna_cancoes": "music_id",
-  "tabela_que_contem_cancoes": "music"
+  "tabela_que_contem_cancoes": "musics"
 }
