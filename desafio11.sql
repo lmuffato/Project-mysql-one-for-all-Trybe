@@ -7,6 +7,6 @@ INNER JOIN SpotifyClone.songs s
     ON sH.song_id = s.song_id
 INNER JOIN SpotifyClone.users u
     ON sH.user_id = u.user_id
-WHERE u.plan_id IN (1,3)
+WHERE u.plan_id IN (2,3)
 GROUP BY `Nome`
 ORDER BY `reproducoes` DESC, `Nome`;

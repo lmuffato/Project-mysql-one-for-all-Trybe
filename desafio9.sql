@@ -1,4 +1,3 @@
-DROP PROCEDURE IF EXISTS albuns_do_artista;
 DELIMITER $$
     CREATE PROCEDURE albuns_do_artista(artist_name VARCHAR(50))
         BEGIN
