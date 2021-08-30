@@ -6,7 +6,7 @@ FROM
     SpotifyClone.historico_reproducoes AS his 
 INNER JOIN
     SpotifyClone.cancoes AS can 
-        ON can.id = his.cancao_id 
+        ON can.cancao_id = his.cancao_id 
 GROUP BY
     his.cancao_id 
 ORDER BY
