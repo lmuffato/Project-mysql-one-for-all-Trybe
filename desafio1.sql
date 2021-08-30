@@ -93,7 +93,7 @@ VALUES
   ('Sweetie, Let''s Go Wild', 3),
   ('She Knows', 3),
   ('Fantasy For Me', 4),
-  ('Celebration of More', 4),
+  ('Celebration Of More', 4),
   ('Rock His Everything', 4),
   ('Home Forever', 4),
   ('Diamond Power', 4),
