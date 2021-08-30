@@ -73,9 +73,9 @@ CREATE TABLE songs(
   FOREIGN KEY (album_id) REFERENCES album (album_id)
 ) engine = InnoDB;
 
+INSERT INTO songs (song_name, album_id) VALUES ('Soul For Us', 1);
 INSERT INTO songs (song_name, album_id) VALUES ('Reflections Of Magic', 1);
 INSERT INTO songs (song_name, album_id) VALUES ('Dance With Her Own', 1);
-INSERT INTO songs (song_name, album_id) VALUES ('Soul For Us', 1);
 INSERT INTO songs (song_name, album_id) VALUES ('Troubles Of My Inner Fire', 2);
 INSERT INTO songs (song_name, album_id) VALUES ('Time Fireworks', 2);
 INSERT INTO songs (song_name, album_id) VALUES ('Magic Circus', 3);
