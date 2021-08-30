@@ -6,8 +6,8 @@ SELECT
   COUNT(*) AS seguidores
 FROM artists AS artists
 JOIN albums AS albums
-  ON albums.artist_id = artists.artist_id;
+  ON albums.artist_id = artists.artist_id
 JOIN followers AS followers
   ON followers.artist_id = artists.artist_id
-GROUP BY 1, 2
+GROUP BY artista, album
 ORDER BY seguidores DESC, artista, album;
