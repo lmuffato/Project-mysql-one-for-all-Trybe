@@ -1,4 +1,4 @@
-CREATE VIEW faturamento_anual AS
+CREATE VIEW faturamento_atual AS
 SELECT
   CONVERT(MIN(p.price), DECIMAL(10, 2)) AS 'faturamento_minimo',
   MAX(p.price) AS 'faturamento_maximo',
