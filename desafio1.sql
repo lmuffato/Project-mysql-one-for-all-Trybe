@@ -6,10 +6,10 @@ USE SpotifyClone;
 CREATE TABLE plan(
   plan_id INT PRIMARY KEY AUTO_INCREMENT,
   plan_name VARCHAR(50) NOT NULL,
-  plan_price DOUBLE NOT NULL
+  plan_price DECIMAL(5,2) NOT NULL
 ) ENGINE=InnoDB;
 
-INSERT INTO plan (plan_name, plan_price) VALUES ('gratuito', 0);
+INSERT INTO plan (plan_name, plan_price) VALUES ('gratuito', 0.00);
 INSERT INTO plan (plan_name, plan_price) VALUES ('familiar', 7.99);
 INSERT INTO plan (plan_name, plan_price) VALUES ('universitário', 5.99);
 
