@@ -70,15 +70,14 @@ VALUES
 
 INSERT INTO followed_artists(user_id, artist_id)
 VALUES
-  (1, 2),(2, 1),(3,4),(5,3),(3,3),(4,2),(1,3),(4,3);
+  (1, 2),(2, 1),(3,4),(4,3),(3,3),(4,2),(1,3),(4,4);
 
 INSERT INTO albums(album_name, artist_id)
 VALUES
   ('a Society in which no tear is shed is inconceivably mediocre', 1),
   ('<Atrás/Além>', 2),
   ('Inside', 3),
-  ('Death of a Bachelor', 4),
-  ('Reaching for a star', 5);
+  ('Reaching for a star', 4);
 
 INSERT INTO songs(song_name, album_id)
 VALUES 
@@ -94,15 +93,15 @@ VALUES
   ('Victorious', 4),
   ('dont threaten me with a good time', 4),
   ('Hallelujah', 4),
-  ('take me there', 5),
-  ('bossa uh', 5),
-  ('im closing my eyes', 5),
+  ('take me there', 4),
+  ('bossa uh', 4),
+  ('im closing my eyes', 4),
   ('oops', 4),
-  ('be', 5),
-  ('sunny', 2);
+  ('be', 4),
+  ('sunny', 4);
 
 INSERT INTO songs_history(song_id, user_id) 
 VALUES 
     (1,1),(3,1),(2,1),(7,1),
-    (23,3),(22,2),(13,4),(10,3),(2,2),
-    (23,4),(24,5),(13,2),(10,2),(22,4);
+    (18,3),(12,2),(13,4),(10,3),(2,2),
+    (14,4),(11,4),(13,2),(10,2),(10,4);
