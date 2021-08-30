@@ -8,7 +8,7 @@ CREATE TABLE plans (
   plan_id INT PRIMARY KEY AUTO_INCREMENT,
   plan_type VARCHAR(100) NOT NULL,
   price VARCHAR(10) NOT NULL
-  ) ENGINE=InnoDB;
+) ENGINE=InnoDB;
 
 CREATE TABLE users (
   user_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -16,12 +16,12 @@ CREATE TABLE users (
   age INT NOT NULL,
   plan_id INT NOT NULL,
   FOREIGN KEY (plan_id) REFERENCES plans(plan_id)
- ) ENGINE=InnoDB;
+) ENGINE=InnoDB;
 
 CREATE TABLE artists (
   artist_id INT PRIMARY KEY AUTO_INCREMENT,
   artist VARCHAR(100) NOT NULL
-  ) ENGINE=InnoDB;
+) ENGINE=InnoDB;
 
 CREATE TABLE albums (
   album_id INT PRIMARY KEY AUTO_INCREMENT,
