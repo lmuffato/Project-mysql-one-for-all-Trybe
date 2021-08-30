@@ -1,5 +1,6 @@
 DROP VIEW IF EXISTS cancoes_premium;
 USE SpotifyClone;
+CREATE VIEW cancoes_premium AS
 SELECT
     s.song_name `Nome`,
     COUNT(sH.user_id) `reproducoes`

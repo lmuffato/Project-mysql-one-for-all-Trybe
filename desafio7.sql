@@ -11,4 +11,4 @@ INNER JOIN albums alb
 INNER JOIN followed_artists fART
     ON art.artist_id = fArt.artist_id
 GROUP BY `album`
-ORDER BY `seguidores` DESC, `artista`, `album`; 
+ORDER BY `seguidores` DESC, `artista`, `album`;
