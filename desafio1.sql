@@ -60,24 +60,17 @@ VALUES
 
 INSERT INTO users(user_name, plan_id)
 VALUES
-  ('Alan Albuquerque', 2),
-  ('Jhon Doe', 5),
-  ('Tetsuya Oogask', 2),
-  ('Denis Melo', 4),
-  ('Rogério Lambert', 4);
-
+  ('Alan Albuquerque', 1),
+  ('Jhon Doe', 3),
+  ('Tetsuya Oogask', 1),
+  ('Denis Melo', 2);
 INSERT INTO artists(artist_name) 
 VALUES
-  ('Yoñlu'), ('Terno'), ('Bo Buhman'),
-  ('Panic at the disco'), ('potsu'), ('the bootleg boy'),
-  ('Moe Shop'), ('Boy Pablo'), ('Cuco');
+  ('Yoñlu'), ('Terno'), ('Bo Buhman'), ('potsu');
 
 INSERT INTO followed_artists(user_id, artist_id)
 VALUES
-  (1, 1), (1,8), (1,9), (1,5), (1,3),
-  (2,4), (2,9),(3,7),(3,6),(3,4),(3,9),
-  (4,1), (4,4),(4,8), (4,9),(5,2),(5,5),(5,1),
-  (5,9),(5,8);
+  (1, 2),(2, 1),(3,4),(5,3),(3,3),(4,2),(1,3),(4,3);
 
 INSERT INTO albums(album_name, artist_id)
 VALUES
@@ -85,11 +78,7 @@ VALUES
   ('<Atrás/Além>', 2),
   ('Inside', 3),
   ('Death of a Bachelor', 4),
-  ('Reaching for a star', 5),
-  ('just chill', 6),
-  ('Moe Moe', 7),
-  ('dacing by myself', 8),
-  ('Para mi', 9);
+  ('Reaching for a star', 5);
 
 INSERT INTO songs(song_name, album_id)
 VALUES 
@@ -108,15 +97,9 @@ VALUES
   ('take me there', 5),
   ('bossa uh', 5),
   ('im closing my eyes', 5),
-  ('oops', 6),
-  ('be', 6),
-  ('sunny', 6),
-  ('Notice', 7),
-  ('Lovesick', 7),
-  ('Virtual', 7),
-  ('Lovetripper', 8),
-  ('Keeping Tabs', 8),
-  ('Bossa no sé', 8);
+  ('oops', 4),
+  ('be', 5),
+  ('sunny', 2);
 
 INSERT INTO songs_history(song_id, user_id) 
 VALUES 
