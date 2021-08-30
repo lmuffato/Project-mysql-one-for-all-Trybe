@@ -73,13 +73,13 @@ VALUES
   ("Bill", 20, 3),
   ("Roger", 45, 1);
 
-INSERT INTO albuns (album_nome)
+INSERT INTO albuns (album_nome, artista_id)
 VALUES
-  ("Envious"),
-  ("Exuberant"),
-  ("Hallowed Steam"),
-  ("Incandescent"),
-  ("Temporary Culture");
+  ("Envious", 1),
+  ("Exuberant", 1),
+  ("Hallowed Steam", 4),
+  ("Incandescent", 3),
+  ("Temporary Culture", 2);
 
 INSERT INTO cancoes (cancao_nome)
 VALUES
