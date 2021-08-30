@@ -1,13 +1,14 @@
-CREATE VIEW top_3_artistas AS  SELECT
-    DISTINCT art.artista AS 'artista',
-    COUNT(art.artista_id) AS 'seguidores' 
+CREATE VIEW top_2_hits_do_momento AS
+SELECT
+    can.cancao as 'cancao',
+    COUNT(his.cancao_id) AS 'reproducoes' 
 FROM
-    SpotifyClone.follow_artistas AS foll 
+    SpotifyClone.historico_reproducoes AS his 
 INNER JOIN
-    SpotifyClone.artistas AS art 
-        ON art.artista_id = foll.Artist_id 
+    SpotifyClone.cancoes AS can 
+        ON can.id = his.cancao_id 
 GROUP BY
-    art.artista_id 
+    his.cancao_id 
 ORDER BY
-    seguidores DESC,
-    artista LIMIT 3;
+    reproducoes DESC,
+    cancao LIMIT 2;
