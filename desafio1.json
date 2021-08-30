@@ -5,7 +5,7 @@
   "tabela_que_contem_plano": "plans",
   "coluna_historico_de_reproducoes": "played_id",
   "tabela_que_contem_historico_de_reproducoes": "played",
-  "coluna_seguindo_artistas": "played_id",
+  "coluna_seguindo_artistas": "conection_id",
   "tabela_que_contem_seguindo_artistas": "social",
   "coluna_artista": "artist_id",
   "tabela_que_contem_artista": "artists",
