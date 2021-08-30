@@ -12,6 +12,7 @@ CREATE TABLE plans(
 CREATE TABLE users(
     user_id INT PRIMARY KEY AUTO_INCREMENT,
     user_name VARCHAR(50) NOT NULL,
+    user_age TINYINT(2) NOT NULL,
     plan_id INT NOT NULL,
     FOREIGN KEY (plan_id) REFERENCES plans(plan_id)
 ) engine = InnoDB;
@@ -54,55 +55,54 @@ CREATE TABLE songs_history(
 
 INSERT INTO plans(plan_name, plan_price)
 VALUES
-  ('Student plan', 9.90),
-  ('Duo plan', 24.90),
-  ('Family plan', 34.90);
+  ('gratuito', 0),
+  ('universitário', 5.99),
+  ('familiar', 7.99);
 
-INSERT INTO users(user_name, plan_id)
+INSERT INTO users(user_name, user_age,plan_id)
 VALUES
-  ('Alan Albuquerque', 1),
-  ('Jhon Doe', 3),
-  ('Tetsuya Oogask', 1),
-  ('Denis Melo', 2);
+  ('Thati', 23, 1),
+  ('Cintia', 35, 3),
+  ('Bill', 20, 2),
+  ('Roger', 45, 1);
 INSERT INTO artists(artist_name) 
 VALUES
-  ('Yoñlu'), ('Terno'), ('Bo Buhman'), ('potsu');
+  ('Walter Phoenix'), ('Peter Strong'), ('Lance Day'), ('Freedie Shannon');
 
 INSERT INTO followed_artists(user_id, artist_id)
 VALUES
-  (1, 2),(2, 1),(3,4),(4,3),(3,3),(4,2),(1,3),(4,4);
+  (1, 2),(1, 3),(1,4),(2,1),(2,3),(3,2),(3,1),(4,4);
 
 INSERT INTO albums(album_name, artist_id)
 VALUES
-  ('a Society in which no tear is shed is inconceivably mediocre', 1),
-  ('<Atrás/Além>', 2),
-  ('Inside', 3),
-  ('Reaching for a star', 4),
-  ('Death of a bachelor', 4);
+  ('Envious', 1),
+  ('Exuberant', 1),
+  ('Hallowed Steam', 2),
+  ('Incandescent', 3),
+  ('Temporary Culture', 4);
 
 INSERT INTO songs(song_name, album_id)
 VALUES 
-  ('Suicide song', 1),
-  ('Mecânica celeste aplicada', 1),
-  ('Regra de três', 1),
-  ('Tudo que eu não fiz', 2),
-  ('Pegando leve', 2),
-  ('Eu vou', 2),
-  ('Welcome to the internet', 3),
-  ('Comedy', 3),
-  ('All eyes on me', 3),
-  ('Victorious', 5),
-  ('dont threaten me with a good time', 5),
-  ('Hallelujah', 5),
-  ('take me there', 4),
-  ('bossa uh', 4),
-  ('im closing my eyes', 4),
-  ('oops', 4),
-  ('be', 4),
-  ('sunny', 4);
+  ('Soul For Us', 1),
+  ('Reflections Of Magic', 1),
+  ('Dance With Her Own', 1),
+  ('Troubles Of My Inner Fire', 2),
+  ('Time Fireworks', 2),
+  ('Magic Circus', 3),
+  ('Honey, So Do I', 3),
+  ('Sweetie, Let''s Go Wild', 3),
+  ('She Knows', 3),
+  ('Fantasy For Me', 4),
+  ('Celebration of More', 4),
+  ('Rock His Everything', 4),
+  ('Home Forever', 4),
+  ('Diamond Power', 4),
+  ('Honey, Let''s Be Silly', 4),
+  ('Thang Of Thunder', 5),
+  ('Words Of Her Life', 5),
+  ('Without My Streets', 5);
 
-INSERT INTO songs_history(song_id, user_id) 
+INSERT INTO songs_history(user_id, song_id) 
 VALUES 
-    (1,1),(3,1),(2,1),(7,1),
-    (18,3),(12,2),(13,4),(10,3),(2,2),
-    (14,4),(11,4),(13,2),(10,2),(10,4);
+    (1,1),(1,6),(1,14),(1,16),(2,13),(2,17),(2,2),
+    (2,15),(3,4),(3,16),(3,6),(4,3),(4,18),(4,11);
